@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.ComponentModel.DataAnnotations;
+using System.Entity;
 
 namespace Proyecto1.Models
 {
@@ -17,6 +18,11 @@ namespace Proyecto1.Models
 
         public virtual ICollection<Usuario> Usuario { get; set; }
 
+
+        public bool ObtenerRol()
+        {
+            
+        }
     }
 
 }
