@@ -3,11 +3,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{5A01BB93-B71A-47D7-B973-F271A9184483}</ProjectGuid>
+    <ProjectGuid>{32F01F24-9A5F-456C-9BCF-F81DEA355297}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>AutoStoreUnitTest</RootNamespace>
-    <AssemblyName>AutoStoreUnitTest</AssemblyName>
+    <RootNamespace>AutoStoreUnitTest1</RootNamespace>
+    <AssemblyName>AutoStoreUnitTest1</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
@@ -60,12 +60,12 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
-    <Compile Include="AutoStoreUnitTests.cs" />
+    <Compile Include="AutoStoreUnitTest1.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Proyecto1\Proyecto1.csproj">
-      <Project>{840444CC-FA28-4864-B138-FB72BBB4231D}</Project>
+      <Project>{840444cc-fa28-4864-b138-fb72bbb4231d}</Project>
       <Name>Proyecto1</Name>
     </ProjectReference>
   </ItemGroup>

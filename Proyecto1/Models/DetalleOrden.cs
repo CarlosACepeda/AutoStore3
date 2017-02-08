@@ -11,17 +11,32 @@ namespace Proyecto1.Models
     {
         [ScaffoldColumn(false)]
 
-        public int IdDetalleOrden { get; set; }
+        public Guid IdDetalleOrden { get; set; }
 
         [Required,  Display(Name = "Cantidad")]
         public int Cantidad { get; set; }
-
-        [Required, Display(Name = "Precio Unitario")]
-        public int PrecioUnitario { get; set; }
-
+        //
         public virtual Orden orden { get; set; }
         public virtual Producto producto { get; set; }
 
+        public bool AgregarAlDetalle(DetalleOrden deta)
+        {
+            AutoStoreContext contexto = new AutoStoreContext();
+            contexto.DetalleOrden.Add(deta);
+            contexto.SaveChanges();
+
+            return true;
+        }
+        public List<DetalleOrden> detalles()
+        {
+            AutoStoreContext contexto = new AutoStoreContext();
+
+            var traerDetalle = from det in contexto.DetalleOrden
+                                     where Convert.ToString(det.IdDetalleOrden).Contains(detalle.ToString())
+                                     select det;
+
+            return traerDetalle.ToList();
+        }
 
     }
 }

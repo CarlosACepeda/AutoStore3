@@ -13,9 +13,9 @@ namespace Proyecto1.Models
 
         public int IdOrden { get; set; }
 
-        [Required,  Display(Name = "Fecha orden")]
+        [Required, Display(Name = "Fecha orden")]
         public DateTime FechaOrden { get; set; }
-       
+
 
         [Required, StringLength(50), Display(Name = "Direccion")]
         public string Direccion { get; set; }
@@ -41,12 +41,24 @@ namespace Proyecto1.Models
 
         public virtual MetodoDePago MetodoPago { get; set; }
 
-        public virtual Usuario user { get;  set; }
+        public virtual Usuario user { get; set; }
+        DetalleOrden detalle = new Models.DetalleOrden();
 
         public ICollection<DetalleOrden> DetalleOrden { get; set; }
 
+        public bool RecuperarDetalle(Orden ord)
+        {
+            AutoStoreContext contexto = new AutoStoreContext();
+            contexto.Orden.Add(ord);
 
+            return true;
 
+        }
+        //public bool CalcularTotal()
+        //{
 
+        //}
+        }
+        
     }
 }

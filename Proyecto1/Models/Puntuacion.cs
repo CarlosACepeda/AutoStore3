@@ -15,9 +15,9 @@ namespace Proyecto1.Models
         public int IdPuntuacion { get; set; }
 
         [Required, StringLength(20), Display(Name = "Puntuacion")]
-        public int puntuacion { get; set; }
+        public int PuntuacionUsuario { get; set; }
 
-        public Guid idUsuario { get; set; }
+        public Guid IdUsuario { get; set; }
 
 
         public virtual Usuario usuario { get; set; }
