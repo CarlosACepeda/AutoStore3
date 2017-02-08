@@ -6,9 +6,9 @@ using System.Data.Entity;
 
 namespace Proyecto1.Models
 {
-    public class InicializadorDatabase : DropCreateDatabaseIfModelChanges<DBContext>
+    public class InicializadorDatabase : DropCreateDatabaseIfModelChanges<AutoStoreContext>
     {
-        protected override void Seed(DBContext context)
+        protected override void Seed(AutoStoreContext context)
         {
             listarCategorias().ForEach(c => context.Categoria.Add(c));
             listarMarca().ForEach(p => context.Marca.Add(p));

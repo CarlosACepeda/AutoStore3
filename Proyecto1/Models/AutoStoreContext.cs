@@ -6,9 +6,9 @@ using System.Data.Entity;
 
 namespace Proyecto1.Models
 {
-    public class DBContext : DbContext
+    public class AutoStoreContext : DbContext
     {
-        public DBContext()
+        public AutoStoreContext()
             : base ("AutoStore")
         {
             Database.SetInitializer(new InicializadorDatabase());
@@ -24,7 +24,7 @@ namespace Proyecto1.Models
         public DbSet<Modelo> Modelo { get; set; }
         public DbSet<DetalleOrden> DetalleOrden { get; set; }
         public DbSet<MetodoDePago> MetodoDePago { get; set; }
-        public DbSet<Puntuacion> Puntucion { get; set; }
+        public DbSet<Puntuacion> Puntuacion { get; set; }
         public DbSet<ImagenProducto> ImagenProducto { get; set; }
 
 
