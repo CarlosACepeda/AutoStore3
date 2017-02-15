@@ -58,7 +58,6 @@ namespace Proyecto1.Models
         //{
 
         //}
-        }
         
     }
 }

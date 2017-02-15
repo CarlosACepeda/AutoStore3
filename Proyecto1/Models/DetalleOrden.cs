@@ -27,16 +27,16 @@ namespace Proyecto1.Models
 
             return true;
         }
-        public List<DetalleOrden> detalles()
-        {
-            AutoStoreContext contexto = new AutoStoreContext();
+        //public List<DetalleOrden> detalles()
+        //{
+        //    AutoStoreContext contexto = new AutoStoreContext();
 
-            var traerDetalle = from det in contexto.DetalleOrden
-                                     where Convert.ToString(det.IdDetalleOrden).Contains(detalle.ToString())
-                                     select det;
+        //    var traerDetalle = from det in contexto.DetalleOrden
+        //                             where Convert.ToString(det.IdDetalleOrden).Contains(detalle.ToString())
+        //                             select det;
 
-            return traerDetalle.ToList();
-        }
+        //    return traerDetalle.ToList();
+        //}
 
     }
 }

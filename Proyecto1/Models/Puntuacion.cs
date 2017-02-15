@@ -33,8 +33,8 @@ namespace Proyecto1.Models
             AutoStoreContext contexto = new AutoStoreContext();
 
             double? puntuacionPromedio =
-                        (from punt in contexto.Puntuacion where Convert.ToString(punt.idUsuario).Contains(IdUsuario.ToString())
-                             select punt.puntuacion)
+                        (from punt in contexto.Puntuacion where Convert.ToString(punt.IdUsuario).Contains(IdUsuario.ToString())
+                             select punt.PuntuacionUsuario)
                             .Average();
 
             return puntuacionPromedio;
