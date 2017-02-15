@@ -20,7 +20,7 @@ namespace Proyecto1.Models
         [Required, StringLength(30) Display(Name = "descripcion")]
         public string Descripcion { get; set; }
 
-       public virtual Orden Orden { get; set; }
+       public virtual CarritoCompra Orden { get; set; }
 
     }
 }

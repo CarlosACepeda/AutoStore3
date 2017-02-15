@@ -404,8 +404,10 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Logica\CategoriaBLL.cs" />
+    <Compile Include="Logica\DetalleOrdenBLL.cs" />
     <Compile Include="Models\Categoria.cs" />
-    <Compile Include="Models\DetalleOrden.cs" />
+    <Compile Include="Models\ItemCarrito.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ImagenProducto.cs" />
     <Compile Include="Models\AutoStoreContext.cs" />
@@ -413,7 +415,7 @@
     <Compile Include="Models\Marca.cs" />
     <Compile Include="Models\MetodoDePago.cs" />
     <Compile Include="Models\Modelo.cs" />
-    <Compile Include="Models\Orden.cs" />
+    <Compile Include="Models\CarritoCompra.cs" />
     <Compile Include="Models\Persona.cs" />
     <Compile Include="Models\Producto.cs" />
     <Compile Include="Models\Puntuacion.cs" />

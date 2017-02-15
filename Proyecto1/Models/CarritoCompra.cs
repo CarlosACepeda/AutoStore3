@@ -7,7 +7,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace Proyecto1.Models
 {
-    public class Orden
+    public class CarritoCompra
     {
         [ScaffoldColumn(false)]
 
@@ -42,11 +42,11 @@ namespace Proyecto1.Models
         public virtual MetodoDePago MetodoPago { get; set; }
 
         public virtual Usuario user { get; set; }
-        DetalleOrden detalle = new Models.DetalleOrden();
+        ItemCarrito detalle = new Models.ItemCarrito();
 
-        public ICollection<DetalleOrden> DetalleOrden { get; set; }
+        public ICollection<ItemCarrito> DetalleOrden { get; set; }
 
-        public bool RecuperarDetalle(Orden ord)
+        public bool RecuperarDetalle(CarritoCompra ord)
         {
             AutoStoreContext contexto = new AutoStoreContext();
             contexto.Orden.Add(ord);
