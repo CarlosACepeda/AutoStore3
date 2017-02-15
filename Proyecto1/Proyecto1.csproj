@@ -404,8 +404,20 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Logica\CarritoComprasBLL.cs" />
     <Compile Include="Logica\CategoriaBLL.cs" />
-    <Compile Include="Logica\DetalleOrdenBLL.cs" />
+    <Compile Include="Logica\FabricanteCarroBLL.cs" />
+    <Compile Include="Logica\ImagenProductoBLL.cs" />
+    <Compile Include="Logica\ItemCarritoBLL.cs" />
+    <Compile Include="Logica\ModeloBLL.cs" />
+    <Compile Include="Logica\MarcaProductoBLL.cs" />
+    <Compile Include="Logica\MetodoPagoBLL.cs" />
+    <Compile Include="Logica\ModeloCarroBLL.cs" />
+    <Compile Include="Logica\PersonaBLL.cs" />
+    <Compile Include="Logica\ProductoBLL.cs" />
+    <Compile Include="Logica\PuntuacionBLL.cs" />
+    <Compile Include="Logica\RolBLL.cs" />
+    <Compile Include="Logica\UsuarioBLL.cs" />
     <Compile Include="Models\Categoria.cs" />
     <Compile Include="Models\ItemCarrito.cs" />
     <Compile Include="Models\IdentityModels.cs" />

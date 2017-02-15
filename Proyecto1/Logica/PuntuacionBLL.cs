@@ -5,8 +5,11 @@ using System.Web;
 
 namespace Proyecto1.Logica
 {
-    public class DetalleOrdenBLL
+    public class PuntuacionBLL
     {
-        
+        public void CalcularPuntuacion()
+        {
+
+        }
     }
 }

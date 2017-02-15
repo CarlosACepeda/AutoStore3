@@ -16,49 +16,16 @@ namespace Proyecto1.Models
         [Required, Display(Name = "Fecha orden")]
         public DateTime FechaOrden { get; set; }
 
+        public Guid idCategoria { get; set; }
 
-        [Required, StringLength(50), Display(Name = "Direccion")]
-        public string Direccion { get; set; }
+        public double total { get; set; }
 
-        [Required, StringLength(20), Display(Name = "Ciudad")]
-        public string Ciudad { get; set; }
+        public int idMetodoPago { get; set; }
 
-
-        [Required, StringLength(20), Display(Name = "Estado de la orden")]
-        public string EstadoOrden { get; set; }
-
-        [Required, StringLength(20), Display(Name = "Pais")]
-        public string Pais { get; set; }
-
-        [Required, StringLength(20), Display(Name = "Telefono")]
-        public int Telefono { get; set; }
-
-        [Required, StringLength(20), Display(Name = "Email")]
-        public string Email { get; set; }
-
-        [Required, StringLength(20), Display(Name = "Total")]
-        public int Total { get; set; }
-
-        public virtual MetodoDePago MetodoPago { get; set; }
-
-        public virtual Usuario user { get; set; }
-        ItemCarrito detalle = new Models.ItemCarrito();
-
-        public ICollection<ItemCarrito> DetalleOrden { get; set; }
-
-        public bool RecuperarDetalle(CarritoCompra ord)
-        {
-            AutoStoreContext contexto = new AutoStoreContext();
-            contexto.Orden.Add(ord);
-
-            return true;
-
-        }
-        //public bool CalcularTotal()
-        //{
-
-        //}
-        }
+        public Guid idUsuario { get; set; }
+        public int idItem { get; set; }
+        
+        
         
     }
 }
