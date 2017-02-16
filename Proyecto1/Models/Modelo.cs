@@ -17,7 +17,7 @@ namespace Proyecto1.Models
 
         public int IdMarca { get; set; }
 
-        public virtual Marca marca { get; set; }
+        public virtual Marca marcaP { get; set; }
 
     }
 }

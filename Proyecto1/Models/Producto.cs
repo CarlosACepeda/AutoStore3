@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Proyecto1.Models
 {
@@ -10,7 +11,9 @@ namespace Proyecto1.Models
     {
         [ScaffoldColumn(false)]
 
-        public int idProducto { get; set; }
+        [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        public int ProductoID    { get; set; }
 
         [Required, StringLength(20), Display(Name = "Nombre producto")]
         public string nombreProducto { get; set; }
@@ -20,7 +23,7 @@ namespace Proyecto1.Models
         public string descripcion { get; set; }
 
 
-        public ICollection<ImagenProducto> imagenProducto { get; set; }
+        public int imagenProducto { get; set; }
 
         [Required, StringLength(20), Display(Name = "Precio unitario")]
         public int precioU { get; set; }

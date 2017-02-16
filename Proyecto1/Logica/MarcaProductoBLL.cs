@@ -7,5 +7,9 @@ namespace Proyecto1.Logica
 {
     public class MarcaProductoBLL
     {
+        public void ObtenerMarcaP()
+        {
+
+        }
     }
 }

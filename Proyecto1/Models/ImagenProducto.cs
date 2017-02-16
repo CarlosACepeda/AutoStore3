@@ -17,5 +17,7 @@ namespace Proyecto1.Models
 
         public virtual Producto producto { get; set; }
 
+
+
     }
 }

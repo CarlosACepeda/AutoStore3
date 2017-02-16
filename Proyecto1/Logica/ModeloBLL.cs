@@ -7,6 +7,13 @@ namespace Proyecto1.Logica
 {
     public class ModeloBLL
     {
+        public void AgregarModelo()
+        {
 
+        }
+        public void MostrarModelo()
+        {
+
+        } 
     }
 }
