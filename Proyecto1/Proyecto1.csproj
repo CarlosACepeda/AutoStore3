@@ -219,6 +219,8 @@
     </Content>
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="ClassDiagram1.cd" />
+    <Content Include="ClassDiagram2.cd" />
     <None Include="Scripts\jquery-3.1.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.1.1.js" />
     <Content Include="Scripts\jquery-3.1.1.min.js" />
@@ -425,9 +427,8 @@
     <Compile Include="Models\ImagenProducto.cs" />
     <Compile Include="Models\AutoStoreContext.cs" />
     <Compile Include="Models\InicializadorDatabase.cs" />
-    <Compile Include="Models\Marca.cs" />
+    <Compile Include="Models\MarcaProducto.cs" />
     <Compile Include="Models\MetodoDePago.cs" />
-    <Compile Include="Models\Modelo.cs" />
     <Compile Include="Models\CarritoCompra.cs" />
     <Compile Include="Models\ModeloCarro.cs" />
     <Compile Include="Models\Persona.cs" />

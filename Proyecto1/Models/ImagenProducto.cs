@@ -3,19 +3,27 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.ComponentModel.DataAnnotations;
-
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Proyecto1.Models
 {
     public class ImagenProducto
     {
         [ScaffoldColumn(false)]
-        public int IdImagen { get; set; }
+
+        [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        public int ImagenID { get; set; }
 
         [Required, StringLength(20), Display(Name = "imagen")]
-        public string imagen { get; set; }
+        public string Imagen { get; set; }
 
-        public virtual Producto producto { get; set; }
+
+        //Zona de Relaciones.
+
+        //Relacion con Producto-
+        public int ProductoID { get; set; }
+        public virtual Producto Producto { get; set; }
 
 
 

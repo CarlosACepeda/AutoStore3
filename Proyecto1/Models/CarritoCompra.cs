@@ -10,20 +10,28 @@ namespace Proyecto1.Models
     public class CarritoCompra
     {
         [ScaffoldColumn(false)]
+        [Key]
+        public int CarritoCompraID { get; set; }
 
-        public int IdOrden { get; set; }
-
-        [Required, Display(Name = "Fecha orden")]
+        [Required, Display(Name = "Fecha Del Carrito")]
         public DateTime FechaOrden { get; set; }
-
-        public Guid idCategoria { get; set; }
 
         public double total { get; set; }
 
-        public int idMetodoPago { get; set; }
 
-        public Guid idUsuario { get; set; }
-        public int idItem { get; set; }
+        //Zona de Relaciones
+
+        //Relación con Usuario
+        public Guid? UsuarioID { get; set; }
+        public virtual Usuario Usuario { get; set; }
+
+        //Relacion con Metodo de Pago(Temporal)
+
+        public virtual MetodoDePago MetodoDePago { get; set; }
+
+        //Relacion con ItemCarrito
+
+        public ICollection<ItemCarrito> ItemsCarrito { get; set; }
         
         
         

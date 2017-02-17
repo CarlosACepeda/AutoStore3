@@ -11,13 +11,18 @@ namespace Proyecto1.Models
     {
         [ScaffoldColumn(false)]
 
-        public Guid IdDetalleOrden { get; set; }
+        [Key]
+        public int ItemCarritoID { get; set; }
 
         [Required, Display(Name = "Cantidad")]
         public int Cantidad { get; set; }
-        //
-        public virtual CarritoCompra orden { get; set; }
-        public virtual Producto producto { get; set; }
+        
+
+        //Zona de Relaciones
+
+        //Relacion con Carrito Compra.
+        public int CarritoCompraID { get; set; }
+        public virtual CarritoCompra CarritoCompra { get; set; }
 
     }
 }

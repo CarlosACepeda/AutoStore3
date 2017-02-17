@@ -11,13 +11,14 @@ namespace Proyecto1.Models
         protected override void Seed(AutoStoreContext context)
         {
             listarCategorias().ForEach(c => context.Categoria.Add(c));
-            listarMarca().ForEach(p => context.Marca.Add(p));
-            modelo().ForEach(mod => context.Modelo.Add(mod));
+            listarFabricantes().ForEach(f => context.FabricanteCarro.Add(f));
+            listarModelosDeCarro().ForEach(m => context.ModeloCarro.Add(m));
             producto().ForEach(product => context.Producto.Add(product));
 
-           
+
         }
 
+        //Datos quemados de Modelos de Carro.
         private static List<Categoria> listarCategorias()
         {
             var categorias = new List<Categoria>
@@ -95,192 +96,185 @@ namespace Proyecto1.Models
         };
             return categorias;
         }
-        private static List<Marca> listarMarca()
+
+        //Datos quemados de Modelos de Carro.
+        private static List<FabricanteCarro> listarFabricantes()
         {
-            var marca = new List<Marca>
+            var FabricantesDeCarros = new List<FabricanteCarro>
         {
-            new Marca
+            new FabricanteCarro
             {
-                IdMarca = 1,
-                NombreMarca ="Alfa Romeo"
+
+                NombreFabricanteC ="Alfa Romeo"
             },
-            new Marca
+            new FabricanteCarro
             {
-                IdMarca = 2,
-                NombreMarca ="Chevrolet"
+
+                NombreFabricanteC ="Chevrolet"
             },
-            new Marca
+            new FabricanteCarro
             {
-                IdMarca = 3,
-                NombreMarca ="Nissan"
+
+                NombreFabricanteC ="Nissan"
             },
-            new Marca
+            new FabricanteCarro
             {
-                IdMarca = 4,
-                NombreMarca ="Renault"
+
+                NombreFabricanteC ="Renault"
             },
-            new Marca
+            new FabricanteCarro
             {
-                IdMarca = 5,
-                NombreMarca ="Toyota"
+
+                NombreFabricanteC ="Toyota"
             },
-            new Marca
+            new FabricanteCarro
             {
-                IdMarca = 6,
-                NombreMarca ="Mazda"
+
+                NombreFabricanteC ="Mazda"
             },
-            new Marca
+            new FabricanteCarro
             {
-                IdMarca = 7,
-                NombreMarca ="Jeep"
+
+                NombreFabricanteC ="Jeep"
             },
-            new Marca
+            new FabricanteCarro
             {
-                IdMarca = 8,
-                NombreMarca ="Mitsubishi"
+
+                NombreFabricanteC ="Mitsubishi"
             },
-            new Marca
+            new FabricanteCarro
             {
-                IdMarca = 9,
-                NombreMarca ="Hyundai"
+
+                NombreFabricanteC ="Hyundai"
             },
-            new Marca
+            new FabricanteCarro
             {
-                IdMarca = 10,
-                NombreMarca ="Mercedez-Benzx"
+
+                NombreFabricanteC ="Mercedez-Benz"
             }
         };
-            return marca;
+            return FabricantesDeCarros;
         }
-        private static List<Modelo> modelo()
+        private static List<ModeloCarro> listarModelosDeCarro()
         {
-            var modelo = new List<Modelo>
+            var modelosDeCarro = new List<ModeloCarro>
             {
-             new Modelo
+             new ModeloCarro
              {
-                 Idmodelo=1,
-                 modelo ="Alfa Romeo 4C",
-                 IdMarca= 1
+                 NombreModeloC ="Alfa Romeo 4C",
+                 FabricanteCarroID= 1
              },
 
-             new Modelo
+             new ModeloCarro
              {
-                 Idmodelo=2,
-                 modelo ="Alfa Romeo 4R Zagato",
-                 IdMarca= 1
+                 NombreModeloC ="Alfa Romeo 4R Zagato",
+                 FabricanteCarroID= 1
              },
-             new Modelo
+             new ModeloCarro
              {
-                 Idmodelo=3,
-                 modelo ="Chevrolet Avalanche",
-                 IdMarca= 2
+                 NombreModeloC ="Chevrolet Avalanche",
+                 FabricanteCarroID= 2
              },
-             new Modelo
+             new ModeloCarro
              {
-                 Idmodelo=4,
-                 modelo ="Chevrolet Aveo",
-                 IdMarca= 2
+                 NombreModeloC ="Chevrolet Aveo",
+                 FabricanteCarroID= 2
              },
-             new Modelo
+             new ModeloCarro
              {
-                 Idmodelo=5,
-                 modelo ="Nissan 280Z",
-                 IdMarca= 3
+
+                 NombreModeloC ="Nissan 280Z",
+                 FabricanteCarroID= 3
              },
-             new Modelo
+             new ModeloCarro
              {
-                 Idmodelo=6,
-                 modelo ="Nissan March",
-                 IdMarca= 3
+                 NombreModeloC ="Nissan March",
+                 FabricanteCarroID= 3
              },
-             new Modelo
+             new ModeloCarro
              {
-                 Idmodelo=7,
-                 modelo ="Renault LeCar",
-                 IdMarca= 4
+
+                 NombreModeloC ="Renault LeCar",
+                 FabricanteCarroID= 4
              },
-             new Modelo
+             new ModeloCarro
              {
-                 Idmodelo=8,
-                 modelo ="Renault R16",
-                 IdMarca= 4
+
+                 NombreModeloC ="Renault R16",
+                 FabricanteCarroID= 4
              },
-             new Modelo
+             new ModeloCarro
              {
-                 Idmodelo=9,
-                 modelo ="Toyota FJ Cruiser",
-                 IdMarca= 5
+                 NombreModeloC ="Toyota FJ Cruiser",
+                 FabricanteCarroID= 5
              },
-             new Modelo
+             new ModeloCarro
              {
-                 Idmodelo=10,
-                 modelo ="Toyota Prius C",
-                 IdMarca= 5
+
+                 NombreModeloC ="Toyota Prius C",
+                 FabricanteCarroID= 5
              },
-             new Modelo
+             new ModeloCarro
              {
-                 Idmodelo=11,
-                 modelo ="Mazda MX-6",
-                 IdMarca= 6
+
+                 NombreModeloC ="Mazda MX-6",
+                 FabricanteCarroID= 6
              },
 
-             new Modelo
+             new ModeloCarro
              {
-                 Idmodelo=12,
-                 modelo ="Mazda Navajo",
-                 IdMarca= 6
+
+                 NombreModeloC ="Mazda Navajo",
+                 FabricanteCarroID= 6
              },
-             new Modelo
+             new ModeloCarro
              {
-                 Idmodelo=13,
-                 modelo ="Jeep J-100",
-                 IdMarca= 7
+                 NombreModeloC ="Jeep J-100",
+                 FabricanteCarroID= 7
              },
-             new Modelo
+             new ModeloCarro
              {
-                 Idmodelo=14,
-                 modelo ="Jeep Jeepster",
-                 IdMarca= 7
+
+                 NombreModeloC ="Jeep Jeepster",
+                 FabricanteCarroID= 7
              },
-             new Modelo
+             new ModeloCarro
              {
-                 Idmodelo=15,
-                 modelo ="Mitsubishi i-MiEV",
-                 IdMarca= 8
+                 NombreModeloC ="Mitsubishi i-MiEV",
+                 FabricanteCarroID= 8
              },
 
-             new Modelo
+             new ModeloCarro
              {
-                 Idmodelo=16,
-                 modelo ="Mitsubishi Tredia",
-                 IdMarca= 8
+
+                 NombreModeloC ="Mitsubishi Tredia",
+                 FabricanteCarroID= 8
              }
             };
-            return modelo;
+            return modelosDeCarro;
         }
-        private static List<Producto> producto()
+        private static List<Producto> listarProductos()
         {
-            var producto = new List<Producto>()
+            var listadoDeProductos = new List<Producto>()
             {
                 new Producto
                 {
-                    idProducto= 1,
-                    nombreProducto ="Bujias",
-                    descripcion="480  ",
-                    precioU = 30000,
-                    idCategoria= 1,
-                    idUsuario= 1 ,
-                    idMarca = 1,
+
+                    NombreProducto ="Bujias",
+                    Descripcion="Bujias para... ",
+                    PrecioU = 30000,
+                    Activo= true,
+                    UsuarioID= Guid.NewGuid(),
+                    MarcaProductoID = 1,
                 },
                   new Producto
                 {
-                    idProducto= 2,
-                    nombreProducto ="llantas",
-                    descripcion="Bridgestone  ",
-                    precioU = 50000,
-                    idCategoria= 2,
-                    idUsuario= 2 ,
-                    idMarca = 2,
+                    NombreProducto ="Limpiaparabrisas",
+                    Descripcion="Limpiaparabrisas para... ",
+                    PrecioU = 50000,
+                    Activo= true,
+                    UsuarioID= Guid.NewGuid(),
+                    MarcaProductoID = 1,
                 },
                     new Producto
                 {

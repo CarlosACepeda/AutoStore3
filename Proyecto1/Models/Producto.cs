@@ -13,33 +13,40 @@ namespace Proyecto1.Models
 
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int ProductoID    { get; set; }
+        public int ProductoID { get; set; }
 
-        [Required, StringLength(20), Display(Name = "Nombre producto")]
-        public string nombreProducto { get; set; }
-
-
-        [Required, StringLength(100), Display(Name = "Descripcion")DataType(DataType.MultilineText)]
-        public string descripcion { get; set; }
+        [Required, StringLength(200, ErrorMessage ="El producto debe ser de menos de 200 caracteres"), Display(Name = "Nombre producto")]
+        public string NombreProducto { get; set; }
 
 
-        public int imagenProducto { get; set; }
+        [Required, StringLength(400, ErrorMessage ="La descripción debe ser de menos de 400 caracteres"), Display(Name = "Descripcion")DataType(DataType.MultilineText)]
+        public string Descripcion { get; set; }
 
-        [Required, StringLength(20), Display(Name = "Precio unitario")]
-        public int precioU { get; set; }
+       
+        [Required, StringLength(20, ErrorMessage ="El Precio unitario debe ser menos de 20 cifras"), Display(Name = "Precio unitario"),]
+        public int PrecioU { get; set; }
 
-        public int idCategoria { get; set; }
-        public int idUsuario { get; set; }
-        public int idMarca { get; set; }
-        public virtual Categoria categoria { get; set; }
+        [Required]
+        public bool Activo { get; set; }
 
-        public virtual Usuario user { get; set; }
+        //Zona de Relaciones
 
+        //Relacion con Usuario
 
-        public virtual Marca marca { get; set; }
+        public Guid UsuarioID { get; set; }
 
+        public virtual Usuario Usuario { get; set; }
 
-             
+        //Relacion con ImagenProducto.
+
+        public ICollection<ImagenProducto> ImagenesProductos { get; set; }
+        
+        //Relacion con MarcaProducto
+
+        public int MarcaProductoID { get; set; }
+
+        public virtual MarcaProducto Marca { get; set; }
+
 
 
     }
