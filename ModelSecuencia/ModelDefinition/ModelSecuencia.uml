@@ -1,0 +1,255 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<modelStoreModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner" xmlns:dm9="http://schemas.microsoft.com/VisualStudio/TeamArchitect/SequenceDesigner"
+  dslVersion="1.0.0.0"
+  Id="b1b3bf78-4b10-449e-b00d-46fb9bb7863a"
+  name="ModelSecuencia" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
+  <profileInstances>
+    <packageHasProfileInstances
+      Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b">
+      <profileInstance
+        Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791"
+        name="StandardProfileL2" />
+    </packageHasProfileInstances>
+    <packageHasProfileInstances
+      Id="29349502-908c-4fda-9054-c48619c59ed0">
+      <profileInstance
+        Id="532ea607-fb19-44b8-8502-3351b05452be"
+        name="StandardProfileL3" />
+    </packageHasProfileInstances>
+  </profileInstances>
+  <packagedElements>
+    <packageHasNamedElement>
+      <interaction
+        Id="6dbf37c7-ebd6-4bbb-90c1-f786b3327f8a"
+        name="DiagramaDeSecuencia"
+        collapseFragmentsFlag="false"
+        isActiveClass="false"
+        isAbstract="false"
+        isLeaf="false"
+        isReentrant="false">
+        <fragments>
+          <behaviorExecutionSpecification
+            Id="0f8efcfe-ecbd-43ff-aebe-8900dd4f2b73"
+            name="BehaviorExecutionSpecification1">
+            <coveredLifelines>
+              <lifelineMoniker
+                Id="4d914cb9-dde9-488f-a527-00d0acdf412d"
+                LastKnownName="Lifeline2"
+                LastKnownLocation="ModelSecuencia.uml" />
+            </coveredLifelines>
+            <finish>
+              <executionOccurrenceSpecificationMoniker
+                Id="5c058d52-3b7f-43b8-b3b8-233c3c60511b"
+                LastKnownName="ExecutionOccurrenceSpecification2"
+                LastKnownLocation="ModelSecuencia.uml" />
+            </finish>
+            <start>
+              <executionOccurrenceSpecificationMoniker
+                Id="781979f3-5906-4e7c-bd3a-34ca1481774f"
+                LastKnownName="ExecutionOccurrenceSpecification1"
+                LastKnownLocation="ModelSecuencia.uml" />
+            </start>
+            <nestedOccurrences>
+              <messageOccurrenceSpecificationMoniker
+                Id="ee8f4744-093d-43d7-aaf4-22f9252de475"
+                LastKnownName="MessageOccurrenceSpecification2"
+                LastKnownLocation="ModelSecuencia.uml" />
+              <messageOccurrenceSpecificationMoniker
+                Id="f5d09ec1-804f-4d83-acd0-d7419569fd96"
+                LastKnownName="MessageOccurrenceSpecification3"
+                LastKnownLocation="ModelSecuencia.uml" />
+            </nestedOccurrences>
+          </behaviorExecutionSpecification>
+          <executionOccurrenceSpecification
+            Id="781979f3-5906-4e7c-bd3a-34ca1481774f"
+            name="ExecutionOccurrenceSpecification1">
+            <event>
+              <executionOccurrenceSpecificationReferencesEvent>
+                <executionEventMoniker
+                  Id="48d7350e-25f9-48e0-9e8b-98a875559f28"
+                  LastKnownName="ExecutionEvent"
+                  LastKnownLocation="ModelSecuencia.uml" />
+              </executionOccurrenceSpecificationReferencesEvent>
+            </event>
+            <covered>
+              <lifelineMoniker
+                Id="4d914cb9-dde9-488f-a527-00d0acdf412d"
+                LastKnownName="Lifeline2"
+                LastKnownLocation="ModelSecuencia.uml" />
+            </covered>
+          </executionOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="a29e89c2-048d-4efb-8d0d-0d7fef95297c"
+            name="MessageOccurrenceSpecification1">
+            <covered>
+              <lifelineMoniker
+                Id="33337cc7-9de5-49f7-8c90-502dc72f6a7e"
+                LastKnownName="Cliente : Lifeline1"
+                LastKnownLocation="ModelSecuencia.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="ee8f4744-093d-43d7-aaf4-22f9252de475"
+            name="MessageOccurrenceSpecification2">
+            <covered>
+              <lifelineMoniker
+                Id="4d914cb9-dde9-488f-a527-00d0acdf412d"
+                LastKnownName="Lifeline2"
+                LastKnownLocation="ModelSecuencia.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="f5d09ec1-804f-4d83-acd0-d7419569fd96"
+            name="MessageOccurrenceSpecification3">
+            <covered>
+              <lifelineMoniker
+                Id="4d914cb9-dde9-488f-a527-00d0acdf412d"
+                LastKnownName="Lifeline2"
+                LastKnownLocation="ModelSecuencia.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="4c15bc85-f58a-4de4-b873-d7c252f99927"
+            name="MessageOccurrenceSpecification4">
+            <covered>
+              <lifelineMoniker
+                Id="33337cc7-9de5-49f7-8c90-502dc72f6a7e"
+                LastKnownName="Cliente : Lifeline1"
+                LastKnownLocation="ModelSecuencia.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <executionOccurrenceSpecification
+            Id="5c058d52-3b7f-43b8-b3b8-233c3c60511b"
+            name="ExecutionOccurrenceSpecification2">
+            <event>
+              <executionOccurrenceSpecificationReferencesEvent>
+                <executionEventMoniker
+                  Id="6e7cdb15-d603-4a0d-ac5d-9397ef8aac01"
+                  LastKnownName="ExecutionEvent"
+                  LastKnownLocation="ModelSecuencia.uml" />
+              </executionOccurrenceSpecificationReferencesEvent>
+            </event>
+            <covered>
+              <lifelineMoniker
+                Id="4d914cb9-dde9-488f-a527-00d0acdf412d"
+                LastKnownName="Lifeline2"
+                LastKnownLocation="ModelSecuencia.uml" />
+            </covered>
+          </executionOccurrenceSpecification>
+        </fragments>
+        <lifelines>
+          <lifeline
+            Id="33337cc7-9de5-49f7-8c90-502dc72f6a7e"
+            name="Cliente : Lifeline1"
+            isActor="false"
+            lifelineDisplayName="Cliente : Lifeline1">
+            <topLevelOccurrences>
+              <messageOccurrenceSpecificationMoniker
+                Id="a29e89c2-048d-4efb-8d0d-0d7fef95297c"
+                LastKnownName="MessageOccurrenceSpecification1"
+                LastKnownLocation="ModelSecuencia.uml" />
+              <messageOccurrenceSpecificationMoniker
+                Id="4c15bc85-f58a-4de4-b873-d7c252f99927"
+                LastKnownName="MessageOccurrenceSpecification4"
+                LastKnownLocation="ModelSecuencia.uml" />
+            </topLevelOccurrences>
+          </lifeline>
+          <lifeline
+            Id="4d914cb9-dde9-488f-a527-00d0acdf412d"
+            name="Lifeline2"
+            isActor="false"
+            lifelineDisplayName="Lifeline2">
+            <topLevelOccurrences>
+              <executionOccurrenceSpecificationMoniker
+                Id="781979f3-5906-4e7c-bd3a-34ca1481774f"
+                LastKnownName="ExecutionOccurrenceSpecification1"
+                LastKnownLocation="ModelSecuencia.uml" />
+              <executionOccurrenceSpecificationMoniker
+                Id="5c058d52-3b7f-43b8-b3b8-233c3c60511b"
+                LastKnownName="ExecutionOccurrenceSpecification2"
+                LastKnownLocation="ModelSecuencia.uml" />
+            </topLevelOccurrences>
+          </lifeline>
+        </lifelines>
+        <messages>
+          <message
+            Id="580041ad-cc16-4007-814e-b3dbcc426cec"
+            name="asd"
+            messageKind="Complete"
+            messageSort="SynchCall"
+            createSelfMessage="false">
+            <sendEvent>
+              <messageOccurrenceSpecificationMoniker
+                Id="a29e89c2-048d-4efb-8d0d-0d7fef95297c"
+                LastKnownName="MessageOccurrenceSpecification1"
+                LastKnownLocation="ModelSecuencia.uml" />
+            </sendEvent>
+            <receiveEvent>
+              <messageOccurrenceSpecificationMoniker
+                Id="ee8f4744-093d-43d7-aaf4-22f9252de475"
+                LastKnownName="MessageOccurrenceSpecification2"
+                LastKnownLocation="ModelSecuencia.uml" />
+            </receiveEvent>
+          </message>
+          <message
+            Id="6b5a1cec-1b21-406a-97a4-90e6f06802e8"
+            name="&lt;&lt;return&gt;&gt;"
+            messageKind="Complete"
+            messageSort="Reply"
+            createSelfMessage="false">
+            <sendEvent>
+              <messageOccurrenceSpecificationMoniker
+                Id="f5d09ec1-804f-4d83-acd0-d7419569fd96"
+                LastKnownName="MessageOccurrenceSpecification3"
+                LastKnownLocation="ModelSecuencia.uml" />
+            </sendEvent>
+            <receiveEvent>
+              <messageOccurrenceSpecificationMoniker
+                Id="4c15bc85-f58a-4de4-b873-d7c252f99927"
+                LastKnownName="MessageOccurrenceSpecification4"
+                LastKnownLocation="ModelSecuencia.uml" />
+            </receiveEvent>
+          </message>
+        </messages>
+      </interaction>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <executionEvent
+        Id="48d7350e-25f9-48e0-9e8b-98a875559f28"
+        name="ExecutionEvent" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <executionEvent
+        Id="6e7cdb15-d603-4a0d-ac5d-9397ef8aac01"
+        name="ExecutionEvent" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="3cf08ecd-a70d-41b0-9ace-659d60a4f394"
+        name="Class1"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false" />
+    </packageHasNamedElement>
+  </packagedElements>
+  <primitiveType
+    Id="220a3521-e091-4221-bae9-3ef9018e845c"
+    name="Integer"
+    isAbstract="false"
+    isLeaf="false" />
+  <primitiveType
+    Id="8943dc84-709e-4f62-b15a-a3273aa6f165"
+    name="Boolean"
+    isAbstract="false"
+    isLeaf="false" />
+  <primitiveType
+    Id="59259974-6d55-42c6-b7bd-763d77ac8ef9"
+    name="String"
+    isAbstract="false"
+    isLeaf="false" />
+  <primitiveType
+    Id="3ab42e7d-4969-445a-b209-471f5cb8209c"
+    name="UnlimitedNatural"
+    isAbstract="false"
+    isLeaf="false" />
+</modelStoreModel>

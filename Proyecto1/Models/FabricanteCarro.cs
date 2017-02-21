@@ -7,24 +7,19 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Proyecto1.Models
 {
-    public class Categoria
-
+    public class FabricanteCarro
     {
         [ScaffoldColumn(false)]
 
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int IdCategoria { get; set; }
+        public int idFabricanteCarro { get; set; }
 
-        [Required, StringLength(50, ErrorMessage = "La categoria debe ser de menos de 50 caracteres"), Display(Name = "Categoria")]
-        public string NombreCategoria { get; set; }
+        [Required, StringLength(20, ErrorMessage ="El nombre del fabricante debe ser de menos de 20 caracteres"), Display(Name = "Nombre fabricante")]
+        public string NombreFabricanteC { get; set; }
 
         //Zona de Relaciones
 
-        //Relacion con Modelo Carro
         public ICollection<ModeloCarro> ModelosDeCarro { get; set; }
-
-        //Relacion con Marca del Producto
-        public ICollection<MarcaProducto> MarcaProducto { get; set; }
     }
 }

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Proyecto1.Models
 {
@@ -10,40 +11,30 @@ namespace Proyecto1.Models
     {
         [ScaffoldColumn(false)]
 
-        public int IdPersona { get; set; }
+        [Key]
+        public Guid PersonaID { get; set; }
 
-        [Required, StringLength(20), Display(Name = "Nombre")]
+
+        [Required, StringLength(20, ErrorMessage = "Nombre debe ser de 20 o menos caracteres"), Display(Name = "Nombre")]
         public string Nombre { get; set; }
 
-        [Required, StringLength(20), Display(Name = "Apellido")]
+        [Required, StringLength(20, ErrorMessage = "Apellido debe ser de 20 o menos caracteres"), Display(Name = "Apellido")]
         public string Apellido { get; set; }
 
-        [Required, StringLength(30), Display(Name = "Direccion")]
+        [Required, StringLength(30, ErrorMessage ="Dirección debe ser de menos de 30 caracteres "), Display(Name = "Direccion")]
         public string Direccion { get; set; }
 
 
-        [Required, Display(Name = "Telefono")]
+        [Required]
         public int Telefono { get; set; }
 
 
         [Required, StringLength(40), Display(Name = "Email")]
         public string Email { get; set; }
 
-        public Guid IdUsuario { get; set; }
+        //Zona de Relaciones
 
-        public virtual Usuario Usuario { get; set; }
-
-
-        //Metodos de la clase Persona
-
-        public bool ActualizarInfoPersona(Persona pers)
-        {
-            AutoStoreContext contexto = new AutoStoreContext();
-            contexto.Persona.Add(pers);
-            contexto.SaveChanges();
-            return true;
-        }
-
+        //Ninguna Actualmente.
 
 
     }
