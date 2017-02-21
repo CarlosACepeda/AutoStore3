@@ -15,7 +15,7 @@ namespace AutoStoreUnitTest1
             using (AutoStoreContext contexto = new AutoStoreContext())
             {
                 var fab = contexto.FabricanteCarro.ToList();
-                Assert.AreEqual(fab.Count, 0);
+                Assert.AreEqual(fab.Count, 10);
             }
         }
     }

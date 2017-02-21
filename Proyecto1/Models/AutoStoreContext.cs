@@ -9,7 +9,7 @@ namespace Proyecto1.Models
     public class AutoStoreContext : DbContext
     {
         public AutoStoreContext()
-            : base ("DefaultConnection")
+            : base ("AutoStoreContext")
         {
             Database.SetInitializer(new InicializadorDatabase());
         }
