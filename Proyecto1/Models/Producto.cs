@@ -23,7 +23,7 @@ namespace Proyecto1.Models
         public string Descripcion { get; set; }
 
        
-        [Required, StringLength(20, ErrorMessage ="El Precio unitario debe ser menos de 20 cifras"), Display(Name = "Precio unitario"),]
+        [Required]
         public int PrecioU { get; set; }
 
         [Required]

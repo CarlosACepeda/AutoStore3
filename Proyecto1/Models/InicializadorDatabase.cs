@@ -13,7 +13,7 @@ namespace Proyecto1.Models
             listarCategorias().ForEach(c => context.Categoria.Add(c));
             listarFabricantes().ForEach(f => context.FabricanteCarro.Add(f));
             listarModelosDeCarro().ForEach(m => context.ModeloCarro.Add(m));
-            producto().ForEach(product => context.Producto.Add(product));
+            listarProductos().ForEach(product => context.Producto.Add(product));
 
 
         }
@@ -265,7 +265,8 @@ namespace Proyecto1.Models
                     PrecioU = 30000,
                     Activo= true,
                     UsuarioID= Guid.NewGuid(),
-                    MarcaProductoID = 1,
+                    MarcaProductoID= 1
+                    
                 },
                   new Producto
                 {
@@ -274,40 +275,29 @@ namespace Proyecto1.Models
                     PrecioU = 50000,
                     Activo= true,
                     UsuarioID= Guid.NewGuid(),
-                    MarcaProductoID = 1,
+                    MarcaProductoID = 2,
                 },
                     new Producto
                 {
-                    idProducto= 3,
-                    nombreProducto ="espejos",
-                    descripcion="   ",
-                    precioU = 20555,
-                    idCategoria= 3,
-                    idUsuario= 3,
-                    idMarca = 3,
+                    NombreProducto ="Radioador",
+                    Descripcion="Radiador para... ",
+                    PrecioU = 60000,
+                    Activo= true,
+                    UsuarioID= Guid.NewGuid(),
+                    MarcaProductoID = 3,
                 },
                       new Producto
                 {
-                    idProducto= 4,
-                    nombreProducto ="aire acondicionado",
-                    descripcion="   ",
-                    precioU = 231564,
-                    idCategoria= 4,
-                    idUsuario= 4 ,
-                    idMarca = 4,
+                    NombreProducto ="Retrovisor",
+                    Descripcion="Retrovisor para... ",
+                    PrecioU = 5000,
+                    Activo= true,
+                    UsuarioID= Guid.NewGuid(),
+                    MarcaProductoID = 2,
                 },
-                        new Producto
-                {
-                    idProducto= 5,
-                    nombreProducto ="motor",
-                    descripcion="480  ",
-                    precioU = 244556,
-                    idCategoria= 5,
-                    idUsuario= 5,
-                    idMarca = 5,
-                }
+                
             };
-            return producto;
+            return listadoDeProductos;
             }
         }
     }

@@ -25,7 +25,7 @@ namespace Proyecto1.Models
         public string Direccion { get; set; }
 
 
-        [Required, StringLength(40, ErrorMessage = "Telefono debe ser de 40 o menos caracteres"), Display(Name = "Telefono")]
+        [Required]
         public int Telefono { get; set; }
 
 

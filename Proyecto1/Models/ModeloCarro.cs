@@ -28,5 +28,7 @@ namespace Proyecto1.Models
         public int FabricanteCarroID { get; set; }
         public virtual FabricanteCarro FabricanteCarro { get; set; }
 
+
+
     }
 }

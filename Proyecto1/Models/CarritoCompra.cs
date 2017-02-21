@@ -27,6 +27,8 @@ namespace Proyecto1.Models
 
         //Relacion con Metodo de Pago(Temporal)
 
+        
+        public int MetodoPagoID { get; set; }
         public virtual MetodoDePago MetodoDePago { get; set; }
 
         //Relacion con ItemCarrito

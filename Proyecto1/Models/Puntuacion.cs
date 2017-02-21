@@ -16,7 +16,7 @@ namespace Proyecto1.Models
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int PuntuacionID { get; set; }
 
-        [Required, StringLength(20), Display(Name = "Puntuacion")]
+        [Required]
         public int PuntuacionUsuario { get; set; }
 
 

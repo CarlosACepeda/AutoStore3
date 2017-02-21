@@ -6,16 +6,16 @@ using System.Linq;
 
 namespace AutoStoreUnitTest1
 {
-    [TestClass]
+    [TestClass()]
     public class AutoStoreUnitTest1
     {
-        [TestMethod]
+        [TestMethod()]
         public void TestMethod1()
         {
             using (AutoStoreContext contexto = new AutoStoreContext())
             {
-                var persona = contexto.Persona.ToList();
-                Assert.AreEqual(persona.Count, 0);
+                var fab = contexto.FabricanteCarro.ToList();
+                Assert.AreEqual(fab.Count, 0);
             }
         }
     }

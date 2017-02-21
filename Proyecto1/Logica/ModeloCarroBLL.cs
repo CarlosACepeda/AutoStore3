@@ -12,9 +12,9 @@ namespace Proyecto1.Logica
         {
 
         }
-        public ModeloCarro AgregarModelo()
-        {
+        //public ModeloCarro AgregarModelo()
+        //{
 
-        }
+        //}
     }
 }

@@ -8,21 +8,21 @@ namespace Proyecto1.Logica
 {
     public class ProductoBLL
     {
-        public bool AgregarProducto(string nombreP, string descripcion, int precioU)
-        {
-            var producto = new Producto();
-            producto.nombreProducto = nombreP;
-            producto.descripcion = descripcion;
-            producto.precioU = precioU;
-        }
-        public Producto ModificarProducto (int idProducto, Producto p)
-        {
+        //public bool AgregarProducto(string nombreP, string descripcion, int precioU)
+        //{
+        //    var producto = new Producto();
+        //    producto.nombreProducto = nombreP;
+        //    producto.descripcion = descripcion;
+        //    producto.precioU = precioU;
+        //}
+        //public Producto ModificarProducto (int idProducto, Producto p)
+        //{
             
-        }
-        public bool DesactivarProducto(int idProducto)
-        {
+        //}
+        //public bool DesactivarProducto(int idProducto)
+        //{
 
-        }
+        //}
 
     }
 }

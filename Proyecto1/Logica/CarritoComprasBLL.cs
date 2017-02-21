@@ -12,10 +12,10 @@ namespace Proyecto1.Logica
         {
 
         }
-        public List<ItemCarrito> ObtenerItem()
-        {
+        //public List<ItemCarrito> ObtenerItem()
+        //{
 
-        }
+        //}
         public void ObtenerTotal()
         {
 

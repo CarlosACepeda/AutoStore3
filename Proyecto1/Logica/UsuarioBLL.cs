@@ -16,10 +16,10 @@ namespace Proyecto1.Logica
         {
             return true;
         }
-        public Usuario MostrarInformacionUser()
-        {
+        //public Usuario MostrarInformacionUser()
+        //{
             
-        }
+        //}
         public bool CrearUsuario()
         {
             return true;
@@ -28,10 +28,10 @@ namespace Proyecto1.Logica
         {
 
         }
-        public List<Usuario> MostrarUsuarios()
-        {
+        //public List<Usuario> MostrarUsuarios()
+        //{
             
               
-        }
+        //}
     }
 }

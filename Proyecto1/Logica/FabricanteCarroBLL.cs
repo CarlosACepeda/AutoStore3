@@ -8,9 +8,9 @@ namespace Proyecto1.Logica
 {
     public class FabricanteCarroBLL
     {
-        public List<FabricanteCarro> ObtenerFabricante()
-        {
+        //public List<FabricanteCarro> ObtenerFabricante()
+        //{
 
-        }
+        //}
     }
 }

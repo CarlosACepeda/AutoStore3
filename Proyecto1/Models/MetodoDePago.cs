@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.ComponentModel.DataAnnotations;
-
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Proyecto1.Models
 {
@@ -11,7 +11,8 @@ namespace Proyecto1.Models
     {
         [ScaffoldColumn(false)]
 
-        public int IdMetodoPago { get; set; }
+        [Key]
+        public int MetodoDePagoID { get; set; }
 
         [Required, StringLength(30) Display(Name = "Metodo de pago")]
 
@@ -20,7 +21,11 @@ namespace Proyecto1.Models
         [Required, StringLength(30) Display(Name = "descripcion")]
         public string Descripcion { get; set; }
 
-       public virtual CarritoCompra Orden { get; set; }
+
+        //Zona de Relaciones
+       // [ForeignKey("CarritoCompra")]
+       // public int CarritoDeCompraID { get; set; }
+       //public virtual CarritoCompra CarritoDeCompra { get; set; }
 
     }
 }

@@ -12,10 +12,10 @@ namespace Proyecto1.Logica
         {
             return true; 
         }
-        public bool CrearPersona(Persona p)
-        {
+        //public bool CrearPersona(Persona p)
+        //{
 
-        }
+        //}
     }
 } 
  
