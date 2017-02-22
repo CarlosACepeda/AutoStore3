@@ -10,6 +10,6 @@
 namespace Proyecto1 {
     
     
-    public partial class Home {
+    public partial class Inicio {
     }
 }

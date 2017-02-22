@@ -584,12 +584,11 @@ font-size: 10pt;
 		padding-right: 0px;
 	}
 }
- 
 @media screen and (min-width:768px)and (max-width: 1064px){
  #navbarmidle{
  	max-width: 671px;
  	margin-right: auto;
- 	margin-left: auto;
+ 	margin-left: auto;        
 
  padding-right: 0px;
 padding-left: 0px;
@@ -617,8 +616,8 @@ padding-left: 0px;
 	padding-right: 5px;
 }
 .downicon{
-		padding-left: 5px;
-		margin-left: 5px;
+		padding-left: 10px;
+		margin-left: 10px;
 	}
 .searchform{
 	width: 40px;
