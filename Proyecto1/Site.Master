@@ -27,10 +27,10 @@
 				<li><a href="#"><i class="fa fa-facebook"></i></a></li>
 				<li><a href="#"><i class="fa fa-twitter"></i></a></li>
 				<li><a href="#"><i class="fa fa-google-plus"></i></a></li>
-				<li><a href="#"><i class="fa fa-pinterest"></i></a></li>
+				<%--<li><a href="#"><i class="fa fa-pinterest"></i></a></li>--%>
 			</ul>
 			<ul class="givusacall">
-				<li>CONTACTENOS: 564564896 </li>
+				<li>CONTACTO: 321564897 </li>
 			</ul>
 			<ul class="logreg">
 				<li><a href="#">LOGIN </a> </li>
@@ -50,12 +50,11 @@
 				<a class="navbar-brand logo" href="#"><img src="image/logo1.png" alt="logo"></a>
 			</div>	 
 		</div>
-        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+
+		<asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
 
 
-
-        </asp:ContentPlaceHolder>
-
+		</asp:ContentPlaceHolder>
 	</nav>
 </div>
 <!--_______________________________________ Carousel__________________________________ -->
@@ -84,7 +83,7 @@
 		<nav class="navbar navbar-default midle-nav">
 			<div class="navbar-header">
 				<button type="button" class="navbar-toggle collapsed textcostume" data-toggle="collapse" data-target="#navbarmidle" aria-expanded="false">
-						<h1>BUSCADOR</h1>
+						<h1>SEARCH TEXT</h1>
 					<span class="sr-only">Toggle navigation</span>
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
@@ -92,38 +91,43 @@
 				</button>
 			</div>
 			<div class="collapse navbar-collapse" id="navbarmidle">
-				<div class="searchtxt">	
-                    <h1>   </h1>				
+				<div class="searchtxt">
+					<h1>SEARCH TEXT</h1>
 				</div>
 				<form class="navbar-form navbar-left searchformmargin" role="search">
 					<div class="form-group">
-						<input type="text" class="form-control searchform" placeholder="Buscar producto...">
+						<input type="text" class="form-control searchform" placeholder="Buscar Producto...">
 					</div>
 				</form>
 				<ul class="nav navbar-nav navbarborder">
 					<li class="li-category">
-						<a class="btn  dropdown-toggle btn-costume"  id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">CATEGORIA<span class="glyphicon glyphicon-chevron-down downicon"></span></a>
+						<a class="btn  dropdown-toggle btn-costume"  id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">PRODUCTO<span class="glyphicon glyphicon-chevron-down downicon"></span></a>
 						<ul class="dropdown-menu" id="mydd">
-							<li><a href="#">Epic</a></li>
-							<li><a href="#">Old</a></li>
-							<li><a href="#">New</a></li>
+							<li><a href="#">Llantas</a></li>
+							<li><a href="#">Bujias</a></li>
+							<li><a href="#">Espejos</a></li>
 						</ul>
 					</li>
-					<li class="li-minyear"><a class="btn  dropdown-toggle btn-costume"  id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">MODELO <span class="glyphicon glyphicon-chevron-down downicon"></span></a>
+					<li class="li-minyear"><a class="btn  dropdown-toggle btn-costume"  id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">CATEGORIA <span class="glyphicon glyphicon-chevron-down downicon"></span></a>
 						<ul class="dropdown-menu" id="mydd2">
-							<li><a href="#">1</a></li>
-							<li><a href="#">2</a></li>
-							<li><a href="#">3</a></li>
+							<li><a href="#"></a></li>
+							<li><a href="#"></a></li>
+							<li><a href="#"></a></li>
 						</ul>
 					</li>
 					<li class="li-maxyear"><a class="btn dropdown-toggle btn-costume"  id="dropdownMenu3" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">MARCA <span class="glyphicon glyphicon-chevron-down downicon"></span></a>
 						<ul class="dropdown-menu" id="mydd3">
-							<li><a href="#">1900</a></li>
-							<li><a href="#">2000</a></li>
-							<li><a href="#">2016</a></li>
+							<li><a href="#">Nissan</a></li>
+							<li><a href="#">Toyota</a></li>							
 						</ul>
-					</li>								
-					
+					</li>
+					<%--<li class="li-slideprice">
+						<p> <label class="slidertxt" for="amount">Price </label>
+							<input class="priceslider" type="text" id="amount" readonly="readonly">
+						</p>
+							<div id="slider-range"></div>
+							
+					</li>--%>
 					<li class="li-search"> <button class="searchbutton"><span class="glyphicon glyphicon-search "></span></button></li>
 				</ul>
  
@@ -132,11 +136,11 @@
 	</div>
 </div>
 <!-- ____________________Featured Section ______________________________--> 
-<div class="allcontain">
+<%--<div class="allcontain">
 	<div class="feturedsection">
-		<h1 class="text-center"><span class="bdots">&bullet;</span>P R O D U C T O S</h1>
-	</div>
-	<div class="feturedimage">
+		<h1 class="text-center"><span class="bdots">&bullet;</span>A U T O P A R T E S</h1>
+	</div>--%>
+	<%--<div class="feturedimage">
 		<div class="row firstrow">
 			<div class="col-lg-6 costumcol colborder1">
 				<div class="row costumrow">
@@ -152,8 +156,12 @@
 			 				<button id="btnRM" onclick="rmtxt()">READ MORE</button>
 			 				<div id="readmore">
 			 						<h1>Car Name</h1>
-			 						
-			 						
+			 						<p>"Lorem ipsum dolor sit amet, consectetur ,<br>
+			 						sed do eiusmod tempor incididunt <br>"Lorem ipsum dolor sit amet, consectetur ,<br>
+			 						sed do eiusmod tempor incididunt"Lorem ipsum dolor sit amet, consectetur1 ,
+			 						sed do eiusmod tempor incididunt"Lorem ipsum dolor sit amet, consectetur1
+			 						sed do eiusmod tempor incididunt"Lorem ipsum dolor sit amet, consectetur1<br>
+			 						</p>
 			 						<button id="btnRL">READ LESS</button>
 			 				</div>
 						</div>
@@ -186,9 +194,9 @@
 				</div>
 			</div>
 		</div>
-	</div>
+	</div>--%>
 <!-- ________________________LATEST CARS SECTION _______________________-->
-<div class="latestcars">
+<%--<div class="latestcars">
 	<h1 class="text-center">&bullet; LATEST   CARS &bullet;</h1>
 	<ul class="nav nav-tabs navbar-left latest-navleft">
 		<li role="presentation" class="li-sortby"><span class="sortby">SORT BY: </span></li>
@@ -199,11 +207,10 @@
 		<li data-filter=".LPRICE" role="presentation"><a href="#" class="prcBtnL">LOWEST  PRICE </a></li>
 		<li id="hideonmobile">
 	</ul>
-</div>
-<br>
-<br>
+</div>--%>
+
 <!-- ________________________Latest Cars Image Thumbnail________________-->
-	<div class="grid">
+	<%--<div class="grid">
 		<div class="row">
 			<div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
 				<div class="txthover">
@@ -430,9 +437,9 @@
 				</div>	 
 			</div>	
 		</div>
-	</div>
+	</div>--%>
 <!-- _______________________________News Letter ____________________-->
-	<div class="newslettercontent">
+	<%--<div class="newslettercontent">
 		<div class="leftside">
 			<img src="image/border.png" alt="border">
 			<h1>NEWSLETTER</h1>
@@ -445,11 +452,11 @@
 			<input type="text" class="form-control" id="subemail" placeholder="EMAIL">
 			<button>SUBSCRIBE</button>
 		</div>
-	</div>
+	</div>--%>
 	<!-- ______________________________________________________Bottom Menu ______________________________-->
 	<div class="bottommenu">
 		<div class="bottomlogo">
-		<span class="dotlogo">&bullet;</span><img src="image/collectionlogo1.png" alt="logo1"><span class="dotlogo">&bullet;;</span>
+		<%--<span class="dotlogo">&bullet;</span><img src="image/collectionlogo1.png" alt="logo1"><span class="dotlogo">&bullet;;</span>--%>
 		</div>
 		<ul class="nav nav-tabs bottomlinks">
 			<li role="presentation" ><a href="#/" role="button">ABOUT US</a></li>
@@ -458,14 +465,13 @@
 			<li role="presentation"><a href="#/">CONTACT US</a></li>
 			<li role="presentation"><a href="#/">RECEIVE OUR NEWSLETTER</a></li>
 		</ul>
-		<p>"Lorem ipsum dolor sit amet, consectetur,  sed do eiusmod tempor incididunt <br>
-			eiusmod tempor incididunt </p>
-		 <img src="image/line.png" alt="line"> <br>
+		
+		<%-- <img src="image/line.png" alt="line"> <br>--%>
 		 <div class="bottomsocial">
 		 	<a href="#"><i class="fa fa-facebook"></i></a>
 			<a href="#"><i class="fa fa-twitter"></i></a>
 			<a href="#"><i class="fa fa-google-plus"></i></a>
-			<a href="#"><i class="fa fa-pinterest"></i></a>
+			<%--<a href="#"><i class="fa fa-pinterest"></i></a>--%>
 		</div>
 			<div class="footer">
 				<div class="copyright">
@@ -476,7 +482,7 @@
 				</div>
 			</div>
 	</div>
-</div>
+
 
 <script type="text/javascript" src="source/bootstrap-3.3.6-dist/js/jquery.js"></script>
 <script type="text/javascript" src="source/js/isotope.js"></script>
