@@ -17,6 +17,7 @@
 /// <reference path="../source/bootstrap-3.3.6-dist/js/jquer.1.10.js" />
 /// <reference path="../source/bootstrap-3.3.6-dist/js/jquery.1.11.js" />
 /// <reference path="../source/bootstrap-3.3.6-dist/js/jquery.js" />
+/// <reference path="../source/bootstrap-3.3.6-dist/js/login.js" />
 /// <reference path="../source/bootstrap-3.3.6-dist/js/npm.js" />
 /// <reference path="../source/js/isotope.js" />
 /// <reference path="../source/js/myscript.js" />

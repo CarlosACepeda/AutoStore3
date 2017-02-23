@@ -211,9 +211,6 @@
     <Content Include="contact.html" />
     <Content Include="GARAGE - HTML-CSS-Template\._contact.html" />
     <Content Include="GARAGE - HTML-CSS-Template\._index.html" />
-    <Content Include="GARAGE - HTML-CSS-Template\._LICENSE.txt" />
-    <Content Include="GARAGE - HTML-CSS-Template\._README - en.txt" />
-    <Content Include="GARAGE - HTML-CSS-Template\._README - it.txt" />
     <Content Include="GARAGE - HTML-CSS-Template\image\._benz.jpg" />
     <Content Include="GARAGE - HTML-CSS-Template\image\._border.png" />
     <Content Include="GARAGE - HTML-CSS-Template\image\._car1.jpg" />
@@ -284,6 +281,7 @@
     <Content Include="source\bootstrap-3.3.6-dist\js\jquer.1.10.js" />
     <Content Include="source\bootstrap-3.3.6-dist\js\jquery.1.11.js" />
     <Content Include="source\bootstrap-3.3.6-dist\js\jquery.js" />
+    <Content Include="source\bootstrap-3.3.6-dist\js\login.js" />
     <Content Include="source\bootstrap-3.3.6-dist\js\npm.js" />
     <Content Include="source\font-awesome-4.5.0\css\font-awesome.css" />
     <Content Include="source\font-awesome-4.5.0\css\font-awesome.min.css" />
@@ -293,6 +291,7 @@
     <Content Include="source\js\myscript.js" />
     <Content Include="source\js\selectordie.js" />
     <Content Include="style\contactstyle.css" />
+    <Content Include="style\login.css" />
     <Content Include="style\mystyle.css" />
     <Content Include="style\slider.css" />
     <Content Include="Inicio.aspx" />
@@ -611,6 +610,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="InterfazGUI\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
