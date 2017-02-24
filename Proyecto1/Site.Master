@@ -4,7 +4,7 @@
 <html>
 <head runat="server">
     <meta charset="UTF-8">
-    <title>Scarica gratis GARAGE Template html/css - Web Domus Italia - Web Agency </title>
+    <title>AutoStore </title>
     <meta name="description" content="Scarica gratis il nostro Template HTML/CSS GARAGE. Se avete bisogno di un design per il vostro sito web GARAGE può fare per voi. Web Domus Italia">
     <meta name="author" content="Web Domus Italia">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
@@ -19,6 +19,9 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
+    <script src="style/login.css"></script>
+ 
+
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
 </head>
@@ -31,17 +34,13 @@
                 <li><a href="#"><i class="fa fa-twitter"></i></a></li>
                 <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
                 <li>
-                     <a data-toggle="modal" href="#modalSesion" id="modal-nav" style="text-decoration: none; color: white; float: left; ">LOGIN</a>
+                     <a data-toggle="modal" href="#modalSesion" id="modal-nav" style="text-decoration: none; color: white; ">LOGIN</a>
                 </li>                        
                 <li>
-                 <a data-toggle="modal" href="#modalSesion2" id="modal-nav2" style="text-decoration: none; color: white; float: left; ">REGISTRARSE</a>                                    
+                 <a data-toggle="modal" href="#modalSesion2" id="modal-nav2" style="text-decoration: none; color: white;">REGISTRARSE</a>                                    
 
                 </li>
-            </ul>
-            <ul class="givusacall">
-                <li>CONTACTO: 321564897 </li>
-            </ul>
-            <ul class="logreg"></ul>
+            </ul>            
 
             </div>
 
@@ -54,25 +53,25 @@
                                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">X</span></button>
                                 <h4 class="modal-title" id="myModalLabel">Iniciar Sesión</h4>
                             </div>
-                            <div class="modal-body">   
-
+                            <div class="modal-body">               
+                               
         <div class="card card-container">
             <!-- <img class="profile-img-card" src="//lh3.googleusercontent.com/-6V8xOA6M7BA/AAAAAAAAAAI/AAAAAAAAAAA/rzlHcD0KYwo/photo.jpg?sz=120" alt="" /> -->
             <img id="profile-img" class="profile-img-card" src="//ssl.gstatic.com/accounts/ui/avatar_2x.png" />
             <p id="profile-name" class="profile-name-card"></p>
-            <form class="form-signin" style="margin-left: 10%;">
+            <form class="form-signin" style="margin-left: auto";>
                 <span id="reauth-email" class="reauth-email"></span>
-                <input type="email" id="inputEmail" class="form-control" placeholder="Correo Electronico" required autofocus>
-                <input type="password" id="inputPassword" class="form-control" placeholder="Contraseña" required>
+                <input type="email"  style="width:60%;"  id="inputEmail" class="form-control"  placeholder="Correo Electronico" required autofocus><br />
+                <input type="password"  style="width:60%;"  id="inputPassword" class="form-control"  placeholder="Contraseña" required><br />
                 <div id="remember" class="checkbox">
                     <label>
                         <input type="checkbox" value="remember-me">Recordar datos.
                     </label>
                 </div>
-                <button class="btn btn-lg btn-primary btn-block btn-signin" type="submit">Ingresar</button>
+                <button class="btn btn-lg btn-primary btn-block btn-signin" style="width:60%;" type="submit">Ingresar</button>
             </form><!-- /form -->
-            <a href="#" class="¿olvido Contraseña?">
-                Forgot the password?
+            <a href="#" class="forgot-password">
+               ¿Olvido la contraseña?
             </a>
         </div><!-- /card-container -->
     </div><!-- /container -->
@@ -96,18 +95,18 @@
             <!-- <img class="profile-img-card" src="//lh3.googleusercontent.com/-6V8xOA6M7BA/AAAAAAAAAAI/AAAAAAAAAAA/rzlHcD0KYwo/photo.jpg?sz=120" alt="" /> -->
             <img id="profile-img2" class="profile-img-card" src="//ssl.gstatic.com/accounts/ui/avatar_2x.png" />
             <p id="profile-name2" class="profile-name-card"></p>
-            <form class="form-signin" style="margin-left: 10%;">
+            <form class="form-signin" style="margin-left: auto">
                 <span id="reauth-email2" class="reauth-email"></span>
-                 <input type="text" id="InputUsuario" class="form-control" placeholder="Usuario" required autofocus>
-                <input type="text" id="InputNombre" class="form-control" placeholder="Nombre" required >
-                <input type="text" id="InputApellido" class="form-control" placeholder="Apellido" required>  
-                <input type="text" id="inputDireccion" class="form-control" placeholder="Direccion" required >               
-                <input type="text" id="InputTelefono" class="form-control" placeholder="Telefono" required>
-                <input type="email" id="InputCorreoElectronico" class="form-control" placeholder="Correo Electronico" required >
-                <input type="password" id="InputContraseña" class="form-control" placeholder="Contraseña" required>
+                 <input type="text"  style="width:60%;" id="InputUsuario" class="form-control" placeholder="Usuario" required autofocus><br />
+                <input type="text" style="width:60%;" id="InputNombre" class="form-control" placeholder="Nombre" required ><br />
+                <input type="text" style="width:60%;" id="InputApellido" class="form-control" placeholder="Apellido" required>  <br />
+                <input type="text"  style="width:60%;"id="inputDireccion" class="form-control" placeholder="Direccion" required >     <br />          
+                <input type="text" style="width:60%;" id="InputTelefono" class="form-control" placeholder="Telefono" required><br />
+                <input type="email" style="width:60%;" id="InputCorreoElectronico" class="form-control" placeholder="Correo Electronico" required > <br />
+                <input type="password"  style="width:60%;"id="InputContraseña" class="form-control" placeholder="Contraseña" required> <br />
                              
                  
-                <button class="btn btn-lg btn-primary btn-block btn-signin" type="submit">Registrarse</button>
+                <button class="btn btn-lg btn-primary btn-block btn-signin"  style="width:60%;" type="submit">Registrarse</button>
             </form><!-- /form -->            
         </div><!-- /card-container -->
     </div><!-- /container -->
@@ -116,7 +115,7 @@
                     </div>
                 
         <!-- Navbar Up -->
-        <nav class="topnavbar navbar-default topnav">
+        <nav class="topnavbar navbar-default topnav" style="background-color:#E5E6E9">
             <div class="container">
                 <div class="navbar-header">
                     <button type="button" class="navbar-toggle collapsed toggle-costume" data-toggle="collapse" data-target="#upmenu" aria-expanded="false">
@@ -125,7 +124,7 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand logo" href="#">
+                    <a class="navbar-brand logo" href="#" style="margin-left: -10%";>
                         <img src="image/logo1.png" alt="logo"></a>
                 </div>
             </div>
@@ -133,9 +132,9 @@
             <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
             </asp:ContentPlaceHolder>
         </nav>
-    </div>
-    <!--_______________________________________ Carousel__________________________________ -->
-    <div class="allcontain">
+    
+    <!--_______________________________________ SLIDER__________________________________ -->
+  <%--  <div class="allcontain">
         <div id="carousel-up" class="carousel slide" data-ride="carousel">
             <div class="carousel-inner " role="listbox">
                 <div class="item active">
@@ -153,7 +152,7 @@
                     <div class="carousel-caption">
                     </div>
                 </div>
-            </div>
+            </div>--%>
 
             <!-- Buscador -->
             <%--<nav class="navbar navbar-default midle-nav">
@@ -201,9 +200,9 @@
 				</ul>
  
 			</div>
-		</nav>--%>
+		</nav>
         </div>
-    </div>
+    </div>--%>
     <!-- ____________________Featured Section ______________________________-->
     <%--<div class="allcontain">
 	<div class="feturedsection">
@@ -556,12 +555,12 @@
 
     <!-- /container -->
 
-    <!--<script type="text/javascript" src="source/bootstrap-3.3.6-dist/js/jquery.js"></script>
+    <script type="text/javascript" src="source/bootstrap-3.3.6-dist/js/jquery.js"></script>
     <script type="text/javascript" src="source/js/isotope.js"></script>
     <script type="text/javascript" src="source/js/myscript.js"></script>
     <script type="text/javascript" src="source/bootstrap-3.3.6-dist/js/jquery.1.11.js"></script>
     <script type="text/javascript" src="source/bootstrap-3.3.6-dist/js/bootstrap.js"></script>
-    <script type="text/javascript" src="source/bootstrap-3.3.6-dist/js/login.js"></script>-->
+    <script type="text/javascript" src="source/bootstrap-3.3.6-dist/js/login.js"></script>
 
 </body>
 </html>

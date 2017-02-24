@@ -1,13 +1,12 @@
 body, html {
     height: 100%;
     background-repeat: no-repeat;
-    background-image: linear-gradient(rgb(104, 145, 162), rgb(12, 97, 33));
+    background-image: linear-gradient(#225a7b, #31708f);
 }
-
 .card-container.card {
     max-width: 350px;
     padding: 40px 40px;
-    background-color:#d2dce8;
+
 }
 
 .btn {

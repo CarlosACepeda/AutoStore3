@@ -154,11 +154,11 @@ padding-left: 5%;
   	color: #313943;
     padding-top: 5px;
     padding-bottom: 6px;
-    margin-bottom: 22px;
+    margin-bottom: 25px;
  	padding-left: 10px;
     padding-right: 10px!important;
     margin-left: 34px;
-    border-bottom: 2px solid rgba(0,0,0,.0);
+    border-bottom: 2px solid #b57f06;
 
   }
   #navbarontop > li >a:hover{
@@ -397,7 +397,7 @@ font-size: 10pt;
 #navbarmidle{
 		padding-left: 6.6%;
 		padding-bottom: 26px;
-		width: 100%;
+		width: 50%;
  
 }
 .searchtxt{
@@ -438,7 +438,7 @@ font-size: 10pt;
 .navbarborder>li>a{
 	font-family: "OpenSans Regular";
 	font-size: 13pt;
-	color: #fff !important;
+	color: #31708f !important;
 	background-color: none;
 	padding-top: 11px;
 	padding-bottom: 11px;
@@ -507,6 +507,7 @@ font-size: 10pt;
 	color: #fff;
 }
 .searchnav{
+    color: #31708f !important;
 	margin-right: 7.3%;
 }
 .searchbutton{
@@ -514,10 +515,11 @@ font-size: 10pt;
 	background: none;
 	background-color: none;
 	font-size: 13pt;
-	color: #fff;
+	color: #31708f !important;
 	padding-top: 20px;
 }
 .btn-costume{
+    color: #31708f !important;
 	border-radius: 0px;
 }
 
@@ -592,6 +594,7 @@ font-size: 10pt;
 
  padding-right: 0px;
 padding-left: 0px;
+background-color:rgb(104, 145, 162);
  }
 .navbarborder{
 	width: 520px;
