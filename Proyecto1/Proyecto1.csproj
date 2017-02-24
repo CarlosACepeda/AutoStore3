@@ -382,9 +382,7 @@
     <Compile Include="Logica\FabricanteCarroBLL.cs" />
     <Compile Include="Logica\ImagenProductoBLL.cs" />
     <Compile Include="Logica\ItemCarritoBLL.cs" />
-    <Compile Include="Logica\ModeloBLL.cs" />
     <Compile Include="Logica\MarcaProductoBLL.cs" />
-    <Compile Include="Logica\MetodoPagoBLL.cs" />
     <Compile Include="Logica\ModeloCarroBLL.cs" />
     <Compile Include="Logica\PersonaBLL.cs" />
     <Compile Include="Logica\ProductoBLL.cs" />

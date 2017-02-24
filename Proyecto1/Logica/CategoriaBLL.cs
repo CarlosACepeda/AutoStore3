@@ -2,19 +2,50 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using Proyecto1.Models;
 
 namespace Proyecto1.Logica
 {
     public class CategoriaBLL
     {
-        public List<Models.Categoria> ObtenerCategoria(int idCategoria)
+        /// <summary>
+        /// Metodo que se encargar de listar todas las categorias existentes
+        /// </summary>
+        /// <returns>Retorna la lista de categorias</returns>
+        public List<Categoria> ObtenerCategoria()
         {
-            Models.AutoStoreContext contexto = new Models.AutoStoreContext();
+            AutoStoreContext context = new AutoStoreContext();
+            var mostrarCategoria = from categoria in context.Categoria
+                                   select categoria;
+            return mostrarCategoria.ToList();
+        }
+        /// <summary>
+        /// Metodo para agregar categorias
+        /// </summary>
+        /// <param name="nombreC">Parametro que captura el nombre de la categoria</param>
+        /// <param name="Modelos">Parametro para guardar el modelo al cual pertenece</param>
+        /// <param name="MarcasP">Parametro para guardar las marcas de productos</param>
+        /// <returns>Retorna un valor booleano segun la ejecucion del metodo</returns>
+        public bool AgregarCategoria(string nombreC, List<ModeloCarro> Modelos, List<MarcaProducto> MarcasP)
+        {
+            try
+            {
+                Categoria categoria = new Categoria
+                {
+                    NombreCategoria = nombreC,
+                    ModelosDeCarro = Modelos,
+                    MarcaProducto = MarcasP
+                };
+                AutoStoreContext contexto = new AutoStoreContext();
+                contexto.Categoria.Add(categoria);
+                return true;
+            }
 
-            var recuperarCategoria = from rc in contexto.Categoria
-                                     where (rc.IdCategoria).Equals(idCategoria)
-                                     select rc;
-            return recuperarCategoria.ToList();
+
+            catch (Exception)
+            {
+                return false;
+            }
         }
     }
 }

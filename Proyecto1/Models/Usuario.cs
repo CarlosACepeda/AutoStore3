@@ -19,7 +19,7 @@ namespace Proyecto1.Models
         public string Contrasena { get; set; }
 
         [Required(ErrorMessage ="Este campo es requerido"), StringLength(400), Display(Name = "Foto")]
-        public string Foto { get; set; }
+        public char? Foto { get; set; }
 
         [Required]
         public bool Activo { get; set; }
