@@ -33,44 +33,86 @@
                 <li><a href="#"><i class="fa fa-facebook"></i></a></li>
                 <li><a href="#"><i class="fa fa-twitter"></i></a></li>
                 <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+                  <li>
+                <a>|</a>
+                    </li>
                 <li>
-                     <a data-toggle="modal" href="#modalSesion" id="modal-nav" style="text-decoration: none; color: white; ">LOGIN</a>
-                </li>                        
+                     <a data-toggle="modal"  href="#modalSesion" id="modal-nav" style="text-decoration: none;  width:150px; color: #FFFFFF; ">INICIAR SESIÓN <span class="glyphicon glyphicon-check"></span></a>
+                </li>   
                 <li>
-                 <a data-toggle="modal" href="#modalSesion2" id="modal-nav2" style="text-decoration: none; color: white;">REGISTRARSE</a>                                    
-
+                    <a>|</a>
+                </li>                     
+                <li>
+                 <a data-toggle="modal"  href="#modalSesion2" id="modal-nav2" style="text-decoration: none;  width:180px; color: #FFFFFF;">REGISTRARSE <span class="glyphicon glyphicon-eye-open"></span></a>                              
                 </li>
+                <li>
+                <a>|</a>
+                    </li>
+                <li>
+                     <a data-toggle="modal"  href="#modalSesion3" id="Editar Perfil" style="text-decoration: none; color: #FFFFFF; ">EDITAR PERFIL<span class="glyphicon glyphicon-user"></span></a>
+                </li>  
+                  <li>
+                <a>|</a>
+                    </li> 
+
+               
             </ul>            
 
             </div>
-
-                <!-- Modal LOGIN-->
-
-                <div class="modal fade" role="dialog" id="modalSesion">
-                    <div class="modal-dialog modal-ms" style="margin: auto">
-                        <div class="modal-content">
+        <!-- MODAL EDITAR USUARIO-->
+           <div class="modal fade" role="dialog" id="modalSesion3" >
+                    <div class="modal-dialog modal-ms" >
+                        <div class="modal-content" style="background-color:#FFFFFF">
                             <div class="modal-header">
                                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">X</span></button>
-                                <h4 class="modal-title" id="myModalLabel">Iniciar Sesión</h4>
+                                <h4 class="modal-title" style="background-color:#FFFFFF" id="myModalEditarPerfil">Editar Perfil</h4>
                             </div>
                             <div class="modal-body">               
                                
-        <div class="card card-container">
+        <div class="card card-container" style="background-color:#EBEBEB">
+            <!-- <img class="profile-img-card" src="//lh3.googleusercontent.com/-6V8xOA6M7BA/AAAAAAAAAAI/AAAAAAAAAAA/rzlHcD0KYwo/photo.jpg?sz=120" alt="" /> -->
+            <img id="profile-img3" class="profile-img-card" src="//ssl.gstatic.com/accounts/ui/avatar_2x.png" />
+            <p id="profile-name3" class="profile-name-card"></p>
+            <form class="form-signin" style="margin-left: auto";>
+                <span id="reauth-email3" class="reauth-email"></span>
+                <input type="text"  style="width:90%;" " id="Direccion" class="form-control"  placeholder="Direccion" required autofocus><br />
+                <input type="email"  style="width:90%;" " id="inputEmail3" class="form-control"  placeholder="Correo Electronico..." required autofocus><br />
+                <input type="password"  style="width:90%;"  id="contraseñanueva" class="form-control"  placeholder="Digite su nueva Contraseña..." required><br />
+               
+                <button class="btn btn-lg btn-primary btn-block btn-signin" style="width:90%; background-color:#63A8F2";  type="submit">Guardar <span class="glyphicon glyphicon-floppy-open"></span></button>
+            </form><!-- /form -->
+           
+        </div><!-- /card-container -->
+    </div><!-- /container -->
+                        </div>                           
+                        </div>
+                    </div>
+                <!-- Modal LOGIN-->
+                <div class="modal fade" role="dialog" id="modalSesion" >
+                    <div class="modal-dialog modal-ms" >
+                        <div class="modal-content" style="background-color:#FFFFFF">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">X</span></button>
+                                <h4 class="modal-title" style="background-color:#FFFFFF" id="myModalLabel">Iniciar Sesión</h4>
+                            </div>
+                            <div class="modal-body">               
+                               
+        <div class="card card-container" style="background-color:#EBEBEB">
             <!-- <img class="profile-img-card" src="//lh3.googleusercontent.com/-6V8xOA6M7BA/AAAAAAAAAAI/AAAAAAAAAAA/rzlHcD0KYwo/photo.jpg?sz=120" alt="" /> -->
             <img id="profile-img" class="profile-img-card" src="//ssl.gstatic.com/accounts/ui/avatar_2x.png" />
             <p id="profile-name" class="profile-name-card"></p>
             <form class="form-signin" style="margin-left: auto";>
                 <span id="reauth-email" class="reauth-email"></span>
-                <input type="email"  style="width:60%;"  id="inputEmail" class="form-control"  placeholder="Correo Electronico" required autofocus><br />
-                <input type="password"  style="width:60%;"  id="inputPassword" class="form-control"  placeholder="Contraseña" required><br />
+                <input type="email"  style="width:90%;" " id="inputEmail" class="form-control"  placeholder="Correo Electronico" required autofocus><br />
+                <input type="password"  style="width:90%;"  id="inputPassword" class="form-control"  placeholder="Contraseña" required><br />
                 <div id="remember" class="checkbox">
                     <label>
                         <input type="checkbox" value="remember-me">Recordar datos.
                     </label>
                 </div>
-                <button class="btn btn-lg btn-primary btn-block btn-signin" style="width:60%;" type="submit">Ingresar</button>
+                <button class="btn btn-lg btn-primary btn-block btn-signin" style="width:90%; background-color:#63A8F2";  type="submit">Ingresar</button>
             </form><!-- /form -->
-            <a href="#" class="forgot-password">
+            <a href="#" class="forgot-password" style="font:#63A8F2">
                ¿Olvido la contraseña?
             </a>
         </div><!-- /card-container -->
@@ -78,41 +120,44 @@
                         </div>                           
                         </div>
                     </div>
-                </div>
+               
 
     <!-- Modal REGISTRO-->
-
                 <div class="modal fade" role="dialog" id="modalSesion2">
-                    <div class="modal-dialog modal-ms" style="margin: auto">
-                        <div class="modal-content">
+                    <div class="modal-dialog modal-ms" >
+                        <div class="modal-content" style="background-color:#FFFFFF">
                             <div class="modal-header">
                                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">X</span></button>
                                 <h4 class="modal-title" id="myModalLabe2">Registrarse</h4>
                             </div>
                             <div class="modal-body">   
 
-        <div class="card card-container">
+        <div class="card card-container" style="background-color:#EBEBEB">
             <!-- <img class="profile-img-card" src="//lh3.googleusercontent.com/-6V8xOA6M7BA/AAAAAAAAAAI/AAAAAAAAAAA/rzlHcD0KYwo/photo.jpg?sz=120" alt="" /> -->
             <img id="profile-img2" class="profile-img-card" src="//ssl.gstatic.com/accounts/ui/avatar_2x.png" />
             <p id="profile-name2" class="profile-name-card"></p>
             <form class="form-signin" style="margin-left: auto">
                 <span id="reauth-email2" class="reauth-email"></span>
-                 <input type="text"  style="width:60%;" id="InputUsuario" class="form-control" placeholder="Usuario" required autofocus><br />
-                <input type="text" style="width:60%;" id="InputNombre" class="form-control" placeholder="Nombre" required ><br />
-                <input type="text" style="width:60%;" id="InputApellido" class="form-control" placeholder="Apellido" required>  <br />
-                <input type="text"  style="width:60%;"id="inputDireccion" class="form-control" placeholder="Direccion" required >     <br />          
-                <input type="text" style="width:60%;" id="InputTelefono" class="form-control" placeholder="Telefono" required><br />
-                <input type="email" style="width:60%;" id="InputCorreoElectronico" class="form-control" placeholder="Correo Electronico" required > <br />
-                <input type="password"  style="width:60%;"id="InputContraseña" class="form-control" placeholder="Contraseña" required> <br />
+                 <input type="text"  style="width:90%;" id="InputUsuario" class="form-control" placeholder="Usuario" required autofocus><br />
+                <input type="text" style="width:90%;" id="InputNombre" class="form-control" placeholder="Nombre" required ><br />
+                <input type="text" style="width:90%;" id="InputApellido" class="form-control" placeholder="Apellido" required>  <br />
+                <input type="text"  style="width:90%;"id="inputDireccion" class="form-control" placeholder="Direccion" required >     <br />          
+                <input type="text" style="width:90%;" id="InputTelefono" class="form-control" placeholder="Telefono" required><br />
+                <input type="email" style="width:90%;" id="InputCorreoElectronico" class="form-control" placeholder="Correo Electronico" required > <br />
+                <input type="password"  style="width:90%;"id="InputContraseña" class="form-control" placeholder="Contraseña" required> <br />
                              
                  
-                <button class="btn btn-lg btn-primary btn-block btn-signin"  style="width:60%;" type="submit">Registrarse</button>
-            </form><!-- /form -->            
-        </div><!-- /card-container -->
-    </div><!-- /container -->
-                        </div>                           
-                        </div>
+                <button class="btn btn-lg btn-primary btn-block btn-signin"  style="width:90%; background-color:#63A8F2";  type="submit">Registrarse</button>
+
+            </form>  
                     </div>
+
+                            </div>
+                        </div>  
+
+                    </div>
+                    </div>
+         </div>
                 
         <!-- Navbar Up -->
         <nav class="topnavbar navbar-default topnav" style="background-color:#E5E6E9">
@@ -124,7 +169,7 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand logo" href="#" style="margin-left: -10%";>
+                    <a class="navbar-brand logo" href="Inicio.aspx" style="margin-left:-10%";>
                         <img src="image/logo1.png" alt="logo"></a>
                 </div>
             </div>
