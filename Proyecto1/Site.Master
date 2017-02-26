@@ -28,12 +28,15 @@
 <body>
     <!-- Header -->
     <div class="allcontain">
-        <div class="header">
+        <div class="header" style="background-color:blue" >
             <ul class="socialicon">
                 <li><a href="#"><i class="fa fa-facebook"></i></a></li>
                 <li><a href="#"><i class="fa fa-twitter"></i></a></li>
                 <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
-                  <li>
+                <li>
+                    <a> </a><a> </a><a> </a><a> </a><a> </a><a> </a><a> </a><a> </a><a> </a><a> </a><a> </a><a> </a><a> </a><a> </a><a> </a><a> </a><a> </a><a> </a><a> </a><a> </a><a> </a><a> </a><a> </a><a> </a><a> </a><a> </a><a> </a><a> </a><a> </a><a> </a><a> </a><a> </a><a> </a><a> </a><a> </a><a> </a><a> </a><a> </a><a> </a><a> </a><a> </a><a> </a>
+                </li>                 
+                <li>
                 <a>|</a>
                     </li>
                 <li>
@@ -49,27 +52,68 @@
                 <a>|</a>
                     </li>
                 <li>
-                     <a data-toggle="modal"  href="#modalSesion3" id="Editar Perfil" style="text-decoration: none; color: #FFFFFF; ">EDITAR PERFIL<span class="glyphicon glyphicon-user"></span></a>
+                     <a data-toggle="modal"  href="#modalSesion3" id="EditarPerfil" style="text-decoration: none; color: #FFFFFF; ">EDITAR PERFIL<span class="glyphicon glyphicon-user"></span></a>
                 </li>  
                   <li>
                 <a>|</a>
-                    </li> 
+                        </li> 
+                <li>
+                   <a data-toggle="modal"  href="#modalSesion4" id="Gestionar" style="text-decoration: none; color: #FFFFFF; ">GESTIONAR <span class="glyphicon glyphicon-briefcase"></span></a>
 
-               
+                </li>
+                <li>
+                <a>|</a>
+                        </li>                
+                <li>
+                    <a href="#" style="text-decoration: none; color: #FFFFFF;">CARRITO<span class="glyphicon glyphicon-shopping-cart"></span></a>
+                </li>                
             </ul>            
 
             </div>
-        <!-- MODAL EDITAR USUARIO-->
-           <div class="modal fade" role="dialog" id="modalSesion3" >
+
+
+
+        <!--MODAL GESTIONAR -->
+         
+        <div class="modal fade" role="dialog" id="modalSesion4" >
                     <div class="modal-dialog modal-ms" >
-                        <div class="modal-content" style="background-color:#FFFFFF">
-                            <div class="modal-header">
-                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">X</span></button>
-                                <h4 class="modal-title" style="background-color:#FFFFFF" id="myModalEditarPerfil">Editar Perfil</h4>
+                        <div class="modal-content" style="background-color:#091d35">
+                            <div class="modal-header" style="background-color:#00295a">
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true" style="font:whit;">X</span></button>
+                                <h4 class="modal-title" style="background-color:#00295a; color:white;" id="myModalGestionar">Gestionar</h4>
                             </div>
                             <div class="modal-body">               
                                
-        <div class="card card-container" style="background-color:#EBEBEB">
+        <div class="card card-container" style="background-color:#092b52">           
+            <form class="form-signin" style="margin-left: auto"; >            
+                 <a href="GestionarUsuarios.aspx" class="btn btn-lg btn-primary btn-block btn-signin"  style="width:90%; border-bottom:1px solid #03214c; background-color:#091d35";  type="button">Gestionar  Usuarios</a>
+                 <a href="GestionarProductos.aspx" class="btn btn-lg btn-primary btn-block btn-signin"  style="width:90%; border-bottom:1px solid #03214c; background-color:#091d35";  type="button">Gestionar  Productos</a>
+                 <a href="GestionarFabricantes.aspx" class="btn btn-lg btn-primary btn-block btn-signin"  style="width:90%; border-bottom:1px solid #03214c; background-color:#091d35";  type="button">Gestionar  Fabricantes</a>
+                 <a href="GestionarCategorias.aspx" class="btn btn-lg btn-primary btn-block btn-signin"  style="width:90%; border-bottom:1px solid #03214c; background-color:#091d35";  type="button">Gestionar  Categorias</a>
+                 <a href="GestionarModelos.aspx" class="btn btn-lg btn-primary btn-block btn-signin"  style="width:90%; border-bottom:1px solid #03214c; background-color:#091d35";  type="button">Gestionar  Modelos</a>
+                 <a href="GestionarMarcas.aspx" class="btn btn-lg btn-primary btn-block btn-signin"  style="width:90%; border-bottom:1px solid #03214c; background-color:#091d35";  type="button">Gestionar  Marcas</a>
+
+               
+            </form><!-- /form -->
+           
+        </div><!-- /card-container -->
+    </div><!-- /container -->
+                        </div>                           
+                        </div>
+                    </div>
+
+        <!-- MODAL EDITAR USUARIO-->
+
+           <div class="modal fade" role="dialog" id="modalSesion3" >
+                    <div class="modal-dialog modal-ms" >
+                        <div class="modal-content" style="background-color:#091d35">
+                            <div class="modal-header" style="background-color: #00295a ">
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true" style="font:White;">X</span></button>
+                                <h4 class="modal-title" style="background-color:#00295a; color:white;" id="myModalEditarPerfil">Editar Perfil</h4>
+                            </div>
+                            <div class="modal-body">               
+                               
+        <div class="card card-container" style="background-color:#092b52 ">
             <!-- <img class="profile-img-card" src="//lh3.googleusercontent.com/-6V8xOA6M7BA/AAAAAAAAAAI/AAAAAAAAAAA/rzlHcD0KYwo/photo.jpg?sz=120" alt="" /> -->
             <img id="profile-img3" class="profile-img-card" src="//ssl.gstatic.com/accounts/ui/avatar_2x.png" />
             <p id="profile-name3" class="profile-name-card"></p>
@@ -79,25 +123,27 @@
                 <input type="email"  style="width:90%;" " id="inputEmail3" class="form-control"  placeholder="Correo Electronico..." required autofocus><br />
                 <input type="password"  style="width:90%;"  id="contraseñanueva" class="form-control"  placeholder="Digite su nueva Contraseña..." required><br />
                
-                <button class="btn btn-lg btn-primary btn-block btn-signin" style="width:90%; background-color:#63A8F2";  type="submit">Guardar <span class="glyphicon glyphicon-floppy-open"></span></button>
+                <button class="btn btn-lg btn-primary btn-block btn-signin" style="width:90%; border-bottom:1px solid #03214c; background-color:#091d35";  type="submit">Guardar</button>
             </form><!-- /form -->
            
         </div><!-- /card-container -->
     </div><!-- /container -->
-                        </div>                           
+                        </div>                            
                         </div>
                     </div>
-                <!-- Modal LOGIN-->
+
+
+                <!-- Modal INICIO SESIÓN-->
                 <div class="modal fade" role="dialog" id="modalSesion" >
                     <div class="modal-dialog modal-ms" >
-                        <div class="modal-content" style="background-color:#FFFFFF">
-                            <div class="modal-header">
+                        <div class="modal-content" style="background-color:#091d35">
+                            <div class="modal-header" style="background-color: #00295a ">
                                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">X</span></button>
-                                <h4 class="modal-title" style="background-color:#FFFFFF" id="myModalLabel">Iniciar Sesión</h4>
+                                <h4 class="modal-title" style="background-color:#00295a; color:white;" id="myModalLabel">Iniciar Sesión</h4>
                             </div>
                             <div class="modal-body">               
                                
-        <div class="card card-container" style="background-color:#EBEBEB">
+        <div class="card card-container" style="background-color:#092b52">
             <!-- <img class="profile-img-card" src="//lh3.googleusercontent.com/-6V8xOA6M7BA/AAAAAAAAAAI/AAAAAAAAAAA/rzlHcD0KYwo/photo.jpg?sz=120" alt="" /> -->
             <img id="profile-img" class="profile-img-card" src="//ssl.gstatic.com/accounts/ui/avatar_2x.png" />
             <p id="profile-name" class="profile-name-card"></p>
@@ -105,14 +151,14 @@
                 <span id="reauth-email" class="reauth-email"></span>
                 <input type="email"  style="width:90%;" " id="inputEmail" class="form-control"  placeholder="Correo Electronico" required autofocus><br />
                 <input type="password"  style="width:90%;"  id="inputPassword" class="form-control"  placeholder="Contraseña" required><br />
-                <div id="remember" class="checkbox">
+                <div id="remember" class="checkbox" style="color:white;">
                     <label>
-                        <input type="checkbox" value="remember-me">Recordar datos.
+                        <input type="checkbox" value="remember-me" style="color:white;">Recordar datos.
                     </label>
                 </div>
-                <button class="btn btn-lg btn-primary btn-block btn-signin" style="width:90%; background-color:#63A8F2";  type="submit">Ingresar</button>
+                <button class="btn btn-lg btn-primary btn-block btn-signin" style="width:90%; border-bottom:1px solid #03214c; background-color:#091d35";  type="submit">Ingresar</button>
             </form><!-- /form -->
-            <a href="#" class="forgot-password" style="font:#63A8F2">
+            <a href="#"  class="forgot-password" >
                ¿Olvido la contraseña?
             </a>
         </div><!-- /card-container -->
@@ -125,14 +171,14 @@
     <!-- Modal REGISTRO-->
                 <div class="modal fade" role="dialog" id="modalSesion2">
                     <div class="modal-dialog modal-ms" >
-                        <div class="modal-content" style="background-color:#FFFFFF">
-                            <div class="modal-header">
+                        <div class="modal-content" style="background-color:#091d35">
+                            <div class="modal-header" style="background-color: #00295a">
                                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">X</span></button>
-                                <h4 class="modal-title" id="myModalLabe2">Registrarse</h4>
+                                <h4 class="modal-title" style="background-color:#00295a; color:white;" id="myModalLabe2">Registrarse</h4>
                             </div>
                             <div class="modal-body">   
 
-        <div class="card card-container" style="background-color:#EBEBEB">
+        <div class="card card-container" style="background-color:#092b52">
             <!-- <img class="profile-img-card" src="//lh3.googleusercontent.com/-6V8xOA6M7BA/AAAAAAAAAAI/AAAAAAAAAAA/rzlHcD0KYwo/photo.jpg?sz=120" alt="" /> -->
             <img id="profile-img2" class="profile-img-card" src="//ssl.gstatic.com/accounts/ui/avatar_2x.png" />
             <p id="profile-name2" class="profile-name-card"></p>
@@ -147,7 +193,7 @@
                 <input type="password"  style="width:90%;"id="InputContraseña" class="form-control" placeholder="Contraseña" required> <br />
                              
                  
-                <button class="btn btn-lg btn-primary btn-block btn-signin"  style="width:90%; background-color:#63A8F2";  type="submit">Registrarse</button>
+                <button class="btn btn-lg btn-primary btn-block btn-signin"  style="width:90%;  border-bottom:1px solid #03214c; background-color:#091d35";  type="submit">Registrarse</button>
 
             </form>  
                     </div>

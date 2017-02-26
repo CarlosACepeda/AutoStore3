@@ -15,7 +15,7 @@
 	margin-right: auto;
 }
 .header{
-	background-color: #191919;
+	background-color: #0068c2;
 	
 }
 .header .container{
@@ -149,16 +149,16 @@ padding-left: 5%;
     src: url(../source/fonts/BebasNeue-Regular.otf) format("truetype");
 }
   #navbarontop > li > a {
-  	font-family: 'BebasNeue Regular';
-  	font-size: 17px;
-  	color: #313943;
+  	font-family: 'monospace';
+  	font-size: 14px;
+  	color: #383b42;
     padding-top: 5px;
     padding-bottom: 6px;
     margin-bottom: 25px;
  	padding-left: 10px;
     padding-right: 10px!important;
     margin-left: 34px;
-    border-bottom: 2px solid #b57f06;
+    border-bottom: #9cb3b9;
 
   }
   #navbarontop > li >a:hover{

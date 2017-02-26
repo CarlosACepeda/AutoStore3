@@ -6,7 +6,7 @@
 
     
     <!-- INICIO Y BUSCADOR DE PRODUCTOS-->
-    <div class="collapse navbar-collapse" id="upmenu" style="margin-left:-6%">
+    <div class="collapse navbar-collapse" id="upmenu" style="margin-left:-9%">
         <ul class="nav navbar-nav" style="margin-left:-6%" id="navbarontop">
             <li><a style="margin-left:auto" href="Inicio.aspx">INICIO</a> </li>
             <li class="dropdown">

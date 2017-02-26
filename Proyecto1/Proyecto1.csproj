@@ -251,6 +251,12 @@
     <Content Include="GARAGE - HTML-CSS-Template\style\._contactstyle.css" />
     <Content Include="GARAGE - HTML-CSS-Template\style\._mystyle.css" />
     <Content Include="GARAGE - HTML-CSS-Template\style\._slider.css" />
+    <Content Include="GestionarCategorias.aspx" />
+    <Content Include="GestionarFabricantes.aspx" />
+    <Content Include="GestionarMarcas.aspx" />
+    <Content Include="GestionarModelos.aspx" />
+    <Content Include="GestionarProductos.aspx" />
+    <Content Include="GestionarUsuarios.aspx" />
     <Content Include="image\benz.jpg" />
     <Content Include="image\border.png" />
     <Content Include="image\car1.jpg" />
@@ -272,6 +278,7 @@
     <Content Include="image\porche.jpg" />
     <Content Include="index.html" />
     <Content Include="Productos.aspx" />
+    <Content Include="QuienesSomos.aspx" />
     <Content Include="source\bootstrap-3.3.6-dist\css\bootstrap-theme.css" />
     <Content Include="source\bootstrap-3.3.6-dist\css\bootstrap-theme.min.css" />
     <Content Include="source\bootstrap-3.3.6-dist\css\bootstrap.css" />
@@ -563,6 +570,48 @@
     <Compile Include="App_Start\IdentityConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
+    <Compile Include="GestionarCategorias.aspx.cs">
+      <DependentUpon>GestionarCategorias.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GestionarCategorias.aspx.designer.cs">
+      <DependentUpon>GestionarCategorias.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GestionarFabricantes.aspx.cs">
+      <DependentUpon>GestionarFabricantes.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GestionarFabricantes.aspx.designer.cs">
+      <DependentUpon>GestionarFabricantes.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GestionarMarcas.aspx.cs">
+      <DependentUpon>GestionarMarcas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GestionarMarcas.aspx.designer.cs">
+      <DependentUpon>GestionarMarcas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GestionarModelos.aspx.cs">
+      <DependentUpon>GestionarModelos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GestionarModelos.aspx.designer.cs">
+      <DependentUpon>GestionarModelos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GestionarProductos.aspx.cs">
+      <DependentUpon>GestionarProductos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GestionarProductos.aspx.designer.cs">
+      <DependentUpon>GestionarProductos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GestionarUsuarios.aspx.cs">
+      <DependentUpon>GestionarUsuarios.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GestionarUsuarios.aspx.designer.cs">
+      <DependentUpon>GestionarUsuarios.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Inicio.aspx.cs">
       <DependentUpon>Inicio.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -593,6 +642,13 @@
       <DependentUpon>Productos.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="QuienesSomos.aspx.cs">
+      <DependentUpon>QuienesSomos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="QuienesSomos.aspx.designer.cs">
+      <DependentUpon>QuienesSomos.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Site.Master.cs">
       <DependentUpon>Site.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
