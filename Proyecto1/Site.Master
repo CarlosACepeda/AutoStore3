@@ -75,7 +75,7 @@
 
         <!--MODAL GESTIONAR -->
          
-        <div class="modal fade" role="dialog" id="modalSesion4" >
+        <div class="modal fade " role="dialog" id="modalSesion4" >
                     <div class="modal-dialog modal-ms" >
                         <div class="modal-content" style="background-color:#00295a">
                             <div class="modal-header" style="background-color:#00295a">
