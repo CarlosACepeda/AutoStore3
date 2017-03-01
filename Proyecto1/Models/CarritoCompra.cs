@@ -11,7 +11,7 @@ namespace Proyecto1.Models
     {
         [ScaffoldColumn(false)]
         [Key]
-        public int CarritoCompraID { get; set; }
+        public string CarritoCompraID { get; set; }
 
         [Required, Display(Name = "Fecha Del Carrito")]
         public DateTime FechaOrden { get; set; }

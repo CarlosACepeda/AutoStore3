@@ -12,7 +12,7 @@ namespace Proyecto1.Models
         [ScaffoldColumn(false)]
 
         [Key]
-        public int ItemCarritoID { get; set; }
+        public string ItemCarritoID { get; set; }
 
         [Required, Display(Name = "Cantidad")]
         public int Cantidad { get; set; }
@@ -21,8 +21,18 @@ namespace Proyecto1.Models
         //Zona de Relaciones
 
         //Relacion con Carrito Compra.
-        public int CarritoCompraID { get; set; }
+        public string CarritoCompraID { get; set; }
         public virtual CarritoCompra CarritoCompra { get; set; }
+
+        //Relacion con producto
+
+        public int ProductoID { get; set; }
+       
+        public virtual Producto Producto { get; set; }
+
+        //Relacion con usuario
+
+        public string NombreUsuario { get; set; }
 
     }
 }

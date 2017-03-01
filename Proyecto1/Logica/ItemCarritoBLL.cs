@@ -6,7 +6,6 @@ using System.Web;
 namespace Proyecto1.Logica
 {
     public class ItemCarritoBLL
-    {
-        
+    {        
     }
 }

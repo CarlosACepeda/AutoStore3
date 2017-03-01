@@ -10,7 +10,6 @@ namespace Proyecto1.Logica
     {
         public void ObtenerRol(int idRol)
         {
-
         }
     }
 }
