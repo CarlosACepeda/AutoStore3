@@ -20,7 +20,23 @@
             <!--buscador panel-->
             <li>
         </ul>
-          <div class="collapse navbar-collapse" id="navbarmidle" style="margin-left: 15%">
+    <br />
+    <br />
+    <br />
+    <br />
+  
+
+    <nav class="navbar navbar-default midle-nav">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed textcostume" data-toggle="collapse" data-target="#navbarmidle" aria-expanded="false">
+						<h1>SEARCH TEXT</h1>
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+			</div>
+			 <div class="collapse navbar-collapse" id="navbarmidle" style="margin-left: 15%">
             <div class="searchtxt">
             </div>
             <form class="navbar-form navbar-left searchformmargin" role="search">
@@ -30,9 +46,39 @@
 
                 </div>
             </form>
-              </div>
+             
+                 <ul class="nav navbar-nav navbarborder">
+                     <li class="li-category">
+                         <a class="btn  dropdown-toggle btn-costume" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">Categoria<span class="glyphicon glyphicon-chevron-down downicon"></span></a>
+                         <ul class="dropdown-menu" id="mydd">
+                             <li><a href="#">Epic</a></li>
+                             <li><a href="#">Old</a></li>
+                             <li><a href="#">New</a></li>
+                         </ul>
+                     </li>
+                     <li class="li-minyear"><a class="btn  dropdown-toggle btn-costume" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">Marca <span class="glyphicon glyphicon-chevron-down downicon"></span></a>
+                         <ul class="dropdown-menu" id="mydd2">
+                             <li><a href="#">1</a></li>
+                             <li><a href="#">2</a></li>
+                             <li><a href="#">3</a></li>
+                         </ul>
+                     </li>
+                     <li class="li-maxyear"><a class="btn dropdown-toggle btn-costume" id="dropdownMenu3" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">Modelo <span class="glyphicon glyphicon-chevron-down downicon"></span></a>
+                         <ul class="dropdown-menu" id="mydd3">
+                             <li><a href="#">1900</a></li>
+                             <li><a href="#">2000</a></li>
+                             <li><a href="#">2016</a></li>
+                         </ul>
+                     </li>
+                 </ul>
+ 
+			</div>
+		</nav>
+  
+     
+         
     
-    
+   
 
     
     <!-- PRODUCTOS LISTA-->
@@ -302,5 +348,5 @@
         </div>
     </div>
         	
-
+   
 </asp:Content>

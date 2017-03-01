@@ -209,6 +209,7 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="contact.html" />
+    <Content Include="EditarPerfil.aspx" />
     <Content Include="GARAGE - HTML-CSS-Template\._contact.html" />
     <Content Include="GARAGE - HTML-CSS-Template\._index.html" />
     <Content Include="GARAGE - HTML-CSS-Template\image\._benz.jpg" />
@@ -443,6 +444,7 @@
     <Content Include="Scripts\WebForms\WebUIValidation.js" />
     <Content Include="Scripts\_references.js" />
     <Content Include="Site.Master" />
+    <Content Include="VerOrden.aspx" />
     <Content Include="ViewSwitcher.ascx" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
@@ -570,6 +572,13 @@
     <Compile Include="App_Start\IdentityConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
+    <Compile Include="EditarPerfil.aspx.cs">
+      <DependentUpon>EditarPerfil.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EditarPerfil.aspx.designer.cs">
+      <DependentUpon>EditarPerfil.aspx</DependentUpon>
+    </Compile>
     <Compile Include="GestionarCategorias.aspx.cs">
       <DependentUpon>GestionarCategorias.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -664,6 +673,13 @@
       <DependentUpon>Site.Mobile.Master</DependentUpon>
     </Compile>
     <Compile Include="Startup.cs" />
+    <Compile Include="VerOrden.aspx.cs">
+      <DependentUpon>VerOrden.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="VerOrden.aspx.designer.cs">
+      <DependentUpon>VerOrden.aspx</DependentUpon>
+    </Compile>
     <Compile Include="ViewSwitcher.ascx.cs">
       <DependentUpon>ViewSwitcher.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

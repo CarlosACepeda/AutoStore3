@@ -55,7 +55,7 @@
                 <a>|</a>
                     </li>
                 <li>
-                     <a data-toggle="modal"  href="#modalSesion3" id="EditarPerfil" style="text-decoration: none; color: #FFFFFF; ">EDITAR PERFIL<span class="glyphicon glyphicon-user"></span></a>
+                     <a data-toggle="modal"  href="#modalSesion3" id="EditarPerfil" style="text-decoration: none; color: #FFFFFF; ">CONFIGURACIÓN<span class="glyphicon glyphicon-user"></span></a>
                 </li>  
                   <li>
                 <a>|</a>
@@ -73,7 +73,7 @@
             </ul>            
 
             </div>
-        
+          
 
         <!--MODAL GESTIONAR -->
          
@@ -86,7 +86,10 @@
                             </div>
                             <div class="modal-body">               
                                
-        <div class="card card-container" style="background-color: white">           
+        <div class="card card-container" style="background-color: white"> 
+             <!-- <img class="profile-img-card" src="//lh3.googleusercontent.com/-6V8xOA6M7BA/AAAAAAAAAAI/AAAAAAAAAAA/rzlHcD0KYwo/photo.jpg?sz=120" alt="" /> -->
+            <img id="profile-img4" class="profile-img-card" src="//ssl.gstatic.com/accounts/ui/avatar_2x.png" />
+            <p id="profile-name4" class="profile-name-card"></p>          
             <form class="form-signin" style="margin-left: auto"; >            
                  <a href="GestionarUsuarios.aspx" class="btn btn-lg btn-primary btn-block btn-signin"  style="width:90%; border-bottom:1px solid #03214c; background-color:#4d90fe";  type="button">Gestionar  Usuarios</a>
                  <a href="GestionarProductos.aspx" class="btn btn-lg btn-primary btn-block btn-signin"  style="width:90%; border-bottom:1px solid #03214c; background-color:#4d90fe";  type="button">Gestionar  Productos</a>
@@ -104,7 +107,7 @@
                         </div>
                     </div>
 
-        <!-- MODAL EDITAR USUARIO-->
+        <!-- MODAL CONFIGURACIÓN PERFIL-->
 
            <div class="modal fade" role="dialog" id="modalSesion3" >
                     <div class="modal-dialog modal-ms" >
@@ -121,11 +124,11 @@
             <p id="profile-name3" class="profile-name-card"></p>
             <form class="form-signin" style="margin-left: auto";>
                 <span id="reauth-email3" class="reauth-email"></span>
-                <input type="text"  style="width:90%;" " id="Direccion" class="form-control"  placeholder="Direccion" required autofocus><br />
-                <input type="email"  style="width:90%;" " id="inputEmail3" class="form-control"  placeholder="Correo Electronico..." required autofocus><br />
-                <input type="password"  style="width:90%;"  id="contraseñanueva" class="form-control"  placeholder="Digite su nueva Contraseña..." required><br />
                
-                <button class="btn btn-lg btn-primary btn-block btn-signin" style="width:90%; border-bottom:1px solid #00295a; background-color:#4d90fe";  type="submit">Guardar</button>
+                  <a href="EditarPerfil.aspx" class="btn btn-lg btn-primary btn-block btn-signin"  style="width:90%; border-bottom:1px solid #03214c; background-color:#4d90fe";  type="button">EDITAR  PERFIL</a>
+                 <a href="VerOrden.aspx" class="btn btn-lg btn-primary btn-block btn-signin"  style="width:90%; border-bottom:1px solid #03214c; background-color:#4d90fe";  type="button">VER ORDENES</a>
+
+
             </form><!-- /form -->
            
         </div><!-- /card-container -->
