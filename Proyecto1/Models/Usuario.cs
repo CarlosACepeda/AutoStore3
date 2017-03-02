@@ -9,100 +9,46 @@ namespace Proyecto1.Models
     public class Usuario
     {
         [ScaffoldColumn(false)]
+        [Key]
         public Guid IdUsuario { get; set; }
 
-        [Required, StringLength(20), Display(Name ="Nombre del Usuario")]
+        [Required, StringLength(20, ErrorMessage ="El nombre de usuario debe ser menos de 20 caracteres"), Display(Name ="Nombre del Usuario")]
         public string NombreUsuario { get; set; }
 
-        [Required, StringLength(50), Display(Name = "Clave")]
+        [Required, StringLength(50, ErrorMessage ="La contraseña debe ser menos de 50 caracteres"), Display(Name = "Clave")]
         public string Contrasena { get; set; }
 
-        public ICollection<Puntuacion> Puntuaciones { get; set; }
+        [Required(ErrorMessage ="Este campo es requerido"), StringLength(400), Display(Name = "Foto")]
+        public char? Foto { get; set; }
 
-        public string Foto { get; set; }
-        
-        [StringLength(5)]
-        public double Puntuacion { get; set; }
-
-        [Required, StringLength(1)]
+        [Required]
         public bool Activo { get; set; }
 
-        [Required, Display(Name ="Nombre de Rol")]
+        
+        //Zona de Relaciones entre entidades.
+
+        //Relacion con Rol
+        [Required]
+        public int RolID { get; set; }
+
         public virtual Rol Rol { get; set; }
 
+        //Relacion con Puntuacion
+        public ICollection<Puntuacion> Puntuaciones { get; set; }
 
 
+        //Relacion con Persona
 
-        //Métodos de la clase Usuario
+        public virtual Persona Persona { get; set; }
 
-        public bool CambiarEstadoUsuario(bool activo, Guid idUsuario)
-        {
-            AutoStoreContext contexto = new AutoStoreContext();
+        //Relacion con Carro Compras.
 
-            var cambiarEstadoUsr =
-               from usrEstado in contexto.Usuario
-               where usrEstado.IdUsuario.Equals(idUsuario)
-               select usrEstado;
+        public ICollection<CarritoCompra> CarritosDeCompra { get; set; }
+        
+        //Relacion con Producto
 
-           
-            foreach (Usuario usr in cambiarEstadoUsr)
-            {
-                usr.Activo = false;
-            }
+        public ICollection<Producto> Productos { get; set; }
 
-            return true;
-        }
-        public bool InsertarUsuario(Usuario usr)
-        {
-            AutoStoreContext contexto = new AutoStoreContext();
-
-            contexto.Usuario.Add(usr);
-
-            contexto.SaveChanges();
-
-            return true;
-        }
-        public bool ModificarUsuarioyPass(Guid idUsuario, string nombreUsr, string pass)
-        {
-            AutoStoreContext contexto = new AutoStoreContext();
-
-            var modificarUsr =
-               from usr in contexto.Usuario
-               where usr.IdUsuario.Equals(idUsuario)
-               select usr;
-
-
-            foreach (Usuario usr in modificarUsr)
-            {
-                usr.NombreUsuario = nombreUsr;
-                usr.Contrasena = pass;
-
-            }
-            return true;
-        }
-        public List<Usuario> ObtenerUsuario(Guid idUsuario)
-        {
-            AutoStoreContext contexto = new AutoStoreContext();
-
-            var seleccionarUsuario = from usr in contexto.Usuario
-                                     where Convert.ToString(usr.IdUsuario).Contains(idUsuario.ToString())
-                                     select usr;
-
-            return seleccionarUsuario.ToList();
-            
-        }
-
-        public bool Puntuar(Puntuacion punt)
-        {
-            AutoStoreContext contexto = new AutoStoreContext();
-
-            contexto.Puntuacion.Add(punt);
-
-            contexto.SaveChanges();
-
-            return true;
-        }
-
-
+        
     }
 }

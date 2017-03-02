@@ -88,6 +88,9 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.QualityTools.Testing.Fakes, Version=12.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -204,6 +207,10 @@
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\Site.css" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="Account\Web.config" />
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
@@ -413,6 +420,10 @@
     <Content Include="GARAGE - HTML-CSS-Template\source\fonts\._OpenSans-Semibold.ttf" />
     <Content Include="GARAGE - HTML-CSS-Template\source\fonts\._Roboto-Light.ttf" />
     <Content Include="._GARAGE - HTML-CSS-Template" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="ClassDiagram1.cd" />
+    <Content Include="ClassDiagram2.cd" />
     <None Include="Scripts\jquery-3.1.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.1.1.js" />
     <Content Include="Scripts\jquery-3.1.1.min.js" />
@@ -628,16 +639,29 @@
     <Compile Include="Inicio.aspx.designer.cs">
       <DependentUpon>Inicio.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Logica\CarritoComprasBLL.cs" />
+    <Compile Include="Logica\CategoriaBLL.cs" />
+    <Compile Include="Logica\FabricanteCarroBLL.cs" />
+    <Compile Include="Logica\ImagenProductoBLL.cs" />
+    <Compile Include="Logica\ItemCarritoBLL.cs" />
+    <Compile Include="Logica\MarcaProductoBLL.cs" />
+    <Compile Include="Logica\ModeloCarroBLL.cs" />
+    <Compile Include="Logica\PersonaBLL.cs" />
+    <Compile Include="Logica\ProductoBLL.cs" />
+    <Compile Include="Logica\PuntuacionBLL.cs" />
+    <Compile Include="Logica\RolBLL.cs" />
+    <Compile Include="Logica\UsuarioBLL.cs" />
     <Compile Include="Models\Categoria.cs" />
-    <Compile Include="Models\DetalleOrden.cs" />
+    <Compile Include="Models\FabricanteCarro.cs" />
+    <Compile Include="Models\ItemCarrito.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ImagenProducto.cs" />
     <Compile Include="Models\AutoStoreContext.cs" />
     <Compile Include="Models\InicializadorDatabase.cs" />
-    <Compile Include="Models\Marca.cs" />
+    <Compile Include="Models\MarcaProducto.cs" />
     <Compile Include="Models\MetodoDePago.cs" />
-    <Compile Include="Models\Modelo.cs" />
-    <Compile Include="Models\Orden.cs" />
+    <Compile Include="Models\CarritoCompra.cs" />
+    <Compile Include="Models\ModeloCarro.cs" />
     <Compile Include="Models\Persona.cs" />
     <Compile Include="Models\Producto.cs" />
     <Compile Include="Models\Puntuacion.cs" />
