@@ -183,18 +183,24 @@
             <!-- <img class="profile-img-card" src="//lh3.googleusercontent.com/-6V8xOA6M7BA/AAAAAAAAAAI/AAAAAAAAAAA/rzlHcD0KYwo/photo.jpg?sz=120" alt="" /> -->
             <img id="profile-img2" class="profile-img-card" src="//ssl.gstatic.com/accounts/ui/avatar_2x.png" />
             <p id="profile-name2" class="profile-name-card"></p>
-            <form class="form-signin" style="margin-left: auto">
+            <form id="form1" runat="server" class="form-signin" style="margin-left: auto" >
+                    <div>
                 <span id="reauth-email2" class="reauth-email"></span>
-                 <input type="text"  style="width:90%;" id="InputUsuario" class="form-control" placeholder="Usuario" required autofocus><br />
-                <input type="text" style="width:90%;" id="InputNombre" class="form-control" placeholder="Nombre" required ><br />
-                <input type="text" style="width:90%;" id="InputApellido" class="form-control" placeholder="Apellido" required>  <br />
-                <input type="text"  style="width:90%;"id="inputDireccion" class="form-control" placeholder="Direccion" required >     <br />          
-                <input type="text" style="width:90%;" id="InputTelefono" class="form-control" placeholder="Telefono" required><br />
-                <input type="email" style="width:90%;" id="InputCorreoElectronico" class="form-control" placeholder="Correo Electronico" required > <br />
-                <input type="password"  style="width:90%;"id="InputContraseña" class="form-control" placeholder="Contraseña" required> <br />
-                             
+                <asp:TextBox ID="InputUsuario" runat="server" placeholder="Usuario" CssClass="form-control"></asp:TextBox>    <br /> 
+                <asp:TextBox ID="InputNombre" runat="server" placeholder="Nombre" CssClass="form-control"></asp:TextBox>    <br /> 
+                <asp:TextBox ID="InputApellido" runat="server" placeholder="Apellido" CssClass="form-control"></asp:TextBox>     <br /> 
+                <asp:TextBox ID="InputDireccion" runat="server" placeholder="Dirección" CssClass="form-control"></asp:TextBox>     <br />          
+                <asp:TextBox ID="InputTelefono" runat="server" placeholder="Teléfono" CssClass="form-control"></asp:TextBox><br />
+                <asp:TextBox ID="InputCorreoE" runat="server" placeholder="Correo Electrónico" CssClass="form-control" TextMode="Email"></asp:TextBox> <br />
+                <asp:TextBox ID="InputContraseña" runat="server" placeholder="Contraseña" CssClass="form-control" TextMode="Password"></asp:TextBox> <br />
                  
-                <button class="btn btn-lg btn-primary btn-block btn-signin"  style="width:90%;  border-bottom:1px solid #03214c; background-color:#4d90fe";  type="submit">Registrarse</button>
+                <asp:Button ID="botonRegistrarse" runat="server" Text="Registrarse" CssClass="btn btn-lg btn-primary btn-block btn-signin" OnClick="botonRegistrarse_Click"/>
+                
+                    </div>
+            </form>
+                    
+                 
+                
 
             </form>  
                     </div>

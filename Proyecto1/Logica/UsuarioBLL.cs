@@ -121,7 +121,7 @@ namespace Proyecto1.Logica
         /// <param name="rol">Parametro que captura el rol que tendra el usuario</param>
         /// <param name="activo">Parametro que captura el estado que tiene el usuario</param>
         /// <returns>Retorna un valor booleano segun la ejecucion del metodo</returns>
-        public bool CrearUsuario(Guid idUser, string nombreUser, string clave, Char foto, int rol, bool activo = true)
+        public bool CrearUsuario(Guid idUser, string nombreUser, string clave, string foto, int rol, bool activo = true)
         {
             try
             {
@@ -132,18 +132,22 @@ namespace Proyecto1.Logica
                     NombreUsuario = nombreUser,
                     Contrasena = clave,
                     Foto = foto,
+                    Activo= activo,
                     RolID = rol
+                   
 
 
                 };
                 AutoStoreContext contex = new AutoStoreContext();
                 contex.Usuario.Add(usr);
+                contex.SaveChanges();
                 return true;
+                
             }
             catch (Exception)
             {
 
-                return false;
+                throw;
             }
 
         }

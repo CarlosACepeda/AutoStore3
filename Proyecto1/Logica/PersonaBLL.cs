@@ -53,7 +53,7 @@ namespace Proyecto1.Logica
         /// <param name="telefono">Parametro que permite ingresar el telefono de la persona</param>
         /// <param name="email">Parametro que permite ingresar el email de la persona</param>
         /// <returns>Retorna un valor booleano segun la ejecucion del metodo</returns>
-        public bool CrearPersona(Guid idPersona, string nombre, string apellido, string direccion, int telefono, string email)
+        public bool CrearPersona(Guid idPersona, string nombre, string apellido, string direccion, Int64 telefono, string email)
         {
             try
             {
@@ -70,12 +70,13 @@ namespace Proyecto1.Logica
                 };
                 AutoStoreContext contex = new AutoStoreContext();
                 contex.Persona.Add(persona);
+                contex.SaveChanges();
                 return true;
             }
             catch (Exception)
             {
 
-                return false;
+                throw;
             }
         }
     }
