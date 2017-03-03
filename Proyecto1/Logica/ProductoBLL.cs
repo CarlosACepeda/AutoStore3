@@ -70,7 +70,7 @@ namespace Proyecto1.Logica
                 prod.PrecioU = p.PrecioU;
                 prod.CategoriaID = p.CategoriaID;
                 prod.MarcaProductoID = p.MarcaProductoID;
-                prod.ModeloCarroID = p.ModeloCarroID;
+                prod.ModeloDeCarroID = p.ModeloDeCarroID;
                 prod.UsuarioID = p.UsuarioID;
             }
 

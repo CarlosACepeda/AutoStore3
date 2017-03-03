@@ -98,5 +98,10 @@ namespace Proyecto1
         {
             return new ApplicationSignInManager(context.GetUserManager<ApplicationUserManager>(), context.Authentication);
         }
+
+        internal object PasswordSignIn(string Usuario, string Contraseña)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

@@ -9,6 +9,7 @@ namespace Proyecto1.Logica
     public class UsuarioBLL
     {
 
+
         /// <summary>
         /// Metodo para cambiar el estado del usuario 
         /// </summary>
@@ -160,7 +161,30 @@ namespace Proyecto1.Logica
             return mostrarInfo.ToList();
 
         }
-        
-        
+
+        /// <summary>
+        /// Metodo para Autenticar el usuario que se va a loguear en el sistema
+        /// </summary>
+        /// <param name="nombre">Nombre de Usuario</param>
+        /// <param name="clave">contraseña del Usuario</param>
+        /// <returns></returns>
+        public bool Autenticar(string nombre, string clave )
+        {
+
+            try
+            {
+                AutoStoreContext context = new AutoStoreContext();
+                var mostrarInfo = from usr in context.Usuario
+                                  where usr.NombreUsuario == nombre && usr.Contrasena== clave
+                                  select usr;
+                return true;
+            }
+            catch (Exception)
+            {
+
+                return false;
+            }
+        }
+
     }
 }

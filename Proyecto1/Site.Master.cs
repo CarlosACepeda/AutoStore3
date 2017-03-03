@@ -7,6 +7,12 @@ using System.Web.Security;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using Microsoft.AspNet.Identity;
+using Microsoft.AspNet.Identity.Owin;
+using System.Data;
+using System.Data.SqlClient;
+using Proyecto1.Logica;
+
+
 
 namespace Proyecto1
 {
@@ -15,6 +21,8 @@ namespace Proyecto1
         private const string AntiXsrfTokenKey = "__AntiXsrfToken";
         private const string AntiXsrfUserNameKey = "__AntiXsrfUserName";
         private string _antiXsrfTokenValue;
+
+        public bool IsValid { get; }
 
         protected void Page_Init(object sender, EventArgs e)
         {
@@ -76,6 +84,30 @@ namespace Proyecto1
         {
             Context.GetOwinContext().Authentication.SignOut(DefaultAuthenticationTypes.ApplicationCookie);
         }
+
+        protected void btnsubirProducto_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        public void BtnIniciarSesion_Click(object sender, EventArgs e)
+        {
+            
+        }
+        public void IniciarSesion_Click(object sender, EventArgs e)
+        {
+            UsuarioBLL login = new UsuarioBLL();
+
+            if (login.Autenticar("Diego", "123456") == true)
+            {
+                Response.Redirect("http://www.google.com");
+            }
+            else
+            {
+                Response.Redirect("http://xvideos.com");
+            }
+        }
+
+        }
     }
 
-}
