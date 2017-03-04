@@ -70,7 +70,7 @@ namespace Proyecto1.Logica
                 prod.PrecioU = p.PrecioU;
                 prod.CategoriaID = p.CategoriaID;
                 prod.MarcaProductoID = p.MarcaProductoID;
-                prod.ModeloCarroID = p.ModeloCarroID;
+                prod.ModelodeCarroID = p.ModelodeCarroID;
                 prod.UsuarioID = p.UsuarioID;
             }
 
@@ -120,6 +120,13 @@ namespace Proyecto1.Logica
             }
             return true;
 
+        }
+        public List<Producto> ObtenerProducto()
+        {
+            AutoStoreContext context = new AutoStoreContext();
+            var mostrarProducto = from Fab in context.Producto
+                                    select Fab;
+            return mostrarProducto.ToList();
         }
     }
 }

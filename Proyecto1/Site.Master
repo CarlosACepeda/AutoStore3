@@ -125,7 +125,7 @@
             <form class="form-signin" style="margin-left: auto";>
                 <span id="reauth-email3" class="reauth-email"></span>
                
-                  <a href="EditarPerfil.aspx" class="btn btn-lg btn-primary btn-block btn-signin"  style="width:90%; border-bottom:1px solid #03214c; background-color:#4d90fe";  type="button">EDITAR  PERFIL</a>
+                  <a href="EditarPerfil.aspx" class="btn btn-lg btn-primary btn-block btn-signin"  style="width:90%; border-bottom:1px solid #03214c; background-color:#4d90fe";  type="button">VER PERFIL</a>
                  <a href="VerOrden.aspx" class="btn btn-lg btn-primary btn-block btn-signin"  style="width:90%; border-bottom:1px solid #03214c; background-color:#4d90fe";  type="button">VER ORDENES</a>
 
 

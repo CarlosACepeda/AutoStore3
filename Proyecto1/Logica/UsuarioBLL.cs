@@ -93,22 +93,15 @@ namespace Proyecto1.Logica
         /// </summary>
         /// <param name="idUser">Parametro que permite saber de que usuario se desea obtener la informacion</param>
         /// <returns>Retorna un valor booleano segun la ejecucion del metodo</returns>
-        public bool MostrarInformacion(Guid idUser)
+        public List<Usuario> MostrarInformacion(Guid idUser)
         {
 
-            try
-            {
                 AutoStoreContext context = new AutoStoreContext();
                 var mostrarInfo = from usr in context.Usuario
                                   where usr.IdUsuario == idUser
                                   select usr;
-                return true;
-            }
-            catch (Exception)
-            {
 
-                return false;
-            }
+            return mostrarInfo.ToList();
         }
 
         /// <summary>
