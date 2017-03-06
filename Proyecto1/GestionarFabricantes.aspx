@@ -2,9 +2,8 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    
-     <form id="form1" runat="server">
-    <div class="collapse navbar-collapse" id="upmenu" style="background-color:#e9eef1">
+        <form id="form1" runat="server">
+            <div class="collapse navbar-collapse" id="upmenu" style="background-color:#e9eef1">
         <ul class="nav navbar-nav" id="navbarontop" style="background-color:#e9eef1">
             <li><a href="Inicio.aspx">INICIO</a> </li>
             <li><a href="Productos.aspx">PRODUCTOS</a></li>
@@ -18,7 +17,8 @@
 
         </ul>
     </div>
-    <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
+
+             <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
 
     <asp:Button ID="btnGuardar" runat="server" Text="Button" OnClick="Button1_Click"/>
 
@@ -37,5 +37,8 @@
              <SortedDescendingCellStyle BackColor="#E9EBEF" />
              <SortedDescendingHeaderStyle BackColor="#4870BE" />
          </asp:GridView>
-         </form>
+    
+   
+        </form>  
+        
 </asp:Content>

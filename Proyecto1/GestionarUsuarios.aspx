@@ -26,8 +26,14 @@
             <br />
             <br />
             <br />
-&nbsp;<a></a><a></a><a></a><asp:GridView ID="gvUser" runat="server" Visible="False">
-            </asp:GridView>
+&nbsp;<div class="form-group">
+                <asp:GridView ID="gvUser" runat="server">
+                </asp:GridView>
+
+                <br />
+                <asp:TextBox ID="TextBox1" runat="server" Width="231px"></asp:TextBox>
+
+      </div>
             <br />
             <asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="Cambiar Estado" />
             <br />
