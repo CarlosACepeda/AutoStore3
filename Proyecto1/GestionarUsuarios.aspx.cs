@@ -12,7 +12,7 @@ namespace Proyecto1
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+                
         }
 
         protected void btnVerUser_Click(object sender, EventArgs e)
@@ -21,6 +21,11 @@ namespace Proyecto1
             UsuarioBLL user = new UsuarioBLL();
             gvUser.DataSource = user.ListarUsuarios();
             gvUser.DataBind();
+        }
+
+        protected void Button1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

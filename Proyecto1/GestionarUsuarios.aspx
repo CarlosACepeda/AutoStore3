@@ -20,18 +20,16 @@
     </div>
             <asp:Button ID="btnVerUser" runat="server" Text="Ver Usuarios" OnClick="btnVerUser_Click"/>
 
-            <asp:GridView ID="gvUser" runat="server" CellPadding="4" ForeColor="#333333" GridLines="None" Visible="False">
-                <AlternatingRowStyle BackColor="White" />
-                <EditRowStyle BackColor="#2461BF" />
-                <FooterStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
-                <HeaderStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
-                <PagerStyle BackColor="#2461BF" ForeColor="White" HorizontalAlign="Center" />
-                <RowStyle BackColor="#EFF3FB" />
-                <SelectedRowStyle BackColor="#D1DDF1" Font-Bold="True" ForeColor="#333333" />
-                <SortedAscendingCellStyle BackColor="#F5F7FB" />
-                <SortedAscendingHeaderStyle BackColor="#6D95E1" />
-                <SortedDescendingCellStyle BackColor="#E9EBEF" />
-                <SortedDescendingHeaderStyle BackColor="#4870BE" />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+&nbsp;<a></a><a></a><a></a><asp:GridView ID="gvUser" runat="server" Visible="False">
             </asp:GridView>
+            <br />
+            <asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="Cambiar Estado" />
+            <br />
             </form>
 </asp:Content>
