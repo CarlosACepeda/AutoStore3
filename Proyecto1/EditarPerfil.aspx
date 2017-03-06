@@ -25,35 +25,46 @@
         <div class="collapse navbar-collapse" id="upmenu2" style="background-color: #ffffff">
         <ul class="nav navbar-nav" id="navbarontop2" style="background-color: #ffffff">
             <li>
-               
+               <form id="form1" runat="server">
                   <div > 
                     <label  for="ex1">Usuario</label>  
-                <input type="text"  style="width:90%;"id="Usuario" class="form-control">
+                      <asp:TextBox ID="txtUsuario" runat="server" Style="width: 90%;" CssClass="form-control"></asp:TextBox>
 
-              </div>
+              
                     <label for="ex2">Nombre</label>
-                <input type="text"  style="width:90%;"id="Nombre" class="form-control">
+                <asp:TextBox ID="txtNombre" runat="server" style="width:90%;" CssClass="form-control"></asp:TextBox>>
                 
               
                     <label for="ex3">Apellido</label>
-                <input type="text"  style="width:90%;"id="Apellido" class="form-control">
+                <asp:TextBox ID="txtApellido" runat="server" style="width:90%;" CssClass="form-control"></asp:TextBox>
                     
 
             <label for="ex4">Direccion</label>
-                <input type="text"  style="width:90%;"id="Direccion" class="form-control">
+                <asp:TextBox ID="TextBox1" runat="server" style="width:90%;" CssClass="form-control"></asp:TextBox>
 
             <label for="ex5">Telefono</label>
-                <input type="tel"  style="width:90%;"id="Telefono" class="form-control">
+                <asp:TextBox ID="txtTelefono" runat="server" style="width:90%;" CssClass="form-control"></asp:TextBox>
 
                  <label for="ex6">Correo Electronico</label>
-                <input type="email"  style="width:90%;"id="Correo Electronico" class="form-control">
+                <asp:TextBox ID="txtCorreo" runat="server" style="width:90%;" CssClass="form-control"></asp:TextBox>
 
                  <label for="ex7">Contraseña</label>
-                <input type="password"  style="width:90%;"id="InputContraseña" class="form-control">
+                <asp:TextBox ID="txtClave" runat="server" style="width:90%;" CssClass="form-control"></asp:TextBox>
+                 
+                      <br />
+                      <br />
+                      <asp:GridView ID="gvPerfil" runat="server">
+                      </asp:GridView>
+                      <br />
+                      <br />
+                      <br />
                  
                 <br />
-                 <button class="btn btn-lg btn-primary btn-block btn-signin"  style="width:90%;  border-bottom:1px solid #03214c; background-color:#4d90fe";  type="button">Editar Perfil</button>
-
+                      <asp:Button ID="btnVerI" runat="server" Text="Button" OnClick="btnVerI_Click"/>
+                      <%--<asp:Button ID="bntVer" runat="server" Text="Button" Class="btn btn-lg btn-primary btn-block btn-signin"  style="width:90%;  border-bottom:1px solid #03214c; background-color:#4d90fe";  type="button" OnClick="EditarPerfil_Click">--%>
+                 <%--<button class="btn btn-lg btn-primary btn-block btn-signin"  style="width:90%;  border-bottom:1px solid #03214c; background-color:#4d90fe";  type="button" </button>--%>
+                      </div>
+                   </form>
             </li>    
         </ul>
                 </div>

@@ -54,7 +54,7 @@ namespace Proyecto1.Models
 
         // Relacion con ModeloCarro
 
-        public int ModeloDeCarroID { get; set; }
+        public int ModelodeCarroID { get; set; }
 
         public virtual ModeloCarro ModeloCarro { get; set; }
 
