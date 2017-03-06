@@ -22,7 +22,7 @@ namespace Proyecto1
             fabricante.AgregarFabricante(
                  TextBox1.Text = nombre
                 );
-            
+
         }
 
         protected void btnVerF_Click(object sender, EventArgs e)

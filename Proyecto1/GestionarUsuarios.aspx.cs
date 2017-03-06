@@ -21,9 +21,16 @@ namespace Proyecto1
             UsuarioBLL user = new UsuarioBLL();
             gvUser.DataSource = user.ListarUsuarios();
             gvUser.DataBind();
+            //gvUser.Rows[0].Cells[4].Enabled = true;
         }
 
         protected void Button1_Click(object sender, EventArgs e)
+        {
+            UsuarioBLL user = new UsuarioBLL();
+            user.CambiarEstadoUser(Guid.Parse(TextBox1.Text));
+        }
+
+        protected void gvUser_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }
