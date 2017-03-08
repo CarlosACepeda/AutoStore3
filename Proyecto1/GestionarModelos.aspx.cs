@@ -10,23 +10,36 @@ namespace Proyecto1
 {
     public partial class GestionarModelos : System.Web.UI.Page
     {
+        ModeloCarroBLL modelo = new ModeloCarroBLL();
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            CargarModelos();
         }
 
         protected void Button1_Click(object sender, EventArgs e)
         {
+            FabricanteCarroBLL lista = new FabricanteCarroBLL();
 
+            lista.ObtenerFabricante();
+
+
+            //modelo.AgregarModeloCarro(
+            //    TextBox1.Text,
+            //    TextBox2.Text,
+
+            //);
         }
 
-        protected void btnVer_Click(object sender, EventArgs e)
+        public void CargarModelos()
         {
-            gvModelo.Visible = true;
             ModeloCarroBLL modelo = new ModeloCarroBLL();
             gvModelo.DataSource = modelo.ObtenerModeloCarro();
             gvModelo.DataBind();
+        }
 
+        protected void DropDownList1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            
         }
     }
 }

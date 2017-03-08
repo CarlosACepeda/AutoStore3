@@ -42,7 +42,7 @@ namespace Proyecto1.Logica
 
             catch (Exception)
             {
-                return false;
+                throw;
             }
         }
     }

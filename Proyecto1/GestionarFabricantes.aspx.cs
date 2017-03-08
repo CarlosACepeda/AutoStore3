@@ -10,7 +10,7 @@ namespace Proyecto1
 {
     public partial class GestionarFabricantes : System.Web.UI.Page
     {
-        string nombre; 
+
         FabricanteCarroBLL fabricante = new FabricanteCarroBLL();
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -20,7 +20,7 @@ namespace Proyecto1
         protected void Button1_Click(object sender, EventArgs e)
         {
             fabricante.AgregarFabricante(
-                 TextBox1.Text = nombre
+                 TextBox1.Text
                 );
 
         }

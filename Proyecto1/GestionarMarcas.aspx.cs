@@ -13,18 +13,21 @@ namespace Proyecto1
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            CarcgarMarcas();
         }
 
         protected void btnVerMarcas_Click(object sender, EventArgs e)
         {
-            gvMarcas.Visible = true;
+           
+
+        }
+        public void CarcgarMarcas()
+        {
             AutoStoreContext contex = new AutoStoreContext();
 
             MarcaProductoBLL marca = new MarcaProductoBLL();
             gvMarcas.DataSource = marca.ObtenerMarcaP();
             gvMarcas.DataBind();
-
         }
     }
 }

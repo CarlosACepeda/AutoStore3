@@ -19,12 +19,17 @@
         </ul>
     </div>
     <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
-    <asp:TextBox ID="TextBox2" runat="server"></asp:TextBox>
-    <asp:Button ID="Button1" runat="server" Text="Button" OnClick="Button1_Click"/>
-
-        <asp:Button ID="btnVer" runat="server" Text="Ver Modelos" OnClick="btnVer_Click"/>
+        <br />
+        <br />
+        <asp:TextBox ID="TextBox2" runat="server"></asp:TextBox>
+        <br />
+        <br />
+        <asp:DropDownList ID="DropDownList1" runat="server" OnSelectedIndexChanged="DropDownList1_SelectedIndexChanged">
+        </asp:DropDownList>
+        <br />
+    <asp:Button ID="Button1" runat="server" Text="Agregar Modelo" OnClick="Button1_Click"/>
         
-        <asp:GridView ID="gvModelo" runat="server" CellPadding="4" ForeColor="#333333" GridLines="None" Visible="False">
+        <asp:GridView ID="gvModelo" runat="server" CellPadding="4" ForeColor="#333333" GridLines="None">
             <AlternatingRowStyle BackColor="White" />
             <EditRowStyle BackColor="#2461BF" />
             <FooterStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
