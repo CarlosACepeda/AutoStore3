@@ -18,9 +18,8 @@
 
         </ul>
     </div>
-         <asp:Button ID="btnVerMarcas" runat="server" Text="Ver Marcas" OnClick="btnVerMarcas_Click"/>
 
-         <asp:GridView ID="gvMarcas" runat="server" CellPadding="4" ForeColor="#333333" GridLines="None" Visible="False">
+         <asp:GridView ID="gvMarcas" runat="server" CellPadding="4" ForeColor="#333333" GridLines="None">
              <AlternatingRowStyle BackColor="White" />
              <EditRowStyle BackColor="#2461BF" />
              <FooterStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />

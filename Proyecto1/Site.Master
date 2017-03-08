@@ -1,5 +1,6 @@
 ﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="Proyecto1.SiteMaster" %>
 
+
 <!doctype html>
 <html>
 <head runat="server">
@@ -22,11 +23,15 @@
     <script src="style/login.css"></script>
  
 
+
+
+
     <asp:ContentPlaceHolder ID="head" runat="server">
 
     </asp:ContentPlaceHolder>
 </head>
 <body>
+    
     
         <!-- Navbar Up -->
       <nav class="topnavbar navbar-default topnav" style="background-color:#E5E6E9">
@@ -221,6 +226,8 @@
                         </div>  
                         </div>
                     </div>
+      
+            
          </asp:ContentPlaceHolder>
 </body>
 </html>
