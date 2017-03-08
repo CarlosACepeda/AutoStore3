@@ -1,8 +1,33 @@
 ﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="Proyecto1.SiteMaster" %>
-
+<%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="cc1" %>
 <!doctype html>
 <html>
 <head runat="server">
+
+
+    <style type="text/css">
+        .modalBackground
+        {
+            background-color: Black;
+            filter: alpha(opacity=90);
+            opacity: 0.8;
+
+        }
+        .modalPopup
+        {
+            background-color: #FFFFFF;
+            border-width: 3px;
+            border-style: solid;
+            border-color: black;
+            padding-top: 10px;
+            padding-left: 10px;
+            width: 500px;
+            height: 300px;
+        }
+    </style>
+
+
+
     <meta charset="UTF-8">
     <title>AutoStore </title>
     <meta name="description" content="Scarica gratis il nostro Template HTML/CSS GARAGE. Se avete bisogno di un design per il vostro sito web GARAGE può fare per voi. Web Domus Italia">
@@ -25,11 +50,12 @@
     <asp:ContentPlaceHolder ID="head" runat="server">
 
     </asp:ContentPlaceHolder>
+
 </head>
+
 <body>
-    
-        <!-- Navbar Up -->
-      <nav class="topnavbar navbar-default topnav" style="background-color:#E5E6E9">
+    <form id="form1" runat="server">
+    <nav class="topnavbar navbar-default topnav" style="background-color:#E5E6E9">
             <div class="container">
                 <div class="navbar-header">
                     <button type="button" class="navbar-toggle collapsed toggle-costume" data-toggle="collapse" data-target="#upmenu" aria-expanded="false">
@@ -43,56 +69,112 @@
                 </div>
             </div>
            </nav>
-
-
-    <div class="allcontain">
+     <div class="allcontain">
+          
                  <div class="header" style="background-color: black">
                 <ul class="socialicon">
                     <li><a href="#"><i class="fa fa-facebook"></i></a></li>
                     <li><a href="#"><i class="fa fa-twitter"></i></a></li>
                     <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
                     <li>
-                        <a></a><a></a><a></a><a></a><a></a><a></a><a></a><a></a><a></a><a></a><a></a><a></a><a></a><a></a><a></a><a></a><a></a><a></a><a></a><a></a><a></a><a></a><a></a><a></a><a></a><a></a><a></a><a></a><a></a><a></a><a></a><a></a><a></a><a></a><a></a><a></a><a></a><a></a><a></a><a></a><a></a><a></a>
+                        </li>
+                    <li>
+                      <a></a><a></a><a></a><a></a><a></a><a></a><a></a><a></a><a></a><a></a><a></a><a></a><a></a><a></a><a></a><a></a><a></a><a></a><a></a><a></a><a></a><a></a><a></a><a></a><a></a><a></a><a></a><a></a><a></a><a></a><a></a><a></a><a></a><a></a><a></a><a></a><a></a><a></a><a></a><a></a><a></a><a></a><a></a><a></a><a></a><a></a><a></a><a></a><a></a><a></a><a></a><a></a><a></a><a></a><a></a><a></a><a></a><a></a><a></a>
                     </li>
+                   <li>
 
-                    <li>
-                        <a>|</a>
-                    </li>
-                    <li>
-                        <a data-toggle="modal" href="#modalSesion" id="modal-nav" style="text-decoration: none; width: 150px; color: #FFFFFF;">INICIAR SESIÓN <span class="glyphicon glyphicon-check"></span></a>
-                    </li>
-                    <li>
-                        <a>|</a>
-                    </li>
-                    <li>
-                        <a data-toggle="modal" href="#modalSesion2" id="modal-nav2" style="text-decoration: none; width: 180px; color: #FFFFFF;">REGISTRARSE <span class="glyphicon glyphicon-eye-open"></span></a>
-                    </li>
-                    <li>
-                        <a>|</a>
-                    </li>
-                    <li>
-                        <a data-toggle="modal" href="#modalSesion3" id="EditarPerfil" style="text-decoration: none; color: #FFFFFF;">CONFIGURACIÓN<span class="glyphicon glyphicon-user"></span></a>
-                    </li>
-                    <li>
-                        <a>|</a>
-                    </li>
-                    <li>
-                        <a data-toggle="modal" href="#modalSesion4" id="Gestionar" style="text-decoration: none; color: #FFFFFF;">GESTIONAR <span class="glyphicon glyphicon-briefcase"></span></a>
+                      
+                            <asp:ScriptManager ID="ScriptManager1" runat="server">
+                            </asp:ScriptManager>
 
-                    </li>
-                    <li>
-                        <a>|</a>
-                    </li>
-                    <li>
-                        <a href="#" style="text-decoration: none; color: #FFFFFF;">CARRITO<span class="glyphicon glyphicon-shopping-cart"></span></a>
-                    </li>
-                </ul>
+                            <!--MODAL INICIO SESION-->
 
-            </div>
-        </div>
+                            <asp:Button ID="btnShow" runat="server" Text="INICIAR SESION" />
 
-     
-  
+                            <!-- ModalPopupExtender -->
+                            <cc1:ModalPopupExtender ID="mp1" runat="server" PopupControlID="Panel1" TargetControlID="btnShow"
+                                CancelControlID="btnClose" BackgroundCssClass="modalBackground">
+                            </cc1:ModalPopupExtender>
+                            <asp:Panel ID="Panel1" runat="server" CssClass="modalPopup" align="center" Style="display: none">
+
+                                <asp:TextBox ID="TxtNombre" runat="server" CssClass="form-control"></asp:TextBox><br />
+                                <asp:TextBox ID="TxtContraseña" runat="server" CssClass="form-control"></asp:TextBox><br />
+
+                                <asp:Button ID="BtnIniciarSesion" runat="server" Text="Button" CssClass="btn btn-lg btn-primary btn-block btn-signin" OnClick="BtnIniciarSesion_Click" /><br />
+                                <asp:Button ID="btnClose" runat="server" Text="Cerrar" />
+                            </asp:Panel>
+                            <!-- ModalPopupExtender -->
+                          
+
+                            <!--MODAL REGISTRO-->
+                           
+                            <asp:Button ID="BtnRegistrarse" runat="server" Text="REGISTRARSE" />
+
+                            <cc1:ModalPopupExtender ID="ModalPopupExtender1" runat="server" PopupControlID="Panel2" TargetControlID="BtnRegistrarse"
+                                CancelControlID="btnClose" BackgroundCssClass="modalBackground">
+                            </cc1:ModalPopupExtender>
+                            <asp:Panel ID="Panel2" runat="server" CssClass="modalPopup" align="center" Style="display: none">
+                                <asp:TextBox ID="InputUsuario" runat="server" placeholder="Usuario" CssClass="form-control"></asp:TextBox>
+                                <br />
+                                <asp:TextBox ID="InputNombre" runat="server" placeholder="Nombre" CssClass="form-control"></asp:TextBox>
+                                <br />
+                                <asp:TextBox ID="InputApellido" runat="server" placeholder="Apellido" CssClass="form-control"></asp:TextBox>
+                                <br />
+                                <asp:TextBox ID="InputDireccion" runat="server" placeholder="Dirección" CssClass="form-control"></asp:TextBox>
+                                <br />
+                                <asp:TextBox ID="InputTelefono" runat="server" placeholder="Teléfono" CssClass="form-control"></asp:TextBox><br />
+                                <asp:TextBox ID="InputCorreoE" runat="server" placeholder="Correo Electrónico" CssClass="form-control" TextMode="Email"></asp:TextBox>
+                                <br />
+                                <asp:TextBox ID="InputContraseña" runat="server" placeholder="Contraseña" CssClass="form-control" TextMode="Password"></asp:TextBox>
+                                <br />
+
+                                <asp:Button ID="botonRegistrarse" runat="server" Text="Registrarse" CssClass="btn btn-lg btn-primary btn-block btn-signin" OnClick="botonRegistrarse_Click" />
+                            </asp:Panel>
+
+                   <!--MODAL GESTIONAR-->
+                            <asp:Button ID="BtnGestionar" runat="server" Text="GESTIONAR" />
+
+                            <!-- ModalPopupExtender -->
+                            <cc1:ModalPopupExtender ID="ModalPopupExtender2" runat="server" PopupControlID="Panel3" TargetControlID="BtnGestionar"
+                                CancelControlID="btnClose" BackgroundCssClass="modalBackground">
+                            </cc1:ModalPopupExtender>
+                            <asp:Panel ID="Panel3" runat="server" CssClass="modalPopup" align="center" Style="display: none">
+
+                            <asp:Button ID="BtnGestionarUsuarios" runat="server" Text="Gestionar Usduarios" CssClass="btn btn-lg btn-primary btn-block btn-signin" OnClick="BtnGestionarProductos_Click" /><br />
+                            <asp:Button ID="BtnGestionarProductos" runat="server" Text="Gestionar Productos" CssClass="btn btn-lg btn-primary btn-block btn-signin" OnClick="BtnGestionarProductos_Click1"/><br />
+                            <asp:Button ID="BtnGestionarFabricantes" runat="server" Text="Gestionar Fabricantes" CssClass="btn btn-lg btn-primary btn-block btn-signin" OnClick="BtnGestionarFabricantes_Click" /> <br />
+                            <asp:Button ID="BtnGestionarCategorias" runat="server" Text="Gestionar Categorias" CssClass="btn btn-lg btn-primary btn-block btn-signin" OnClick="BtnGestionarCategorias_Click" /><br />
+                            <asp:Button ID="BtnGestionarModelos" runat="server" Text="Gestionar Modelos" CssClass="btn btn-lg btn-primary btn-block btn-signin" OnClick="BtnGestionarModelos_Click" /><br />
+                            <asp:Button ID="btnGestionarMarcas" runat="server" Text="Gestionar Marcas" CssClass="btn btn-lg btn-primary btn-block btn-signin" OnClick="btnGestionarMarcas_Click" /><br />
+
+                                <asp:Button ID="Button3" runat="server" Text="Cerrar" />
+                            </asp:Panel>
+
+                            <!--MODAL CONFIGURACION PERFIL-->
+                              
+                              <asp:Button ID="BtnConfigurarPerfil" runat="server" Text="CONFIGURAR PERFIL" />
+
+                            <!-- ModalPopupExtender -->
+                            <cc1:ModalPopupExtender ID="ModalPopupExtender4" runat="server" PopupControlID="Panel4" TargetControlID="BtnConfigurarPerfil"
+                                CancelControlID="btnClose" BackgroundCssClass="modalBackground">
+                            </cc1:ModalPopupExtender>
+                            <asp:Panel ID="Panel4" runat="server" CssClass="modalPopup" align="center" Style="display: none">
+
+                              <asp:Button ID="BtnEditarPerfil" runat="server" Text="Editar Perfil" CssClass="btn btn-lg btn-primary btn-block btn-signin" OnClick="BtnEditarPerfil_Click" /><br />
+                              <asp:Button ID="BtnVerOrden" runat="server" Text="Ver Orden" CssClass="btn btn-lg btn-primary btn-block btn-signin" OnClick="BtnVerOrden_Click" /><br />
+
+                                <asp:Button ID="Button2" runat="server" Text="Cerrar" />
+                            </asp:Panel>
+
+
+
+                       </li>
+                    </ul>
+                     </div>
+         </div>
+
+
+
     <script type="text/javascript" src="source/bootstrap-3.3.6-dist/js/jquery.js"></script>
     <script type="text/javascript" src="source/js/isotope.js"></script>
     <script type="text/javascript" src="source/js/myscript.js"></script>
@@ -101,126 +183,14 @@
     <script type="text/javascript" src="source/bootstrap-3.3.6-dist/js/login.js"></script>
 
 
-  <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+
+
+    <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+     
+    </asp:ContentPlaceHolder>
+
+
              
-
-        <!--MODAL GESTIONAR -->
-         
-        <div class="modal fade" role="dialog" id="modalSesion4" >
-                    <div class="modal-dialog modal-ms" >
-                        <div class="modal-content" style="background-color:aliceblue">
-                            <div class="modal-header" style="background-color: #4d90fe">
-                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true" style="font: whit;">X</span></button>
-                                <h4 class="modal-title" style="background-color: #4d90fe; color: white;" id="myModalGestionar">Gestionar</h4>
-                            </div>
-                            <div class="modal-body">               
-                               
-                                <div class="card card-container" style="background-color: white"> 
-                                     <!-- <img class="profile-img-card" src="//lh3.googleusercontent.com/-6V8xOA6M7BA/AAAAAAAAAAI/AAAAAAAAAAA/rzlHcD0KYwo/photo.jpg?sz=120" alt="" /> -->
-                                     <img id="profile-img4" class="profile-img-card" src="//ssl.gstatic.com/accounts/ui/avatar_2x.png" />
-                                      <p id="profile-name4" class="profile-name-card"></p>                 
-                                      <a href="GestionarUsuarios.aspx" class="btn btn-lg btn-primary btn-block btn-signin"  style="width:90%; border-bottom:1px solid #03214c; background-color:#4d90fe";  type="button">Gestionar  Usuarios</a>
-                                      <a href="GestionarProductos.aspx" class="btn btn-lg btn-primary btn-block btn-signin"  style="width:90%; border-bottom:1px solid #03214c; background-color:#4d90fe";  type="button">Gestionar  Productos</a>
-                                      <a href="GestionarFabricantes.aspx" class="btn btn-lg btn-primary btn-block btn-signin"  style="width:90%; border-bottom:1px solid #03214c; background-color:#4d90fe";  type="button">Gestionar  Fabricantes</a>
-                                      <a href="GestionarCategorias.aspx" class="btn btn-lg btn-primary btn-block btn-signin"  style="width:90%; border-bottom:1px solid #03214c; background-color:#4d90fe";  type="button">Gestionar  Categorias</a>
-                                      <a href="GestionarModelos.aspx" class="btn btn-lg btn-primary btn-block btn-signin"  style="width:90%; border-bottom:1px solid #03214c; background-color:#4d90fe";  type="button">Gestionar  Modelos</a>
-                                      <a href="GestionarMarcas.aspx" class="btn btn-lg btn-primary btn-block btn-signin"  style="width:90%; border-bottom:1px solid #03214c; background-color:#4d90fe";  type="button">Gestionar  Marcas</a>
-
-              
-           
-                                </div><!-- /card-container -->
-                            </div><!-- /container -->
-                        </div>                           
-                    </div>
-             </div>
-
-        <!-- MODAL CONFIGURACIÓN PERFIL-->
-
-           <div class="modal fade" role="dialog" id="modalSesion3" >
-                    <div class="modal-dialog modal-ms" >
-                        <div class="modal-content" style="background-color: aliceblue">
-                            <div class="modal-header" style="background-color: #4d90fe ">
-                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true" style="font:White;">X</span></button>
-                                <h4 class="modal-title" style="background-color:#4d90fe; color:white;" id="myModalEditarPerfil">Editar Perfil</h4>
-                            </div>
-                            
-                            
-                                    <div class="modal-body">                   
-                                        <div class="card card-container" style="background-color:#FFFFFF">
-                                            <!-- <img class="profile-img-card" src="//lh3.googleusercontent.com/-6V8xOA6M7BA/AAAAAAAAAAI/AAAAAAAAAAA/rzlHcD0KYwo/photo.jpg?sz=120" alt="" /> -->
-                                            <img id="profile-img3" class="profile-img-card" src="//ssl.gstatic.com/accounts/ui/avatar_2x.png" />
-                                            <p id="profile-name3" class="profile-name-card"></p>
-                                            <span id="reauth-email3" class="reauth-email"></span>
-                                            <a href="EditarPerfil.aspx" class="btn btn-lg btn-primary btn-block btn-signin"  style="width:90%; border-bottom:1px solid #03214c; background-color:#4d90fe";  type="button">VER PERFIL</a>
-                                            <a href="VerOrden.aspx" class="btn btn-lg btn-primary btn-block btn-signin"  style="width:90%; border-bottom:1px solid #03214c; background-color:#4d90fe";  type="button">VER ORDENES</a>
-
-           
-                                        </div><!-- /card-container -->
-                                    </div><!-- /container -->
-                        </div>                            
-                      </div>
-               </div>
-
-
-                <!-- Modal INICIO SESIÓN-->
-                <div class="modal fade" role="dialog" id="modalSesion" >
-                    <div class="modal-dialog modal-ms" >
-                        <div class="modal-content" style="background-color:aliceblue">
-                            <div class="modal-header" style="background-color: #4d90fe ">
-                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">X</span></button>
-                                <h4 class="modal-title" style="background-color:#4d90fe; color:white;" id="myModalLabel">Iniciar Sesión</h4>
-                            </div>
-
-                                <div class="modal-body">               
-                                      <div class="card card-container" style="background-color:white">
-                                        <!-- <img class="profile-img-card" src="//lh3.googleusercontent.com/-6V8xOA6M7BA/AAAAAAAAAAI/AAAAAAAAAAA/rzlHcD0KYwo/photo.jpg?sz=120" alt="" /> -->
-                                        <img id="profile-img" class="profile-img-card" src="//ssl.gstatic.com/accounts/ui/avatar_2x.png" />
-                                        <p id="profile-name" class="profile-name-card"></p>
-                                        <span id="reauth-email" class="reauth-email"></span>
-                                        <input type="text"  style="width:90%;" " id="NombreUser" class="form-control"  placeholder="Nombre Usuario" required autofocus><br />
-                                        <input type="password"  style="width:90%;"  id="inputPassword" class="form-control"  placeholder="Contraseña" required><br />
-              
-                                        <button class="btn btn-lg btn-primary btn-block btn-signin" style="width:90%; border-bottom:1px solid #03214c; background-color:#4d90fe";  type="submit">Ingresar</button>
-                                        <a href="#"  class="forgot-password" style="color:#4d90fe " >¿Olvido la contraseña?</a>
-                                      </div><!-- /card-container -->
-                                </div><!-- /container -->
-                        </div>   <!--DIV MODAL CONTAINER -->                         
-                      </div>
-                 </div>
-               
-
-    <!-- Modal REGISTRO-->
-                <div class="modal fade" role="dialog" id="modalSesion2">
-                    <div class="modal-dialog modal-ms" >
-                        <div class="modal-content" style="background-color: aliceblue">
-                            <div class="modal-header" style="background-color: #4d90fe">
-                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">X</span></button>
-                                <h4 class="modal-title" style="background-color:#4d90fe; color:white;" id="myModalLabe2">Registrarse</h4>
-                            </div>
-                            <div class="modal-body">   
-
-                                    <div class="card card-container" style="background-color:white">
-                                        <!-- <img class="profile-img-card" src="//lh3.googleusercontent.com/-6V8xOA6M7BA/AAAAAAAAAAI/AAAAAAAAAAA/rzlHcD0KYwo/photo.jpg?sz=120" alt="" /> -->
-                                        <img id="profile-img2" class="profile-img-card" src="//ssl.gstatic.com/accounts/ui/avatar_2x.png" />
-                                        <p id="profile-name2" class="profile-name-card"></p>
-            
-                                        <span id="reauth-email2" class="reauth-email"></span>
-                                        <asp:TextBox ID="InputUsuario" runat="server" placeholder="Usuario" CssClass="form-control"></asp:TextBox>    <br /> 
-                                        <asp:TextBox ID="InputNombre" runat="server" placeholder="Nombre" CssClass="form-control"></asp:TextBox>    <br /> 
-                                        <asp:TextBox ID="InputApellido" runat="server" placeholder="Apellido" CssClass="form-control"></asp:TextBox>     <br /> 
-                                        <asp:TextBox ID="InputDireccion" runat="server" placeholder="Dirección" CssClass="form-control"></asp:TextBox>     <br />          
-                                        <asp:TextBox ID="InputTelefono" runat="server" placeholder="Teléfono" CssClass="form-control"></asp:TextBox><br />
-                                        <asp:TextBox ID="InputCorreoE" runat="server" placeholder="Correo Electrónico" CssClass="form-control" TextMode="Email"></asp:TextBox> <br />
-                                        <asp:TextBox ID="InputContraseña" runat="server" placeholder="Contraseña" CssClass="form-control" TextMode="Password"></asp:TextBox> <br />
-                 
-                                        <asp:Button ID="botonRegistrarse" runat="server" Text="Registrarse" CssClass="btn btn-lg btn-primary btn-block btn-signin" OnClick="botonRegistrarse_Click"/>
-                  
-                                    </div>
-
-                            </div>
-                        </div>  
-                        </div>
-                    </div>
-         </asp:ContentPlaceHolder>
+             </form> 
 </body>
 </html>

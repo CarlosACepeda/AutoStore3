@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using Proyecto1.Logica;
 
 namespace Proyecto1
 {
@@ -13,5 +14,6 @@ namespace Proyecto1
         {
 
         }
+
     }
 }

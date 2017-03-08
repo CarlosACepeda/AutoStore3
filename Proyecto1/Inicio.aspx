@@ -1,11 +1,13 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Inicio.aspx.cs" Inherits="Proyecto1.Inicio" %>
 
+
+
+
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-
-
-
+  
+                        
     <div class="collapse navbar-collapse" id="upmenu" style="background-color:#e9eef1">
         <ul class="nav navbar-nav" id="navbarontop" style="background-color:#e9eef1">
             <li><a href="Inicio.aspx">INICIO</a> </li>
@@ -43,4 +45,5 @@
             </div>
         </div>
     </div>
+<%--  --%>
 </asp:Content>

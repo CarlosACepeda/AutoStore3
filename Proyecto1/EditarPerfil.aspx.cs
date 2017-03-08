@@ -11,7 +11,6 @@ namespace Proyecto1
 {
     public partial class EditarPerfil : System.Web.UI.Page
     {
-        Guid idUser;
         protected void Page_Load(object sender, EventArgs e)
         {
 
@@ -29,6 +28,8 @@ namespace Proyecto1
             UsuarioBLL list = new UsuarioBLL();
             gvPerfil.DataSource = list.MostrarInformacion(Guid.Parse("91fb22da-d1fa-40e9-8b2f-00223d40e8e7"));
             gvPerfil.DataBind();
+
         }
+        
     }
 }

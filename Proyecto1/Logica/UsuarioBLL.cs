@@ -174,12 +174,22 @@ namespace Proyecto1.Logica
                 var mostrarInfo = from usr in context.Usuario
                                   where usr.NombreUsuario == nombre && usr.Contrasena== clave
                                   select usr;
-                return true;
+
+
+                if (mostrarInfo.Count()==0)
+                {
+                    return false;
+                }
+
+                else
+                {
+                    return true;
+                }
             }
             catch (Exception)
             {
 
-                return false;
+                throw;
             }
         }
 

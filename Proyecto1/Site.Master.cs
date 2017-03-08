@@ -77,6 +77,19 @@ namespace Proyecto1
         {
             Context.GetOwinContext().Authentication.SignOut(DefaultAuthenticationTypes.ApplicationCookie);
         }
+
+        protected void BtnIniciarSesion_Click(object sender, EventArgs e)
+        {
+            UsuarioBLL Login = new UsuarioBLL();
+            if (Login.Autenticar(TxtNombre.Text, TxtContraseña.Text) == true)
+            {
+                Response.Redirect("http://www-google.com");
+            }
+            else
+            {
+                Response.Redirect("http://www.wikipedia.org");
+            }
+        }
         public void botonRegistrarse_Click(object sender, EventArgs e)
         {
             Guid nuevo_id = Guid.NewGuid();
@@ -95,12 +108,56 @@ namespace Proyecto1
                 InputNombre.Text,
                 InputApellido.Text,
                 InputDireccion.Text,
-                Int64.Parse(InputTelefono.Text),
+            Int64.Parse(InputTelefono.Text),
                 InputCorreoE.Text
                 );
 
         }
 
-    }
+        protected void BtnGestionarProductos_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("GestionarProductos.aspx");
+        }
 
+        protected void BtnGestionarProductos_Click1(object sender, EventArgs e)
+        {
+            Response.Redirect("GestionarProductos.aspx");
+
+        }
+
+        protected void BtnGestionarFabricantes_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("GestionarFabricantes.aspx");
+
+        }
+
+        protected void BtnGestionarCategorias_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("GestionarCategorias.aspx");
+
+        }
+
+        protected void BtnGestionarModelos_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("GestionarModelos.aspx");
+
+        }
+
+        protected void btnGestionarMarcas_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("GestionarMarcas.aspx");
+
+        }
+        protected void BtnEditarPerfil_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("EditarPerfil.aspx");
+
+        }
+        protected void BtnVerOrden_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("VerOrden.aspx");
+
+        }
+    }
 }
+

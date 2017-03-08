@@ -12,7 +12,7 @@
             </li>
             <li>
                 <a href="Contactenos.aspx">CONTACTENOS</a>
-
+                <asp:FileUpload ID="FileUpload1" runat="server" />
             </li>
 
         </ul>
@@ -25,7 +25,7 @@
         <div class="collapse navbar-collapse" id="upmenu2" style="background-color: #ffffff">
         <ul class="nav navbar-nav" id="navbarontop2" style="background-color: #ffffff">
             <li>
-               <form id="form1" runat="server">
+               <
                   <div > 
                     <label  for="ex1">Usuario</label>  
                       <asp:TextBox ID="txtUsuario" runat="server" Style="width: 90%;" CssClass="form-control"></asp:TextBox>
@@ -64,7 +64,7 @@
                       <%--<asp:Button ID="bntVer" runat="server" Text="Button" Class="btn btn-lg btn-primary btn-block btn-signin"  style="width:90%;  border-bottom:1px solid #03214c; background-color:#4d90fe";  type="button" OnClick="EditarPerfil_Click">--%>
                  <%--<button class="btn btn-lg btn-primary btn-block btn-signin"  style="width:90%;  border-bottom:1px solid #03214c; background-color:#4d90fe";  type="button" </button>--%>
                       </div>
-                   </form>
+                  
             </li>    
         </ul>
                 </div>
