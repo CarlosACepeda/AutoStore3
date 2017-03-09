@@ -70,7 +70,6 @@ namespace Proyecto1
 
         protected void Page_Load(object sender, EventArgs e)
         {
-
         }
 
         protected void Unnamed_LoggingOut(object sender, LoginCancelEventArgs e)
@@ -83,11 +82,11 @@ namespace Proyecto1
             UsuarioBLL Login = new UsuarioBLL();
             if (Login.Autenticar(TxtNombre.Text, TxtContraseña.Text) == true)
             {
-                Response.Redirect("http://www-google.com");
+                Response.Redirect("Inicio.aspx");
             }
             else
             {
-                Response.Redirect("http://www.wikipedia.org");
+                Response.Write("Por favor, ingrese su usuario y contraseña");
             }
         }
         public void botonRegistrarse_Click(object sender, EventArgs e)
@@ -158,6 +157,19 @@ namespace Proyecto1
             Response.Redirect("VerOrden.aspx");
 
         }
+        protected void BtnGestionarUsuarios_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("GestionarUsuarios.aspx");
+        }
+
+
+
+        protected void BtnPublicarProducto_Click(object sender, EventArgs e)
+        {
+
+        }
+
+       
     }
 }
 
