@@ -82,7 +82,7 @@
             border-color: #337ab7;
             padding-top: 10px;
             padding-left: 10px;
-            width: 200px;
+            width: 300px;
             height: 175px;
         }
     </style>
@@ -263,9 +263,9 @@
 
                                   <asp:Panel ID="Panel4" runat="server" CssClass="modalPopupPerfil" align="center" Style="display: none">
 
-                                      <asp:Button ID="BtnEliminarProducto" runat="server" Text="Editar Perfil" CssClass="btn btn-lg btn-primary btn-block btn-signin" Width="62%" OnClick="BtnEditarPerfil_Click" /><br />
-                                      <asp:Button ID="BtnEditarPerfil" runat="server" Text="Editar Perfil" CssClass="btn btn-lg btn-primary btn-block btn-signin" Width="62%" OnClick="BtnEditarPerfil_Click" /><br />
-                                      <asp:Button ID="BtnVerOrden" runat="server" Text="Ver Orden" CssClass="btn btn-lg btn-primary btn-block btn-signin" Width="62%" OnClick="BtnVerOrden_Click" /><br />
+                                      <asp:Button ID="BtnEliminarProducto" runat="server" Text="Eliminar Producto" CssClass="btn btn-lg btn-primary btn-block btn-signin" Width="69%" OnClick="BtnEliminarProducto_Click" /><br />
+                                      <asp:Button ID="BtnEditarPerfil" runat="server" Text="Editar Perfil" CssClass="btn btn-lg btn-primary btn-block btn-signin" Width="69%" OnClick="BtnEditarPerfil_Click" /><br />
+                                      <asp:Button ID="BtnVerOrden" runat="server" Text="Ver Orden" CssClass="btn btn-lg btn-primary btn-block btn-signin" Width="69%" OnClick="BtnVerOrden_Click" /><br />
 
                                       <asp:Button ID="Button3" runat="server" CssClass="btn btn-lg btn-primary btn-block btn-signin" Width="62%" Text="Cerrar" />
                                   </asp:Panel>

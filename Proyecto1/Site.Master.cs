@@ -161,9 +161,11 @@ namespace Proyecto1
         {
             Response.Redirect("GestionarUsuarios.aspx");
         }
-
-
-
+        protected void BtnEliminarProducto_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("EliminarProducto.aspx");
+        }
+        
         protected void BtnPublicarProducto_Click(object sender, EventArgs e)
         {
 

@@ -12,15 +12,12 @@ namespace Proyecto1
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-                
+            LlenarUser();
         }
 
         protected void btnVerUser_Click(object sender, EventArgs e)
         {
-            gvUser.Visible = true;
-            UsuarioBLL user = new UsuarioBLL();
-            gvUser.DataSource = user.ListarUsuarios();
-            gvUser.DataBind();
+            
             //gvUser.Rows[0].Cells[4].Enabled = true;
         }
 
@@ -33,6 +30,13 @@ namespace Proyecto1
         protected void gvUser_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+        public void LlenarUser()
+         {
+            gvUser.Visible = true;
+            UsuarioBLL user = new UsuarioBLL();
+            gvUser.DataSource = user.ListarUsuarios();
+            gvUser.DataBind();
         }
     }
 }
