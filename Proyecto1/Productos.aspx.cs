@@ -4,6 +4,8 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using Proyecto1.Logica;
+using Proyecto1.Models;
 
 namespace Proyecto1
 {
@@ -12,6 +14,11 @@ namespace Proyecto1
         protected void Page_Load(object sender, EventArgs e)
         {
 
+        }
+        public List<Models.Producto> ObtenerProductos()
+        {
+            ProductoBLL producto = new ProductoBLL();
+            return producto.ObtenerProducto();
         }
     }
 }

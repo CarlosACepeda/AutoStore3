@@ -20,9 +20,6 @@ namespace Proyecto1.Models
 
         //Zona de Relaciones
 
-        //Relación con categorias
-        public ICollection<Categoria> Categorias { get; set; }
-
         //Relación con Fabricante de Carros.
 
         public int FabricanteCarroID { get; set; }

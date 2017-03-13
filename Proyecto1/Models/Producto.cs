@@ -47,20 +47,6 @@ namespace Proyecto1.Models
 
         public virtual MarcaProducto MarcaProducto { get; set; }
 
-        //Relacion con categoría
-        public int CategoriaID { get; set; }
-
-        public virtual Categoria Categoria { get; set; }
-
-        // Relacion con ModeloCarro
-
-        public int ModelodeCarroID { get; set; }
-
-        public virtual ModeloCarro ModeloCarro { get; set; }
-
-
-
-
 
     }
 }

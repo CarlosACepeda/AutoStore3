@@ -13,6 +13,7 @@ namespace Proyecto1
 {
     public partial class SiteMaster : MasterPage
     {
+        
         private const string AntiXsrfTokenKey = "__AntiXsrfToken";
         private const string AntiXsrfUserNameKey = "__AntiXsrfUserName";
         private string _antiXsrfTokenValue;
@@ -83,7 +84,7 @@ namespace Proyecto1
             UsuarioBLL Login = new UsuarioBLL();
             if (Login.Autenticar(TxtNombre.Text, TxtContraseña.Text) == true)
             {
-                Response.Redirect("http://www-google.com");
+                Session["UserLogin"] = TxtNombre.Text;
             }
             else
             {

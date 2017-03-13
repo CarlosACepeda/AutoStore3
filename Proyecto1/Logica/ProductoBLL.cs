@@ -19,7 +19,7 @@ namespace Proyecto1.Logica
         /// <param name="idCategoria">Parametro que captura el id de la categoria a la que pertenece el producto</param>
         /// <param name="activo">Parametro que captura el estado del producto</param>
         /// <returns>Retorna un valor booleano segun la ejecucion del metodo</returns>
-        public bool AgregarProducto(string nombreP, string descripcion, int precioU, int marcaProducto, Guid idUsuario, int idCategoria, bool activo = true)
+        public bool AgregarProducto(string nombreP, string descripcion, int precioU, int marcaProducto, Guid idUsuario, bool activo = true)
         {
 
             try
@@ -31,7 +31,6 @@ namespace Proyecto1.Logica
                     PrecioU = precioU,
                     MarcaProductoID = marcaProducto,
                     UsuarioID = idUsuario,
-                    CategoriaID = idCategoria,
                 };
                 AutoStoreContext contexto = new AutoStoreContext();
                 contexto.Producto.Add(producto);
@@ -68,9 +67,7 @@ namespace Proyecto1.Logica
                 prod.Descripcion = p.Descripcion;
                 prod.ImagenesProductos = p.ImagenesProductos;
                 prod.PrecioU = p.PrecioU;
-                prod.CategoriaID = p.CategoriaID;
                 prod.MarcaProductoID = p.MarcaProductoID;
-                prod.ModelodeCarroID = p.ModelodeCarroID;
                 prod.UsuarioID = p.UsuarioID;
             }
 

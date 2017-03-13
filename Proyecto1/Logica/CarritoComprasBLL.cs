@@ -9,7 +9,8 @@ namespace Proyecto1.Logica
     public class CarritoComprasBLL
     {
 
-        public const string sessionCarro = "SessionCarro";
+        public const string sessionCarro = "sessionCarro";
+        
         public string CarritoId { get; set; }
         AutoStoreContext context = new AutoStoreContext();
 
@@ -18,16 +19,16 @@ namespace Proyecto1.Logica
         /// </summary>
         /// <param name="NombreUsuario">Parametro para asignar el carro a un usuario especifico </param>
         /// <param name="idProducto"> Parametro que proporcionara que producto esta en el carro</param>
-        public void AnadirAlCarro(string NombreUsuario, int idProducto)
+        public void AnadirAlCarro(int idProducto)
         {
             CarritoId = ObtenerItemId();
-            var obtenerItem = context.ItemCarrito.SingleOrDefault(c => c.NombreUsuario == NombreUsuario && c.ProductoID == idProducto);
+            var obtenerItem = context.ItemCarrito.SingleOrDefault(c => c.NombreUsuario == CarritoId && c.ProductoID == idProducto);
             if (obtenerItem == null)
             {
                 ItemCarrito Icarrito = new ItemCarrito
                 {
                     ItemCarritoID = Guid.NewGuid().ToString(),
-                    NombreUsuario = NombreUsuario,
+                    NombreUsuario = CarritoId,
                     Producto = context.Producto.SingleOrDefault(p => p.ProductoID == idProducto),
                     Cantidad = 1
 
@@ -45,6 +46,8 @@ namespace Proyecto1.Logica
         /// <returns></returns>
         public string ObtenerItemId()
         {
+            HttpContext.Current.Session[sessionCarro] = HttpContext.Current.Session["UserLogin"];
+
             if (HttpContext.Current.Session[sessionCarro] == null)
             {
                 string nombreUser = null;
@@ -70,7 +73,13 @@ namespace Proyecto1.Logica
         {
             AutoStoreContext contexto = new AutoStoreContext();
             CarritoId = ObtenerItemId();
-            return contexto.ItemCarrito.Where(c => c.ItemCarritoID == CarritoId).ToList();
+
+            var regresarItems = from itm in context.ItemCarrito
+                                where itm.NombreUsuario == CarritoId
+                                select itm;
+            return regresarItems.ToList();
+
+
         }
         public void RemoverItem(string RemoverCarrito, int idItem)
         {
@@ -174,6 +183,22 @@ namespace Proyecto1.Logica
                                where item.ItemCarritoID == CarritoId
                                select (int?)item.Cantidad * item.Producto.PrecioU).Sum();
             return total ?? decimal.Zero;
+        }
+        public void Dispose()
+        {
+            if (context != null)
+            {
+                context.Dispose();
+                context = null;
+            }
+        }
+
+        public CarritoComprasBLL ObtenerCar (HttpContext contexto)
+        {
+            CarritoComprasBLL car = new CarritoComprasBLL();
+                 car.CarritoId = car.ObtenerItemId();
+                return car;
+            
         }
     } 
 }

@@ -18,16 +18,14 @@ namespace Proyecto1
 
         protected void Button1_Click(object sender, EventArgs e)
         {
-            FabricanteCarroBLL lista = new FabricanteCarroBLL();
-
-            lista.ObtenerFabricante();
-
-
-            //modelo.AgregarModeloCarro(
-            //    TextBox1.Text,
-            //    TextBox2.Text,
-
-            //);
+            CategoriaBLL cat = new CategoriaBLL();
+            ModeloCarroBLL modelo = new ModeloCarroBLL();
+            FabricanteCarroBLL fabC = new FabricanteCarroBLL();
+            cat.ObtenerCategoria();
+            modelo.AgregarModeloCarro(
+                int.Parse(TextBox1.Text),
+                TextBox2.Text
+            );
         }
 
         public void CargarModelos()

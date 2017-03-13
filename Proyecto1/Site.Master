@@ -1,5 +1,31 @@
 ﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="Proyecto1.SiteMaster" %>
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="cc1" %>
+<%--<%@ Import Namespace="mercadopago"%>
+<%@ Import Namespace="System.Collections"%>
+<%@ Import Namespace="System.Collections.Generic"%>--%>
+
+<%--<%
+    MP mp = new MP("1193978298747564", "I493qbjwjbyH0CKeNRk1HMCCnEMKQw6f");
+
+    Hashtable preference = mp.createPreference("{\"items\":[{\"title\":\"sdk-dotnet\",\"quantity\":1,\"currency_id\":\"COP\",\"unit_price\":10.5}]}");
+
+    Response.Write(preference);
+
+    Dictionary<String, String> filters = new Dictionary<string, string>();
+    filters.Add("site_id", "MCO");
+    filters.Add("external_reference", "orden001");
+
+    Hashtable searchResult = mp.searchPayment (filters);
+
+    foreach (Hashtable payment in searchResult.SelectToken("response.results")) {
+    Response.Write(payment["collection"]["id"]);
+    Response.Write(payment["collection"]["status"]);
+}
+
+%>--%>
+
+
+
 <!doctype html>
 <html>
 <head runat="server">
@@ -53,9 +79,9 @@
 
 </head>
 
-<body>
-    <form id="form1" runat="server">
-    <nav class="topnavbar navbar-default topnav" style="background-color:#E5E6E9">
+<body style="background-color:white;">
+    <form id="form1" runat="server" style="background-color:white;">
+    <nav class="topnavbar navbar-default topnav" style="background-color:#FFFFFF">
             <div class="container">
                 <div class="navbar-header">
                     <button type="button" class="navbar-toggle collapsed toggle-costume" data-toggle="collapse" data-target="#upmenu" aria-expanded="false">
