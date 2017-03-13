@@ -189,7 +189,7 @@
                     <li>
                         |
                     </li>
-
+                    
                             <!--MODAL REGISTRO-->
                            <li>
                             <asp:Button ID="BtnRegistrarse" runat="server" Text="REGISTRARSE" />
