@@ -3,7 +3,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-
+    
     <div class="collapse navbar-collapse" id="upmenu" style="background-color:#e9eef1">
         <ul class="nav navbar-nav" id="navbarontop" style="background-color:#e9eef1">
             <li><a href="Inicio.aspx">INICIO</a> </li>
@@ -27,14 +27,23 @@
             <br />
             <br />
 &nbsp;<div class="form-group">
-                <asp:GridView ID="gvUser" runat="server">
+    <div class="collapse navbar-collapse" id="upmenu2" style="background-color:#e9eef1">
+        <ul class="nav navbar-nav" id="navbarontop3" style="background-color:#e9eef1">
+            <li>
+            <asp:GridView ID="gvUser" runat="server">
                 </asp:GridView>
 
                 <br />
                 <asp:TextBox ID="TextBox1" runat="server" Width="231px"></asp:TextBox>
-
+</li>
+            </ul>
       </div>
             <br />
             <asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="Cambiar Estado" />
             <br />
+   
+    </div>
+               
+
+
 </asp:Content>

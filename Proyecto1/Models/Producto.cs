@@ -18,6 +18,7 @@ namespace Proyecto1.Models
         [Required, StringLength(200, ErrorMessage ="El producto debe ser de menos de 200 caracteres"), Display(Name = "Nombre producto")]
         public string NombreProducto { get; set; }
 
+       
 
         [Required, StringLength(400, ErrorMessage ="La descripción debe ser de menos de 400 caracteres"), Display(Name = "Descripcion")DataType(DataType.MultilineText)]
         public string Descripcion { get; set; }
