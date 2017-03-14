@@ -88,7 +88,7 @@ namespace Proyecto1.Logica
                 try
                 {
                     var Item = (from c in context.ItemCarrito
-                                where c.ItemCarritoID == RemoverCarrito
+                                where c.NombreUsuario == RemoverCarrito
                                 && c.Producto.ProductoID == idItem
                                 select c).FirstOrDefault();
                     if (Item != null)
@@ -117,7 +117,7 @@ namespace Proyecto1.Logica
                 try
                 {
                     var Item = (from c in context.ItemCarrito
-                                where c.ItemCarritoID == actualizarCarritoId && c.Producto.ProductoID == actualizarProductoId
+                                where c.NombreUsuario == actualizarCarritoId && c.Producto.ProductoID == actualizarProductoId
                                 select c).FirstOrDefault();
                     if (Item != null)
                     {
@@ -180,7 +180,7 @@ namespace Proyecto1.Logica
             CarritoId = ObtenerItemId();
             decimal? total = decimal.Zero;
             total = (decimal?)(from item in context.ItemCarrito
-                               where item.ItemCarritoID == CarritoId
+                               where item.NombreUsuario == CarritoId
                                select (int?)item.Cantidad * item.Producto.PrecioU).Sum();
             return total ?? decimal.Zero;
         }
@@ -200,5 +200,45 @@ namespace Proyecto1.Logica
                 return car;
             
         }
-    } 
-}
+        public struct ActualizacionesCarrito
+        {
+            public int ProductoID;
+            public int CantidaddeCompra;
+            public bool QuitarItem;
+        }
+
+        public void ActualizarCarritoDB(String carroID, ActualizacionesCarrito[] CartItemUpdates)
+        {
+            AutoStoreContext contexto = new AutoStoreContext();
+                try
+                {
+                    int cuentadeItems = CartItemUpdates.Count();
+                    List<ItemCarrito> miCarrito = ObtenerItemCarrito();
+                    foreach (var cartItem in miCarrito)
+                    {
+                        for (int i = 0; i < cuentadeItems; i++)
+                        {
+                            if (cartItem.Producto.ProductoID == CartItemUpdates[i].ProductoID)
+                            {
+                                if (CartItemUpdates[i].CantidaddeCompra < 1 || CartItemUpdates[i].QuitarItem == true)
+                                {
+                                    RemoverItem(carroID, cartItem.ProductoID);
+                                }
+                                else
+                                {
+                                    ActualizarCarro(carroID, cartItem.ProductoID, CartItemUpdates[i].CantidaddeCompra);
+                                }
+                            }
+                        }
+                    }
+                }
+                catch (Exception exp)
+                {
+
+                    throw new Exception("Error: No se puede actualizar la base de datos del carrio - " + exp.Message.ToString(), exp);
+
+                }
+            }
+        }
+
+    }

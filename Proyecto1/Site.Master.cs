@@ -154,9 +154,21 @@ namespace Proyecto1
             Response.Redirect("EditarPerfil.aspx");
 
         }
+        public void BtnGestionarUsuarios_Click(object sender, EventArgs e)
+        {
+
+        }
         protected void BtnVerOrden_Click(object sender, EventArgs e)
         {
             Response.Redirect("VerOrden.aspx");
+
+        }
+        protected void BtnEliminarProducto_Click(object sender, EventArgs e)
+        {
+
+        }
+        protected void BtnPublicarProducto_Click(object sender, EventArgs e)
+        {
 
         }
     }
