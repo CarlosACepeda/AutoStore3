@@ -114,6 +114,10 @@ namespace Proyecto1
                 );
 
         }
+        protected void BtnGestionarUsuarios_Click(object sender, EventArgs e)
+        {
+
+        }
 
         protected void BtnGestionarProductos_Click(object sender, EventArgs e)
         {
@@ -159,6 +163,12 @@ namespace Proyecto1
             Response.Redirect("VerOrden.aspx");
 
         }
+        protected void BtnEliminarProducto_Click(object sender, EventArgs e)
+        {
+
+        }
+        protected void BtnPublicarProducto_Click(object sender, EventArgs e)
+        { }
     }
 }
 
