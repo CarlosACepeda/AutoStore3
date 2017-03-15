@@ -257,7 +257,8 @@
 
                    <!--MODAL GESTIONAR-->
                     <li>
-                            <asp:Button ID="BtnGestionar" runat="server" Text="GESTIONAR" />
+                        
+                         <asp:Button ID="BtnGestionar" runat="server" Text="GESTIONAR" />
 
                             <!-- ModalPopupExtender -->
                             <cc1:ModalPopupExtender ID="ModalPopupExtender2" runat="server" PopupControlID="Panel3" TargetControlID="BtnGestionar"
@@ -280,7 +281,7 @@
                     </li>
                             <!--MODAL CONFIGURACION PERFIL-->
                               <li>
-                                  <asp:Button ID="BtnConfigurarPerfil" runat="server" Text="CONFIGURAR PERFIL" />
+                                  <asp:Button ID="BtnConfigurarPerfil" runat="server" Text="CONFIGURAR PERFIL"  />
 
                                   <!-- ModalPopupExtender -->
                                   <cc1:ModalPopupExtender ID="ModalPopupExtender4" runat="server" PopupControlID="Panel4" TargetControlID="BtnConfigurarPerfil"
@@ -300,26 +301,9 @@
                     <li>
                         |
                     </li>
-                         <!--MODAL PUBLICAR PRODUCTO-->
+                         <!--BOTÓN SUBIR PRODUCTO-->
                               <li>
-                              <asp:Button ID="BtnPublicarProducto" runat="server" Text="PUBLICAR PRODUCTO" />
-
-                       <!-- ModalPopupExtender -->
-                       <cc1:ModalPopupExtender ID="ModalPopupExtender3" runat="server" PopupControlID="Panel5" TargetControlID="BtnPublicarProducto"
-                           CancelControlID="btnClose" BackgroundCssClass="modalPublicarProducto">
-                       </cc1:ModalPopupExtender>
-                       <asp:Panel ID="Panel5" runat="server" CssClass="modalPopupPublicarProducto" align="center" Style="display: none">
-
-                           <asp:Label ID="LblNombreProducto" runat="server" Text="Nombre del Producto"></asp:Label> <asp:TextBox ID="TtxNombreProducto" runat="server" CssClass="form-control" Width="62%" ></asp:TextBox><br />
-                           <asp:Label ID="LblDescripcion" runat="server" Text="Descripcion"></asp:Label>    <asp:TextBox ID="TxtDescripcion" runat="server" CssClass="form-control" Height="100" Width="62%" ></asp:TextBox><br />
-                           <asp:Label ID="LblPrecio" runat="server" Text="Precio"></asp:Label> <asp:TextBox ID="TxtPrecio" runat="server" CssClass="form-control" Width="62%" ></asp:TextBox><br />
-                            <asp:FileUpload ID="FileUpload1" runat="server" /> <br />     
-                            <asp:Button ID="BtnPublProducto" runat="server" Text="Publicar" CssClass="btn btn-lg btn-primary btn-block btn-signin" Width="62%" OnClick="BtnPublicarProducto_Click" /><br />
-                            <asp:Button ID="Button4" runat="server" CssClass="btn btn-lg btn-primary btn-block btn-signin"  Width="62%" Text="Cerrar" />
-                            </asp:Panel>
-
-
-
+                              <asp:Button ID="BtnSubirProducto" runat="server" Text="PUBLICAR PRODUCTO" OnClick="BtnSubirProducto_Click" />
                        </li>
                     </ul>
                      </div>
