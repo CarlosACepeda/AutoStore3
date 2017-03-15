@@ -46,7 +46,7 @@
                 </asp:TemplateField>
                 <asp:TemplateField>
                     <ItemTemplate>
-                    <asp:CheckBox ID="Remover" runat="server"></asp:CheckBox>
+                    <asp:CheckBox ID="Remover" runat="server" Text="Quitar Producto"></asp:CheckBox>
                     </ItemTemplate>
                 </asp:TemplateField>
             </Columns>
