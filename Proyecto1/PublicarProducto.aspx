@@ -20,12 +20,13 @@
                
     <asp:Label ID="LblNombreProducto" runat="server" Text="Nombre del Producto" ></asp:Label>
     <asp:TextBox ID="TtxNombreProducto" runat="server" CssClass="form-control" Width="62%"></asp:TextBox><br />
+                <asp:FileUpload ID="FileUpload1"  runat="server" /> <br />
     <asp:Label ID="LblDescripcion" runat="server" Text="Descripcion"></asp:Label>
     <textarea id="TxtDescripcion" Class="form-control" name="comentario" rows="5" cols="25" ></textarea>
     <asp:Label ID="LblPrecio" runat="server" Text="Precio"></asp:Label>
-    <asp:TextBox ID="TxtPrecio" runat="server" CssClass="form-control" Width="62%"></asp:TextBox><br />
+    <asp:TextBox ID="TxtPrecio" runat="server" Class="form-control"  Width="62%"></asp:TextBox><br />
 
-    <asp:Button ID="BtnSubirProducto" runat="server" Text="Publicar" CssClass="btn btn-lg btn-primary btn-block btn-signin" Width="62%" OnClick="BtnSubirProducto_Click"/>
+    <asp:Button ID="BtnSubirProducto" runat="server" Text="Publicar" CssClass="btn btn-lg btn-primary btn-block btn-signin" Width="62%" OnClick="BtnSubirProducto_Click"/><br />
                 </li>
             </ul>
         </div>
