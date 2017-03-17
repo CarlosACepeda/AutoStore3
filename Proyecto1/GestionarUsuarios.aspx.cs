@@ -12,8 +12,7 @@ namespace Proyecto1
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            LlenarUser();
-            SiteMaster.usuarioEstaLogueado = 1;
+           
         }
 
         protected void btnVerUser_Click(object sender, EventArgs e)
@@ -22,22 +21,9 @@ namespace Proyecto1
             //gvUser.Rows[0].Cells[4].Enabled = true;
         }
 
-        protected void Button1_Click(object sender, EventArgs e)
-        {
-            UsuarioBLL user = new UsuarioBLL();
-            user.CambiarEstadoUser(Guid.Parse(TextBox1.Text));
-        }
+       
 
-        protected void gvUser_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-        public void LlenarUser()
-         {
-            gvUser.Visible = true;
-            UsuarioBLL user = new UsuarioBLL();
-            gvUser.DataSource = user.ListarUsuarios();
-            gvUser.DataBind();
-        }
+        
+      
     }
 }

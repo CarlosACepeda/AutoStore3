@@ -12,15 +12,16 @@ namespace Proyecto1
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            SiteMaster.usuarioEstaLogueado = 1;
+            ProductoBLL producBLL = new ProductoBLL();
+            string id = Request.Params["ProductoID"];
+            int idNum = Convert.ToInt32(id);
+
+            producBLL.DesactivarProducto(idNum);
         }
 
         protected void btnVerP_Click(object sender, EventArgs e)
         {
-            gvProductos.Visible = true;
-            ProductoBLL producto = new ProductoBLL();
-            gvProductos.DataSource = producto.ObtenerProducto();
-            gvProductos.DataBind();
+           
         }
     }
 }

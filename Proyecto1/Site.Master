@@ -1,5 +1,30 @@
 ﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="Proyecto1.SiteMaster" %>
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="cc1" %>
+<%--<%@ Import Namespace="mercadopago"%>
+<%@ Import Namespace="System.Collections"%>
+<%@ Import Namespace="System.Collections.Generic"%>--%>
+
+<%--<%
+    MP mp = new MP("1193978298747564", "I493qbjwjbyH0CKeNRk1HMCCnEMKQw6f");
+
+    Hashtable preference = mp.createPreference("{\"items\":[{\"title\":\"sdk-dotnet\",\"quantity\":1,\"currency_id\":\"COP\",\"unit_price\":10.5}]}");
+
+    Response.Write(preference);
+
+    Dictionary<String, String> filters = new Dictionary<string, string>();
+    filters.Add("site_id", "MCO");
+    filters.Add("external_reference", "orden001");
+
+    Hashtable searchResult = mp.searchPayment (filters);
+
+    foreach (Hashtable payment in searchResult.SelectToken("response.results")) {
+    Response.Write(payment["collection"]["id"]);
+    Response.Write(payment["collection"]["status"]);
+}
+
+%>--%>
+
+
 
 <!doctype html>
 <html>
@@ -172,19 +197,18 @@
 
                             <!--MODAL INICIO SESION-->
 
-                            <asp:Button ID="btnShow" runat="server" BackColor="Black" ForeColor="White" BorderColor="Black" Text="INICIAR SESION" />
+                            <asp:Button ID="btnShow" runat="server" Text="INICIAR SESION" />
 
                             <!-- ModalPopupExtender -->
                             <cc1:ModalPopupExtender ID="mp1" runat="server" PopupControlID="Panel1" TargetControlID="btnShow"
                                 CancelControlID="btnClose" BackgroundCssClass="modalLogin">
                             </cc1:ModalPopupExtender>
                             <asp:Panel ID="Panel1" runat="server" CssClass="modalPopupLogin" align="center" Style="display: none">
-                                <asp:Label ID="LblIncorrecto" runat="server" Text="El ultimo intento de Inicio de Sesión no fue exitoso" Visible="false" ForeColor="Red"></asp:Label><br />
                                 <asp:Label ID="LblNombre" runat="server" Text="Usuario"></asp:Label> <asp:TextBox ID="TxtNombre" runat="server" CssClass="form-control" Width="62%"></asp:TextBox><br />
-                                <asp:Label ID="LbleClave" runat="server" Text="Contraseña"></asp:Label>  <asp:TextBox ID="TxtContraseña" runat="server" CssClass="form-control" Width="62%" TextMode="Password"></asp:TextBox><br />
+                                <asp:Label ID="LbleClave" runat="server" Text="Contraseña"></asp:Label>  <asp:TextBox ID="TxtContraseña" runat="server" CssClass="form-control" Width="62%"></asp:TextBox><br />
 
                                 <asp:Button ID="BtnIniciarSesion" runat="server" Text="Ingresar" CssClass="btn btn-lg btn-primary btn-block btn-signin" Width="62%" OnClick="BtnIniciarSesion_Click" /><br />
-                                <asp:Button ID="btnClose" runat="server" CssClass="btn btn-lg btn-primary btn-block btn-signin"  Width="62%" Text="Cerrar" OnClick="cerrarLogin_Click" />
+                                <asp:Button ID="btnClose" runat="server" CssClass="btn btn-lg btn-primary btn-block btn-signin"  Width="62%" Text="Cerrar" />
                             </asp:Panel>
                             <!-- ModalPopupExtender -->
                           </li>
@@ -194,7 +218,7 @@
                     
                             <!--MODAL REGISTRO-->
                            <li>
-                            <asp:Button ID="BtnRegistrarse" runat="server"  BackColor="Black" ForeColor="White" BorderColor="Black" Text="REGISTRARSE" />
+                            <asp:Button ID="BtnRegistrarse" runat="server" Text="REGISTRARSE" />
 
                        <cc1:ModalPopupExtender ID="ModalPopupExtender1" runat="server" PopupControlID="Panel2" TargetControlID="BtnRegistrarse"
                            CancelControlID="btnClose" BackgroundCssClass="modalRegistrarse">
@@ -223,7 +247,7 @@
                            <br />
 
                            <asp:Button ID="botonRegistrarse" runat="server" Text="Registrarse" CssClass="btn btn-lg btn-primary btn-block btn-signin" Width="62%" OnClick="botonRegistrarse_Click" />
-                                <asp:Button ID="Button1" runat="server" CssClass="btn btn-lg btn-primary btn-block btn-signin"  Width="62%" Text="Cerrar" OnClick="cerrarRegistro_Click" />
+                                <asp:Button ID="Button1" runat="server" CssClass="btn btn-lg btn-primary btn-block btn-signin"  Width="62%" Text="Cerrar" />
 
                             </asp:Panel>
                                </li>
@@ -233,7 +257,8 @@
 
                    <!--MODAL GESTIONAR-->
                     <li>
-                            <asp:Button ID="BtnGestionar" runat="server"  BackColor="Black" ForeColor="White" BorderColor="Black" Text="GESTIONAR" />
+                        
+                         <asp:Button ID="BtnGestionar" runat="server" Text="GESTIONAR" />
 
                             <!-- ModalPopupExtender -->
                             <cc1:ModalPopupExtender ID="ModalPopupExtender2" runat="server" PopupControlID="Panel3" TargetControlID="BtnGestionar"
@@ -247,7 +272,7 @@
                             <asp:Button ID="BtnGestionarCategorias" runat="server" Text="Gestionar Categorias" CssClass="btn btn-lg btn-primary btn-block btn-signin" Width="62%" OnClick="BtnGestionarCategorias_Click" /><br />
                             <asp:Button ID="BtnGestionarModelos" runat="server" Text="Gestionar Modelos" CssClass="btn btn-lg btn-primary btn-block btn-signin" Width="62%" OnClick="BtnGestionarModelos_Click" /><br />
                             <asp:Button ID="btnGestionarMarcas" runat="server" Text="Gestionar Marcas" CssClass="btn btn-lg btn-primary btn-block btn-signin" Width="62%" OnClick="btnGestionarMarcas_Click" /><br />
-                                <asp:Button ID="Button2" runat="server" CssClass="btn btn-lg btn-primary btn-block btn-signin"  Width="62%" Text="Cerrar" OnClick="cerrarGestionar_Click" />
+                                <asp:Button ID="Button2" runat="server" CssClass="btn btn-lg btn-primary btn-block btn-signin"  Width="62%" Text="Cerrar" />
                             </asp:Panel>
                         </li>
 
@@ -256,7 +281,7 @@
                     </li>
                             <!--MODAL CONFIGURACION PERFIL-->
                               <li>
-                                  <asp:Button ID="BtnConfigurarPerfil"  BackColor="Black" ForeColor="White" BorderColor="Black" runat="server" Text="CONFIGURAR PERFIL" />
+                                  <asp:Button ID="BtnConfigurarPerfil" runat="server" Text="CONFIGURAR PERFIL"  />
 
                                   <!-- ModalPopupExtender -->
                                   <cc1:ModalPopupExtender ID="ModalPopupExtender4" runat="server" PopupControlID="Panel4" TargetControlID="BtnConfigurarPerfil"
@@ -269,33 +294,16 @@
                                       <asp:Button ID="BtnEditarPerfil" runat="server" Text="Editar Perfil" CssClass="btn btn-lg btn-primary btn-block btn-signin" Width="69%" OnClick="BtnEditarPerfil_Click" /><br />
                                       <asp:Button ID="BtnVerOrden" runat="server" Text="Ver Orden" CssClass="btn btn-lg btn-primary btn-block btn-signin" Width="69%" OnClick="BtnVerOrden_Click" /><br />
 
-                                      <asp:Button ID="Button3" runat="server" CssClass="btn btn-lg btn-primary btn-block btn-signin" Width="62%" Text="Cerrar" OnClick="cerrarConfiguracionPerfil_Click" />
+                                      <asp:Button ID="Button3" runat="server" CssClass="btn btn-lg btn-primary btn-block btn-signin" Width="62%" Text="Cerrar" />
                                   </asp:Panel>
                               </li>
 
                     <li>
                         |
                     </li>
-                         <!--MODAL PUBLICAR PRODUCTO-->
+                         <!--BOTÓN SUBIR PRODUCTO-->
                               <li>
-                              <asp:Button ID="BtnPublicarProducto"  BackColor="Black" ForeColor="White" BorderColor="Black" runat="server" Text="PUBLICAR PRODUCTO" />
-
-                       <!-- ModalPopupExtender -->
-                       <cc1:ModalPopupExtender ID="ModalPopupExtender3" runat="server" PopupControlID="Panel5" TargetControlID="BtnPublicarProducto"
-                           CancelControlID="btnClose" BackgroundCssClass="modalPublicarProducto">
-                       </cc1:ModalPopupExtender>
-                       <asp:Panel ID="Panel5" runat="server" CssClass="modalPopupPublicarProducto" align="center" Style="display: none">
-
-                           <asp:Label ID="LblNombreProducto" runat="server" Text="Nombre del Producto"></asp:Label> <asp:TextBox ID="TtxNombreProducto" runat="server" CssClass="form-control" Width="62%" ></asp:TextBox><br />
-                           <asp:Label ID="LblDescripcion" runat="server" Text="Descripcion"></asp:Label>    <asp:TextBox ID="TxtDescripcion" runat="server" CssClass="form-control" Height="100" Width="62%" ></asp:TextBox><br />
-                           <asp:Label ID="LblPrecio" runat="server" Text="Precio"></asp:Label> <asp:TextBox ID="TxtPrecio" runat="server" CssClass="form-control" Width="62%" ></asp:TextBox><br />
-                            <asp:FileUpload ID="FileUpload1" runat="server" /> <br />     
-                            <asp:Button ID="BtnPublProducto" runat="server" Text="Publicar" CssClass="btn btn-lg btn-primary btn-block btn-signin" Width="62%" OnClick="BtnPublicarProducto_Click" /><br />
-                            <asp:Button ID="Button4" runat="server" CssClass="btn btn-lg btn-primary btn-block btn-signin"  Width="62%" Text="Cerrar" OnClick="cerrarPublicarProd_Click" />
-                            </asp:Panel>
-
-
-
+                              <asp:Button ID="BtnSubirProducto" runat="server" Text="PUBLICAR PRODUCTO" OnClick="BtnSubirProducto_Click" />
                        </li>
                     </ul>
                      </div>
@@ -317,6 +325,8 @@
      
     </asp:ContentPlaceHolder>
 
+
+             
              </form> 
 </body>
 </html>

@@ -51,6 +51,7 @@ namespace Proyecto1.Logica
             return true;
         }
 
+    
         /// <summary>
         /// Metodo para editar el usuario 
         /// </summary>

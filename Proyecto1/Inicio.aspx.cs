@@ -12,8 +12,7 @@ namespace Proyecto1
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            SiteMaster site = new SiteMaster();
-            site.RevisarLoginUser();
+            
         }
 
     }

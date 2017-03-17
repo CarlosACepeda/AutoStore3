@@ -10,11 +10,12 @@ namespace Proyecto1
 {
     public partial class GestionarFabricantes : System.Web.UI.Page
     {
+        
 
         FabricanteCarroBLL fabricante = new FabricanteCarroBLL();
         protected void Page_Load(object sender, EventArgs e)
         {
-            SiteMaster.usuarioEstaLogueado = 1;
+            ListarF();
         }
 
         protected void Button1_Click(object sender, EventArgs e)
@@ -27,7 +28,10 @@ namespace Proyecto1
 
         protected void btnVerF_Click(object sender, EventArgs e)
         {
-            gvFabricante.Visible = true;
+           
+        }
+        public void ListarF()
+        {
             FabricanteCarroBLL fabricante = new FabricanteCarroBLL();
             gvFabricante.DataSource = fabricante.ObtenerFabricante();
             gvFabricante.DataBind();

@@ -20,11 +20,11 @@
 
              <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
 
-    <asp:Button ID="btnGuardar" runat="server" Text="Button" OnClick="Button1_Click"/>
+    <asp:Button ID="btnGuardar" runat="server" Text="Agregar Fabricante" OnClick="Button1_Click"/>
 
          <asp:Button ID="btnVerF" runat="server" Text="Ver Fabricantes" OnClick="btnVerF_Click"/>
 
-         <asp:GridView ID="gvFabricante" runat="server" CellPadding="4" ForeColor="#333333" GridLines="None" Visible="False">
+         <asp:GridView ID="gvFabricante" runat="server" CellPadding="4" ForeColor="#333333" GridLines="None">
              <AlternatingRowStyle BackColor="White" />
              <EditRowStyle BackColor="#2461BF" />
              <FooterStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
