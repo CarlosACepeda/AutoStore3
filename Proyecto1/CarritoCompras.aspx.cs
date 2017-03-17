@@ -14,6 +14,7 @@ namespace Proyecto1
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            SiteMaster.usuarioEstaLogueado = 2;
             CarritoComprasBLL carrito = new CarritoComprasBLL();
 
             LlenarCarrito();

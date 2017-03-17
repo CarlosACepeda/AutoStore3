@@ -165,30 +165,44 @@ namespace Proyecto1.Logica
         /// <param name="nombre">Nombre de Usuario</param>
         /// <param name="clave">contraseña del Usuario</param>
         /// <returns></returns>
-        public bool Autenticar(string nombre, string clave )
+        public int Autenticar(string nombre, string clave )
         {
 
             try
             {
-                AutoStoreContext context = new AutoStoreContext();
-                var mostrarInfo = from usr in context.Usuario
-                                  where usr.NombreUsuario == nombre && usr.Contrasena== clave
-                                  select usr;
-
-
-                if (mostrarInfo.Count()==0)
+                using (AutoStoreContext context = new AutoStoreContext())
                 {
-                    return false;
-                }
+                    var mostrarInfo = from usr in context.Usuario
+                                      where usr.NombreUsuario == nombre && usr.Contrasena == clave
+                                      select usr;
+                    //Buscar el Rol del Usuario que se loguea.
+                    var rolId = from usr in context.Usuario
+                                where usr.NombreUsuario == nombre
+                                select usr.RolID;
 
-                else
-                {
-                    return true;
+
+                    //Este if confirma si hay un usuario en la Base de Datos.
+                    if (mostrarInfo.Count() == 0)
+                    {
+                        return 0; //0 vale a 'No hay usuarios'
+                    }
+
+                    //Si se encuentra un usuario, compara el id de ese usuario.
+                    else if(rolId.Equals(1))
+                    {
+                        ///Si el Rol es 1 entonces es Administrador.
+                        return 1;
+                    }
+                    else
+                    {
+                        //Si el rol es 2 entonces es Usuario
+                        return 2;
+                    }
+
                 }
             }
             catch (Exception)
             {
-
                 throw;
             }
         }

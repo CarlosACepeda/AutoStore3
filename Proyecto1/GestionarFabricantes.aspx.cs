@@ -14,7 +14,7 @@ namespace Proyecto1
         FabricanteCarroBLL fabricante = new FabricanteCarroBLL();
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            SiteMaster.usuarioEstaLogueado = 1;
         }
 
         protected void Button1_Click(object sender, EventArgs e)

@@ -13,6 +13,7 @@ namespace Proyecto1
         protected void Page_Load(object sender, EventArgs e)
         {
             LlenarUser();
+            SiteMaster.usuarioEstaLogueado = 1;
         }
 
         protected void btnVerUser_Click(object sender, EventArgs e)
