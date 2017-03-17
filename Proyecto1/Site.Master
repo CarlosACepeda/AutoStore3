@@ -205,7 +205,7 @@
                             </cc1:ModalPopupExtender>
                             <asp:Panel ID="Panel1" runat="server" CssClass="modalPopupLogin" align="center" Style="display: none">
                                 <asp:Label ID="LblNombre" runat="server" Text="Usuario"></asp:Label> <asp:TextBox ID="TxtNombre" runat="server" CssClass="form-control" Width="62%"></asp:TextBox><br />
-                                <asp:Label ID="LbleClave" runat="server" Text="Contraseña"></asp:Label>  <asp:TextBox ID="TxtContraseña" runat="server" CssClass="form-control" Width="62%"></asp:TextBox><br />
+                                <asp:Label ID="LbleClave" runat="server" Text="Contraseña"></asp:Label>  <asp:TextBox ID="TxtContraseña" runat="server" CssClass="form-control" Width="62%" TextMode="Password"></asp:TextBox><br />
 
                                 <asp:Button ID="BtnIniciarSesion" runat="server" Text="Ingresar" CssClass="btn btn-lg btn-primary btn-block btn-signin" Width="62%" OnClick="BtnIniciarSesion_Click" /><br />
                                 <asp:Button ID="btnClose" runat="server" CssClass="btn btn-lg btn-primary btn-block btn-signin"  Width="62%" Text="Cerrar" />
@@ -238,7 +238,7 @@
                            <asp:TextBox ID="InputDireccion" runat="server" CssClass="form-control" Width="62%"></asp:TextBox>
                            <br />
                            <asp:Label ID="LblTelefono" runat="server" Text="Telefono"></asp:Label>
-                           <asp:TextBox ID="InputTelefono" runat="server" CssClass="form-control" Width="62%"></asp:TextBox><br />
+                           <asp:TextBox ID="InputTelefono" runat="server" CssClass="form-control" Width="62%" TextMode="Number"></asp:TextBox><br />
                            <asp:Label ID="LblCorreo" runat="server" Text="Correo Electronico"></asp:Label>
                            <asp:TextBox ID="InputCorreoE" runat="server" CssClass="form-control" Width="62%" TextMode="Email"></asp:TextBox>
                            <br />
