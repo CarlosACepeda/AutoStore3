@@ -61,31 +61,6 @@
             <SortedDescendingHeaderStyle BackColor="#002876" />
         </asp:GridView>
 
-<%--<a href="<% Response.Write(((Hashtable) preference["response"])["init_point"]); %>" name="MP-Checkout" class="orange-ar-m-sq-arall">Pay</a>
-        <script type="text/javascript" src="//resources.mlstatic.com/mptools/render.js"></script>
-        
-        
-         <script type="text/javascript">
-            function execute_my_onreturn(json) {
-                if (json.collection_status == 'approved') {
-                    alert('Pago acreditado');
-                } else if (json.collection_status == 'pending') {
-                    alert('El usuario no completó el pago');
-                } else if (json.collection_status == 'in_process') {
-                    alert('El pago está siendo revisado');
-                } else if (json.collection_status == 'rejected') {
-                    alert('El pago fué rechazado, el usuario puede intentar nuevamente el pago');
-                } else if (json.collection_status == null) {
-                    alert('El usuario no completó el proceso de pago, no se ha generado ningún pago');
-                }
-            }
-        </script>
-
-
-        <script type="text/javascript">
-            (function () { function $MPC_load() { window.$MPC_loaded !== true && (function () { var s = document.createElement("script"); s.type = "text/javascript"; s.async = true; s.src = document.location.protocol + "//secure.mlstatic.com/mptools/render.js"; var x = document.getElementsByTagName('script')[0]; x.parentNode.insertBefore(s, x); window.$MPC_loaded = true; })(); } window.$MPC_loaded !== true ? (window.attachEvent ? window.attachEvent('onload', $MPC_load) : window.addEventListener('load', $MPC_load, false)) : null; })();
-        </script>--%>
-
     <p></p>
     <div>
         <strong>
@@ -97,6 +72,9 @@
         <tr>
             <td>
                 <asp:Button ID="UpdateBtn" runat="server" Text="Actualizar" OnClick="UpdateBtn_Click"/>
+                <br />
+                <br />
+                <asp:Button ID="Button5" runat="server" OnClick="Button5_Click" Text="Pagar" />
             </td>
         </tr>
     </table>

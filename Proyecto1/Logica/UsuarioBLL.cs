@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using Proyecto1.Models;
+using System.Data.Entity.SqlServer;
 
 namespace Proyecto1.Logica
 {
@@ -193,5 +194,6 @@ namespace Proyecto1.Logica
             }
         }
 
+        }
+
     }
-}

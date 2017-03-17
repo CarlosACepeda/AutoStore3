@@ -1,0 +1,113 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="AutoStoreModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <!--Errores durante la generación:
+advertencia 6002: La tabla o vista 'AutoStore.dbo.ViewFiltro' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+        <EntityType Name="ViewFiltro">
+          <Key>
+            <PropertyRef Name="ProductoID" />
+            <PropertyRef Name="NombreProducto" />
+            <PropertyRef Name="PrecioU" />
+            <PropertyRef Name="UsuarioID" />
+            <PropertyRef Name="ModeloCarroID" />
+            <PropertyRef Name="FabricanteCarroID" />
+            <PropertyRef Name="IdMarca" />
+          </Key>
+          <Property Name="ProductoID" Type="int" Nullable="false" />
+          <Property Name="NombreProducto" Type="nvarchar" MaxLength="200" Nullable="false" />
+          <Property Name="PrecioU" Type="int" Nullable="false" />
+          <Property Name="UsuarioID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="ModeloCarroID" Type="int" Nullable="false" />
+          <Property Name="FabricanteCarroID" Type="int" Nullable="false" />
+          <Property Name="MarcaProducto_IdMarca" Type="int" />
+          <Property Name="IdMarca" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="AutoStoreModelStoreContainer">
+          <EntitySet Name="ViewFiltro" EntityType="Self.ViewFiltro" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [ViewFiltro].[ProductoID] AS [ProductoID], 
+    [ViewFiltro].[NombreProducto] AS [NombreProducto], 
+    [ViewFiltro].[PrecioU] AS [PrecioU], 
+    [ViewFiltro].[UsuarioID] AS [UsuarioID], 
+    [ViewFiltro].[ModeloCarroID] AS [ModeloCarroID], 
+    [ViewFiltro].[FabricanteCarroID] AS [FabricanteCarroID], 
+    [ViewFiltro].[MarcaProducto_IdMarca] AS [MarcaProducto_IdMarca], 
+    [ViewFiltro].[IdMarca] AS [IdMarca]
+    FROM [dbo].[ViewFiltro] AS [ViewFiltro]</DefiningQuery>
+          </EntitySet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="AutoStoreModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="ViewFiltro">
+          <Key>
+            <PropertyRef Name="ProductoID" />
+            <PropertyRef Name="NombreProducto" />
+            <PropertyRef Name="PrecioU" />
+            <PropertyRef Name="UsuarioID" />
+            <PropertyRef Name="ModeloCarroID" />
+            <PropertyRef Name="FabricanteCarroID" />
+            <PropertyRef Name="IdMarca" />
+          </Key>
+          <Property Name="ProductoID" Type="Int32" Nullable="false" />
+          <Property Name="NombreProducto" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="PrecioU" Type="Int32" Nullable="false" />
+          <Property Name="UsuarioID" Type="Guid" Nullable="false" />
+          <Property Name="ModeloCarroID" Type="Int32" Nullable="false" />
+          <Property Name="FabricanteCarroID" Type="Int32" Nullable="false" />
+          <Property Name="MarcaProducto_IdMarca" Type="Int32" />
+          <Property Name="IdMarca" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="AutoStoreEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="ViewFiltro" EntityType="Self.ViewFiltro" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="AutoStoreModelStoreContainer" CdmEntityContainer="AutoStoreEntities">
+          <EntitySetMapping Name="ViewFiltro">
+            <EntityTypeMapping TypeName="AutoStoreModel.ViewFiltro">
+              <MappingFragment StoreEntitySet="ViewFiltro">
+                <ScalarProperty Name="ProductoID" ColumnName="ProductoID" />
+                <ScalarProperty Name="NombreProducto" ColumnName="NombreProducto" />
+                <ScalarProperty Name="PrecioU" ColumnName="PrecioU" />
+                <ScalarProperty Name="UsuarioID" ColumnName="UsuarioID" />
+                <ScalarProperty Name="ModeloCarroID" ColumnName="ModeloCarroID" />
+                <ScalarProperty Name="FabricanteCarroID" ColumnName="FabricanteCarroID" />
+                <ScalarProperty Name="MarcaProducto_IdMarca" ColumnName="MarcaProducto_IdMarca" />
+                <ScalarProperty Name="IdMarca" ColumnName="IdMarca" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Ninguno" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

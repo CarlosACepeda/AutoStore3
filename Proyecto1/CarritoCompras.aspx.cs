@@ -79,5 +79,11 @@ namespace Proyecto1
             return valores;
         }
 
+        protected void Button5_Click(object sender, EventArgs e)
+        {
+            UsuarioBLL persona = new UsuarioBLL();
+
+
+        }
     }
 }
