@@ -7,12 +7,16 @@ using System.Web.UI.WebControls;
 
 namespace Proyecto1
 {
-    public partial class QuienesSomos : System.Web.UI.Page
+    public partial class PublicarProducto : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            SiteMaster site = new SiteMaster();
-            site.RevisarLoginUser();
+
+        }
+
+        protected void BtnSubirProducto_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

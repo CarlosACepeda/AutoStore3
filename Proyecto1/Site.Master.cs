@@ -71,7 +71,6 @@ namespace Proyecto1
 
         protected void Page_Load(object sender, EventArgs e)
         {
-
         }
 
         protected void Unnamed_LoggingOut(object sender, LoginCancelEventArgs e)
@@ -85,7 +84,8 @@ namespace Proyecto1
             if (Login.Autenticar(TxtNombre.Text, TxtContraseña.Text) == true)
             {
                 Session["UserLogin"] = TxtNombre.Text;
-            }
+                
+             }
             else
             {
                 Response.Redirect("http://www.wikipedia.org");
@@ -116,20 +116,14 @@ namespace Proyecto1
         }
         protected void BtnGestionarUsuarios_Click(object sender, EventArgs e)
         {
-
-        }
-
-        protected void BtnGestionarProductos_Click(object sender, EventArgs e)
-        {
-            Response.Redirect("GestionarProductos.aspx");
+            Response.Redirect("GestionarUsuarios.aspx");
         }
 
         protected void BtnGestionarProductos_Click1(object sender, EventArgs e)
         {
             Response.Redirect("GestionarProductos.aspx");
-
         }
-
+        
         protected void BtnGestionarFabricantes_Click(object sender, EventArgs e)
         {
             Response.Redirect("GestionarFabricantes.aspx");
@@ -165,10 +159,14 @@ namespace Proyecto1
         }
         protected void BtnEliminarProducto_Click(object sender, EventArgs e)
         {
-
+            Response.Redirect("EliminarProducto.aspx");
         }
-        protected void BtnPublicarProducto_Click(object sender, EventArgs e)
-        { }
+
+        protected void BtnSubirProducto_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("PublicarProducto.aspx");
+        }
+      
     }
 }
 

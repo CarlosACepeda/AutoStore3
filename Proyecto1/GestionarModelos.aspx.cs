@@ -14,6 +14,7 @@ namespace Proyecto1
         protected void Page_Load(object sender, EventArgs e)
         {
             CargarModelos();
+            SiteMaster.usuarioEstaLogueado = 1;
         }
 
         protected void Button1_Click(object sender, EventArgs e)
