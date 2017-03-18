@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using Proyecto1.Models;
+using System.Data.Entity.SqlServer;
 
 namespace Proyecto1.Logica
 {
@@ -23,7 +24,7 @@ namespace Proyecto1.Logica
             var actualizarEstado = from c in contexto.Usuario
                                    where c.IdUsuario == idUsuario
                                    select c;
-                
+
             //Ejecutar la consulta y cambiar los valores que se requiera.
 
             foreach (Usuario usr in actualizarEstado)
@@ -51,7 +52,7 @@ namespace Proyecto1.Logica
             return true;
         }
 
-    
+
         /// <summary>
         /// Metodo para editar el usuario 
         /// </summary>
@@ -86,7 +87,7 @@ namespace Proyecto1.Logica
             catch (Exception)
             {
                 return false;
-            }   
+            }
             return true;
         }
 
@@ -95,13 +96,14 @@ namespace Proyecto1.Logica
         /// </summary>
         /// <param name="idUser">Parametro que permite saber de que usuario se desea obtener la informacion</param>
         /// <returns>Retorna un valor booleano segun la ejecucion del metodo</returns>
-        public List<Usuario> MostrarInformacion(Guid idUser)
+        public List<Usuario> MostrarInformacion()
         {
+            Guid iduser = TraerIdDeUsuarioLogueado();
 
-                AutoStoreContext context = new AutoStoreContext();
-                var mostrarInfo = from usr in context.Usuario
-                                  where usr.IdUsuario == idUser
-                                  select usr;
+            AutoStoreContext context = new AutoStoreContext();
+            var mostrarInfo = from usr in context.Usuario
+                              where usr.IdUsuario == iduser
+                              select usr;
 
             return mostrarInfo.ToList();
         }
@@ -127,9 +129,9 @@ namespace Proyecto1.Logica
                     NombreUsuario = nombreUser,
                     Contrasena = clave,
                     Foto = foto,
-                    Activo= activo,
+                    Activo = activo,
                     RolID = rol
-                   
+
 
 
                 };
@@ -137,7 +139,7 @@ namespace Proyecto1.Logica
                 contex.Usuario.Add(usr);
                 contex.SaveChanges();
                 return true;
-                
+
             }
             catch (Exception)
             {
@@ -166,33 +168,60 @@ namespace Proyecto1.Logica
         /// <param name="nombre">Nombre de Usuario</param>
         /// <param name="clave">contraseña del Usuario</param>
         /// <returns></returns>
-        public bool Autenticar(string nombre, string clave )
+        public int Autenticar(string nombre, string clave)
         {
 
             try
             {
-                AutoStoreContext context = new AutoStoreContext();
-                var mostrarInfo = from usr in context.Usuario
-                                  where usr.NombreUsuario == nombre && usr.Contrasena== clave
-                                  select usr;
-
-
-                if (mostrarInfo.Count()==0)
+                using (AutoStoreContext context = new AutoStoreContext())
                 {
-                    return false;
-                }
+                    var mostrarInfo = from usr in context.Usuario
+                                      where usr.NombreUsuario == nombre && usr.Contrasena == clave
+                                      select usr;
+                    //Buscar el Rol del Usuario que se loguea.
+                    var rolId = from usr in context.Usuario
+                                where usr.NombreUsuario == nombre
+                                select usr.RolID;
 
-                else
-                {
-                    return true;
+
+                    //Este if confirma si hay un usuario en la Base de Datos.
+                    if (mostrarInfo.Count() == 0)
+                    {
+                        return 0; //0 vale a 'No hay usuarios'
+                    }
+
+                    //Si se encuentra un usuario, compara el id de ese usuario.
+                    else if (rolId.Equals(1))
+                    {
+                        ///Si el Rol es 1 entonces es Administrador.
+                        return 1;
+                    }
+                    else
+                    {
+                        //Si el rol es 2 entonces es Usuario
+                        return 2;
+                    }
+
                 }
             }
             catch (Exception)
             {
-
                 throw;
             }
         }
+        public Guid TraerIdDeUsuarioLogueado()
+        {
+            string sesionActual = HttpContext.Current.Session["UserLogin"].ToString();
+            string idUsuario;
+            AutoStoreContext context = new AutoStoreContext();
+            var idUser = from usuario in context.Usuario
+                         where usuario.NombreUsuario == sesionActual
+                         select usuario.IdUsuario;
 
+            idUsuario  =idUser.ToString();
+            return Guid.Parse(idUsuario);
+
+        }
     }
+
 }

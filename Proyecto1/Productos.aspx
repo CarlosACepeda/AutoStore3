@@ -75,6 +75,14 @@
 
     
     <!-- PRODUCTOS LISTA-->
+    <asp:TextBox ID="txtBuscar" runat="server"></asp:TextBox>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <asp:Button ID="btnBuscar" runat="server" Text="Buscar" />
+    <br />
+    <br />
+    <asp:GridView ID="gvProductos" runat="server">
+    </asp:GridView>
+    <br />
     <asp:ListView ID="listaProductosLV" runat="server"
         DataKeyNames="ProductoID" GroupItemCount="3"
 

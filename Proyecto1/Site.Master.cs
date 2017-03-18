@@ -13,7 +13,9 @@ namespace Proyecto1
 {
     public partial class SiteMaster : MasterPage
     {
-        
+
+        public static int? usuarioEstaLogueado;
+
         private const string AntiXsrfTokenKey = "__AntiXsrfToken";
         private const string AntiXsrfUserNameKey = "__AntiXsrfUserName";
         private string _antiXsrfTokenValue;
@@ -71,6 +73,8 @@ namespace Proyecto1
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            RevisarLoginUser();
+
         }
 
         protected void Unnamed_LoggingOut(object sender, LoginCancelEventArgs e)
@@ -81,14 +85,22 @@ namespace Proyecto1
         protected void BtnIniciarSesion_Click(object sender, EventArgs e)
         {
             UsuarioBLL Login = new UsuarioBLL();
-            if (Login.Autenticar(TxtNombre.Text, TxtContraseña.Text) == true)
+            if (Login.Autenticar(TxtNombre.Text, TxtContraseña.Text) == 1)//Si es 1 es Admin
             {
                 Session["UserLogin"] = TxtNombre.Text;
+                usuarioEstaLogueado = 1;
+                RevisarLoginUser();
                 
              }
-            else
+            else if(Login.Autenticar(TxtNombre.Text, TxtContraseña.Text) == 2)//Si es 2 es User.
             {
-                Response.Redirect("http://www.wikipedia.org");
+                Session["UserLogin"] = TxtNombre.Text;
+                usuarioEstaLogueado = 2;
+                RevisarLoginUser();
+            }
+            else //Si no, fue que hubo un error al login
+            {
+                LblIncorrecto.Visible = true;
             }
         }
         public void botonRegistrarse_Click(object sender, EventArgs e)
@@ -114,6 +126,71 @@ namespace Proyecto1
                 );
 
         }
+
+        public void RevisarLoginUser()
+        {
+            if (usuarioEstaLogueado==1)
+            {
+                BtnRegistrarse.Visible = false;
+                BtnRegistrarse.Enabled = false;
+                BtnGestionar.Enabled = true;
+                BtnGestionar.Visible = true;
+                btnShow.Visible = false;
+                btnShow.Enabled = false;
+                BtnConfigurarPerfil.Visible = false;
+                BtnConfigurarPerfil.Enabled = false;
+                BtnSubirProducto.Enabled = false;
+                BtnSubirProducto.Visible=false;
+                
+            }
+            else if(usuarioEstaLogueado==2)
+            {
+                BtnRegistrarse.Visible = false;
+                BtnRegistrarse.Enabled = false;
+                btnShow.Visible = false;
+                btnShow.Enabled = false;
+                BtnGestionar.Enabled = false;
+                BtnGestionar.Visible = false;
+                BtnConfigurarPerfil.Visible = true;
+                BtnConfigurarPerfil.Enabled = true;
+                BtnSubirProducto.Visible = true;
+                BtnSubirProducto.Enabled = true;
+
+            }
+            else
+            {
+                btnShow.Visible = true;
+                BtnRegistrarse.Visible = true;
+                BtnGestionar.Enabled = false;
+                BtnGestionar.Visible = false;
+                BtnConfigurarPerfil.Enabled = false;
+                BtnConfigurarPerfil.Visible = false;
+                BtnSubirProducto.Enabled = false;
+                BtnSubirProducto.Visible = false;
+
+
+            }
+        }
+
+        //Click de los botones
+
+        protected void cerrarLogin_Click(object sender, EventArgs e)
+        {
+            RevisarLoginUser();
+        }
+        protected void cerrarRegistro_Click(object sender, EventArgs e)
+        {
+            RevisarLoginUser();
+        }
+        protected void cerrarConfigurar_Click(object sender, EventArgs e)
+        {
+            RevisarLoginUser();
+        }
+        protected void cerrarGestionar_Click(object sender, EventArgs e)
+        {
+            RevisarLoginUser();
+        }
+
         protected void BtnGestionarUsuarios_Click(object sender, EventArgs e)
         {
             Response.Redirect("GestionarUsuarios.aspx");
@@ -166,7 +243,8 @@ namespace Proyecto1
         {
             Response.Redirect("PublicarProducto.aspx");
         }
-      
+
+
     }
 }
 

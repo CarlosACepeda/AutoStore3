@@ -12,7 +12,7 @@ namespace Proyecto1
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            SiteMaster.usuarioEstaLogueado = 1;
         }
 
         protected void btnVerCateg_Click(object sender, EventArgs e)

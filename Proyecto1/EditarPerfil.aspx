@@ -3,15 +3,17 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
-     <div class="collapse navbar-collapse" id="upmenu" style="background-color:#e9eef1">
-        <ul class="nav navbar-nav" id="navbarontop" style="background-color:#e9eef1">
+    <div class="collapse navbar-collapse" id="upmenu" style="background-color: #e9eef1">
+        <ul class="nav navbar-nav" id="navbarontop" style="background-color: #e9eef1">
             <li><a href="Inicio.aspx">INICIO</a> </li>
             <li><a href="Productos.aspx">PRODUCTOS</a></li>
             <li class="dropdown">
-                  <a href="QuienesSomos.aspx">QUIENES SOMOS</a>
+                <a href="QuienesSomos.aspx">QUIENES SOMOS</a>
             </li>
             <li>
                 <a href="Contactenos.aspx">CONTACTENOS</a>
+
+                <br />
                 <asp:FileUpload ID="FileUpload1" runat="server" />
             </li>
 
@@ -25,8 +27,11 @@
         <div class="collapse navbar-collapse" id="upmenu2" style="background-color: #ffffff">
         <ul class="nav navbar-nav" id="navbarontop2" style="background-color: #ffffff">
             <li>
-               <
                   <div > 
+                      <div cssclass="left" id="PerfilTitulo" runat="server" class="ContentHead">
+                          <h1>Editar mi Perfil</h1>
+                      </div>
+                </div>
                     <label  for="ex1">Usuario</label>  
                       <asp:TextBox ID="txtUsuario" runat="server" Style="width: 90%;" CssClass="form-control"></asp:TextBox>
 
@@ -60,7 +65,7 @@
                       <br />
                  
                 <br />
-                      <asp:Button ID="btnVerI" runat="server" Text="Button" OnClick="btnVerI_Click"/>
+                      <asp:Button ID="btnVerI" runat="server" Text="Button"/>
                       <%--<asp:Button ID="bntVer" runat="server" Text="Button" Class="btn btn-lg btn-primary btn-block btn-signin"  style="width:90%;  border-bottom:1px solid #03214c; background-color:#4d90fe";  type="button" OnClick="EditarPerfil_Click">--%>
                  <%--<button class="btn btn-lg btn-primary btn-block btn-signin"  style="width:90%;  border-bottom:1px solid #03214c; background-color:#4d90fe";  type="button" </button>--%>
                       </div>

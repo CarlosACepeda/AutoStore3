@@ -13,23 +13,16 @@ namespace Proyecto1
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            SiteMaster.usuarioEstaLogueado = 2;
+            CargarInfoDeUsuario();
         }
-        //public void btnVerI_Click(object sender, EventArgs e)
-        //{
-            
-        //}
-
-        protected void btnVerI_Click(object sender, EventArgs e)
+        protected void CargarInfoDeUsuario()
         {
-            AutoStoreContext contex = new AutoStoreContext();
-            Proyecto1.Logica.UsuarioBLL user = new UsuarioBLL();
+            UsuarioBLL user = new UsuarioBLL();
 
-            UsuarioBLL list = new UsuarioBLL();
-            gvPerfil.DataSource = list.MostrarInformacion(Guid.Parse("91fb22da-d1fa-40e9-8b2f-00223d40e8e7"));
-            gvPerfil.DataBind();
-
+            txtNombre.Text = user.MostrarInformacion().ToString();
         }
+
         
     }
 }

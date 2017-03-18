@@ -14,6 +14,7 @@ namespace Proyecto1
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            SiteMaster.usuarioEstaLogueado = 2;
             CarritoComprasBLL carrito = new CarritoComprasBLL();
 
             LlenarCarrito();
@@ -79,5 +80,11 @@ namespace Proyecto1
             return valores;
         }
 
+        protected void Button5_Click(object sender, EventArgs e)
+        {
+            UsuarioBLL persona = new UsuarioBLL();
+
+
+        }
     }
 }

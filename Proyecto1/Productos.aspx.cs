@@ -13,12 +13,18 @@ namespace Proyecto1
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            SiteMaster.usuarioEstaLogueado = 2;
         }
         public List<Models.Producto> ObtenerProductos()
         {
             ProductoBLL producto = new ProductoBLL();
             return producto.ObtenerProducto();
+        }
+        public void LlenarGrilla()
+        {
+            ProductoBLL product = new ProductoBLL();
+            gvProductos.DataSource = product.ObtenerProducto();
+            txtBuscar.Text = ('select * from Producto WHERE NombreProducto LIKE ' % txtBuscar % '"');
         }
     }
 }
