@@ -20,5 +20,11 @@ namespace Proyecto1
             ProductoBLL producto = new ProductoBLL();
             return producto.ObtenerProducto();
         }
+        public void LlenarGrilla()
+        {
+            ProductoBLL product = new ProductoBLL();
+            gvProductos.DataSource = product.ObtenerProducto();
+            txtBuscar.Text = ('select * from Producto WHERE NombreProducto LIKE ' % txtBuscar % '"');
+        }
     }
 }
