@@ -15,8 +15,15 @@ namespace Proyecto1
     {
         
         private const string AntiXsrfTokenKey = "__AntiXsrfToken";
+
+        internal void RevisarLoginUser()
+        {
+            throw new NotImplementedException();
+        }
+
         private const string AntiXsrfUserNameKey = "__AntiXsrfUserName";
         private string _antiXsrfTokenValue;
+        internal static int usuarioEstaLogueado;
 
         protected void Page_Init(object sender, EventArgs e)
         {
@@ -80,16 +87,16 @@ namespace Proyecto1
 
         protected void BtnIniciarSesion_Click(object sender, EventArgs e)
         {
-            UsuarioBLL Login = new UsuarioBLL();
-            if (Login.Autenticar(TxtNombre.Text, TxtContraseña.Text) == true)
-            {
-                Session["UserLogin"] = TxtNombre.Text;
-                
-             }
-            else
-            {
-                Response.Redirect("http://www.wikipedia.org");
-            }
+            //UsuarioBLL Login = new UsuarioBLL();
+            //if (Login.Autenticar(TxtNombre.Text, TxtContraseña.Text) == true)
+            //{
+            //    Session["UserLogin"] = TxtNombre.Text;
+
+            //}
+            //else
+            //{
+            //    Response.Redirect("http://www.wikipedia.org");
+            //}
         }
         public void botonRegistrarse_Click(object sender, EventArgs e)
         {
