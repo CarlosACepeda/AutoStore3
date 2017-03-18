@@ -104,7 +104,7 @@ namespace Proyecto1
                "No hay foto disponible",
                 2
                 );
-            registrarPer.CrearPersona(
+            registrarPer.CrearPersona(  
                 nuevo_id,
                 InputNombre.Text,
                 InputApellido.Text,

@@ -17,6 +17,7 @@ namespace Proyecto1.Models
 
         [Required, StringLength(20), Display(Name = "imagen")]
         public string Imagen { get; set; }
+        
 
 
         //Zona de Relaciones.
