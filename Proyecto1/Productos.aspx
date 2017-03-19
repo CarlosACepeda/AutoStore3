@@ -77,10 +77,17 @@
     <!-- PRODUCTOS LISTA-->
     <asp:TextBox ID="txtBuscar" runat="server"></asp:TextBox>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-    <asp:Button ID="btnBuscar" runat="server" Text="Buscar" />
+    <asp:Button ID="btnBuscar" runat="server" Text="Buscar" OnClick="btnBuscar_Click" />
     <br />
     <br />
-    <asp:GridView ID="gvProductos" runat="server">
+    <asp:GridView ID="gvProductos" runat="server" OnSelectedIndexChanged="gvProductos_SelectedIndexChanged">
+        <Columns>
+            <asp:TemplateField ShowHeader="False">
+                <ItemTemplate>
+                    <asp:Button ID="btnVer" runat="server" CausesValidation="false" CommandName="" OnClick="btnVer_Click" Text="Ver" />
+                </ItemTemplate>
+            </asp:TemplateField>
+        </Columns>
     </asp:GridView>
     <br />
     <asp:ListView ID="listaProductosLV" runat="server"
