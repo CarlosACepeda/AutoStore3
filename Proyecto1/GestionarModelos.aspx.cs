@@ -24,8 +24,8 @@ namespace Proyecto1
             FabricanteCarroBLL fabC = new FabricanteCarroBLL();
             cat.ObtenerCategoria();
             modelo.AgregarModeloCarro(
-                int.Parse(TextBox1.Text),
-                TextBox2.Text
+                TextBox1.Text,
+                int.Parse(TextBox2.Text)
             );
         }
 

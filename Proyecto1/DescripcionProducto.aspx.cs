@@ -17,6 +17,7 @@ namespace Proyecto1
             Label4.Text = Session["PrecioU"].ToString();
             Label5.Text = Session["UsuarioId"].ToString();
             Label6.Text = Session["MarcaP"].ToString();
+
         }
     }
 }
