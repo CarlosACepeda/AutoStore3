@@ -113,7 +113,7 @@ namespace Proyecto1
                 nuevo_id,
                 InputUsuario.Text,
                 InputContraseña.Text,
-               "No hay foto disponible",
+                null,
                 2
                 );
             registrarPer.CrearPersona(  

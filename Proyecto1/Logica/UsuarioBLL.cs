@@ -76,7 +76,6 @@ namespace Proyecto1.Logica
                 user.Contrasena = usr.Contrasena;
                 user.Foto = usr.Foto;
                 user.Activo = true;
-
             }
 
             //Registrar los cambios en la Base de Datos
@@ -96,7 +95,7 @@ namespace Proyecto1.Logica
         /// </summary>
         /// <param name="idUser">Parametro que permite saber de que usuario se desea obtener la informacion</param>
         /// <returns>Retorna un valor booleano segun la ejecucion del metodo</returns>
-        public List<Usuario> MostrarInformacion()
+        public Usuario MostrarInformacion()
         {
             Guid? iduser = TraerIdDeUsuarioLogueado();
 
@@ -105,7 +104,7 @@ namespace Proyecto1.Logica
                               where usr.IdUsuario == iduser
                               select usr;
 
-            return mostrarInfo.ToList();
+            return mostrarInfo.FirstOrDefault();
         }
 
         /// <summary>
@@ -118,7 +117,7 @@ namespace Proyecto1.Logica
         /// <param name="rol">Parametro que captura el rol que tendra el usuario</param>
         /// <param name="activo">Parametro que captura el estado que tiene el usuario</param>
         /// <returns>Retorna un valor booleano segun la ejecucion del metodo</returns>
-        public bool CrearUsuario(Guid idUser, string nombreUser, string clave, string foto, int rol, bool activo = true)
+        public bool CrearUsuario(Guid idUser, string nombreUser, string clave, byte[] foto, int rol, bool activo = true)
         {
             try
             {
@@ -220,6 +219,19 @@ namespace Proyecto1.Logica
 
             return idUser;
         }
+
+        public Persona TraerPersona()
+        {
+            AutoStoreContext contexto = new AutoStoreContext();
+            Guid? idUser = TraerIdDeUsuarioLogueado();
+            string UsuarioLogueado = HttpContext.Current.Session["UserLogin"].ToString();
+
+            var per = from p in contexto.Persona
+                      where p.PersonaID == idUser
+                      select p;
+
+            return per.FirstOrDefault();
+        }
+    }
     }
 
-}

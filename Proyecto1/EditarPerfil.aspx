@@ -14,7 +14,7 @@
                 <a href="Contactenos.aspx">CONTACTENOS</a>
 
                 <br />
-                <asp:FileUpload ID="FileUpload1" runat="server" />
+                
             </li>
 
         </ul>
@@ -25,19 +25,22 @@
     <br />
    
         <div class="collapse navbar-collapse" id="upmenu2" style="background-color: #ffffff">
-        <ul class="nav navbar-nav" id="navbarontop2" style="background-color: #ffffff">
+            <ul class="nav navbar-nav" id="navbarontop2" style="background-color: #ffffff">
             <li>
                   <div > 
                       <div cssclass="left" id="PerfilTitulo" runat="server" class="ContentHead">
                           <h1>Editar mi Perfil</h1>
                       </div>
                 </div>
+                        <label for="ex0">Foto de Perfil</label>
+                            <asp:Image ID="imagenPerfil" runat="server" />
+                            <asp:FileUpload ID="FileUpload1" runat="server" />
                     <label  for="ex1">Usuario</label>  
                       <asp:TextBox ID="txtUsuario" runat="server" Style="width: 90%;" CssClass="form-control"></asp:TextBox>
 
               
                     <label for="ex2">Nombre</label>
-                <asp:TextBox ID="txtNombre" runat="server" style="width:90%;" CssClass="form-control"></asp:TextBox>>
+                <asp:TextBox ID="txtNombre" runat="server" style="width:90%;" CssClass="form-control"></asp:TextBox>
                 
               
                     <label for="ex3">Apellido</label>
@@ -45,7 +48,7 @@
                     
 
             <label for="ex4">Direccion</label>
-                <asp:TextBox ID="TextBox1" runat="server" style="width:90%;" CssClass="form-control"></asp:TextBox>
+                <asp:TextBox ID="txtDireccion" runat="server" style="width:90%;" CssClass="form-control"></asp:TextBox>
 
             <label for="ex5">Telefono</label>
                 <asp:TextBox ID="txtTelefono" runat="server" style="width:90%;" CssClass="form-control"></asp:TextBox>
@@ -65,7 +68,7 @@
                       <br />
                  
                 <br />
-                      <asp:Button ID="btnVerI" runat="server" Text="Button"/>
+                      <asp:Button ID="Actualizar" runat="server" Text="Button" OnClick="btnActualizar_Click"/>
                       <%--<asp:Button ID="bntVer" runat="server" Text="Button" Class="btn btn-lg btn-primary btn-block btn-signin"  style="width:90%;  border-bottom:1px solid #03214c; background-color:#4d90fe";  type="button" OnClick="EditarPerfil_Click">--%>
                  <%--<button class="btn btn-lg btn-primary btn-block btn-signin"  style="width:90%;  border-bottom:1px solid #03214c; background-color:#4d90fe";  type="button" </button>--%>
                       </div>

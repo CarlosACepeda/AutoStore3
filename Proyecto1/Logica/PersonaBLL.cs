@@ -79,18 +79,7 @@ namespace Proyecto1.Logica
                 throw;
             }
         }
-        public List<Persona> TraerPersona()
-        {
-            AutoStoreContext contexto = new AutoStoreContext();
-            UsuarioBLL usr = new UsuarioBLL();
-            string UsuarioLogueado = HttpContext.Current.Session["UserLogin"].ToString();
-
-            var per = from p in contexto.Usuario
-                      where p.NombreUsuario == UsuarioLogueado
-                      select p.Persona;
-
-            return per.ToList();
-        }
+        
         
     }
 } 

@@ -18,8 +18,7 @@ namespace Proyecto1.Models
         [Required, StringLength(50, ErrorMessage ="La contraseña debe ser menos de 50 caracteres"), Display(Name = "Clave")]
         public string Contrasena { get; set; }
 
-        [Required(ErrorMessage ="Este campo es requerido"), StringLength(400), Display(Name = "Foto")]
-        public string Foto { get; set; }
+        public byte[] Foto { get; set; }
 
         [Required]
         public bool Activo { get; set; }

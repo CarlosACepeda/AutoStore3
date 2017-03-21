@@ -13,15 +13,6 @@ namespace Proyecto1 {
     public partial class EditarPerfil {
         
         /// <summary>
-        /// Control FileUpload1.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.FileUpload FileUpload1;
-        
-        /// <summary>
         /// Control PerfilTitulo.
         /// </summary>
         /// <remarks>
@@ -29,6 +20,24 @@ namespace Proyecto1 {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl PerfilTitulo;
+        
+        /// <summary>
+        /// Control imagenPerfil.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Image imagenPerfil;
+        
+        /// <summary>
+        /// Control FileUpload1.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.FileUpload FileUpload1;
         
         /// <summary>
         /// Control txtUsuario.
@@ -58,13 +67,13 @@ namespace Proyecto1 {
         protected global::System.Web.UI.WebControls.TextBox txtApellido;
         
         /// <summary>
-        /// Control TextBox1.
+        /// Control txtDireccion.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox1;
+        protected global::System.Web.UI.WebControls.TextBox txtDireccion;
         
         /// <summary>
         /// Control txtTelefono.
@@ -103,12 +112,12 @@ namespace Proyecto1 {
         protected global::System.Web.UI.WebControls.GridView gvPerfil;
         
         /// <summary>
-        /// Control btnVerI.
+        /// Control Actualizar.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnVerI;
+        protected global::System.Web.UI.WebControls.Button Actualizar;
     }
 }
