@@ -24,7 +24,7 @@ namespace Proyecto1
         {
             ProductoBLL product = new ProductoBLL();
             gvProductos.DataSource = product.ObtenerProducto();
-            txtBuscar.Text = ('select * from Producto WHERE NombreProducto LIKE ' % txtBuscar % '"');
+            //txtBuscar.Text = ('select * from Producto WHERE NombreProducto LIKE ' % txtBuscar % '"');
         }
     }
 }

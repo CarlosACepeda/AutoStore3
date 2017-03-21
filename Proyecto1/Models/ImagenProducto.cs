@@ -16,7 +16,7 @@ namespace Proyecto1.Models
         public int ImagenID { get; set; }
 
         [Required, StringLength(20), Display(Name = "imagen")]
-        public string Imagen { get; set; }
+        public byte[] Imagen { get; set; }
         
 
 

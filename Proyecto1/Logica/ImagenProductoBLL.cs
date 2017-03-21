@@ -13,24 +13,17 @@ namespace Proyecto1.Logica
         /// </summary>
         /// <param name="imagen">Para que captura la ruta de la imagen</param>
         /// <returns></returns>
-        public bool ObtenerImagen(string imagen)
+        public bool ObtenerImagen(byte[] imagen)
         {
-            try
+            AutoStoreContext contexto = new AutoStoreContext();
+            ImagenProducto img = new ImagenProducto
             {
-                ImagenProducto Imgproducto = new ImagenProducto
-                {
-                    Imagen=imagen
-                };
-                AutoStoreContext contexto = new AutoStoreContext();
-                contexto.ImagenProducto.Add(Imgproducto);
-                return true;
-            }
-
-
-            catch (Exception)
-            {
-                return false;
-            }
+                Imagen = imagen
+            };
+            contexto.ImagenProducto.Add(img);
+            contexto.SaveChanges();
+            return true;
         }
-    }
+        
+}
 }
