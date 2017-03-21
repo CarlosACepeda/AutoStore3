@@ -24,7 +24,31 @@ namespace Proyecto1
         {
             ProductoBLL product = new ProductoBLL();
             gvProductos.DataSource = product.ObtenerProducto();
-            //txtBuscar.Text = ('select * from Producto WHERE NombreProducto LIKE ' % txtBuscar % '"');
+            gvProductos.DataMember = txtBuscar.Text;
+            gvProductos.DataBind();
+
+        }
+
+        protected void btnBuscar_Click(object sender, EventArgs e)
+        {
+            LlenarGrilla();
+        }
+
+        protected void gvProductos_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            
+
+        }
+
+        protected void btnVer_Click(object sender, EventArgs e)
+        {
+            Session["IdProducto"] = gvProductos.Columns[1];
+            Session["NombreP"] = gvProductos.Columns[2];
+            Session["Descripcion"] = gvProductos.Columns[3];
+            Session["PrecioU"] = gvProductos.Columns[4];
+            Session["UsuarioId"] = gvProductos.Columns[6];
+            Session["MarcaP"] = gvProductos.Columns[7];
+            Response.Redirect("DescripcionProducto.aspx");
         }
     }
 }

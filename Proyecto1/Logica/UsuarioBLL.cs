@@ -98,7 +98,7 @@ namespace Proyecto1.Logica
         /// <returns>Retorna un valor booleano segun la ejecucion del metodo</returns>
         public List<Usuario> MostrarInformacion()
         {
-            Guid iduser = TraerIdDeUsuarioLogueado();
+            Guid? iduser = TraerIdDeUsuarioLogueado();
 
             AutoStoreContext context = new AutoStoreContext();
             var mostrarInfo = from usr in context.Usuario
@@ -209,18 +209,16 @@ namespace Proyecto1.Logica
                 throw;
             }
         }
-        public Guid TraerIdDeUsuarioLogueado()
+        public Guid? TraerIdDeUsuarioLogueado()
         {
+
             string sesionActual = HttpContext.Current.Session["UserLogin"].ToString();
-            string idUsuario;
             AutoStoreContext context = new AutoStoreContext();
-            var idUser = from usuario in context.Usuario
-                         where usuario.NombreUsuario == sesionActual
-                         select usuario.IdUsuario;
+            Guid? idUser = (from usuario in context.Usuario
+                            where usuario.NombreUsuario == sesionActual
+                            select usuario.IdUsuario).FirstOrDefault();
 
-            idUsuario  =idUser.ToString();
-            return Guid.Parse(idUsuario);
-
+            return idUser;
         }
     }
 
