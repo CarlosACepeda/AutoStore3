@@ -26,7 +26,7 @@ namespace Proyecto1.Models
 
         //Relacion con producto
 
-        public int ProductoID { get; set; }
+        public Guid ProductoID { get; set; }
        
         public virtual Producto Producto { get; set; }
 

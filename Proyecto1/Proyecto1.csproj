@@ -761,7 +761,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Imagen\" />
     <Folder Include="InterfazGUI\" />
   </ItemGroup>
   <PropertyGroup>

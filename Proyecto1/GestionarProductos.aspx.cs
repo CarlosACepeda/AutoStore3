@@ -14,7 +14,7 @@ namespace Proyecto1
         {
             ProductoBLL producBLL = new ProductoBLL();
             string id = Request.Params["ProductoID"];
-            int idNum = Convert.ToInt32(id);
+            Guid idNum = Guid.Parse(id);
 
             producBLL.DesactivarProducto(idNum);
         }

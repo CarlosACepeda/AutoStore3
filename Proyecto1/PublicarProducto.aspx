@@ -23,7 +23,9 @@
                     <br />
                     <asp:TextBox ID="TextNombreProducto" runat="server" Class="form-control" Width="62%"></asp:TextBox><br />
 
-                    <asp:FileUpload ID="FileUpload1" runat="server" />
+                    <asp:FileUpload ID="FileUpload1" runat="server" /> <br />
+                    <asp:Image ID="Image1" runat="server" />
+                    
                     <br />
                     <asp:DropDownList ID="DDlMarca" runat="server" DataSourceID="SqlDataSource1" DataTextField="NombreMarca" DataValueField="IdMarca"></asp:DropDownList>
                     <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConflictDetection="CompareAllValues" ConnectionString="<%$ ConnectionStrings:AutoStoreContext %>" DeleteCommand="DELETE FROM [MarcaProductoes] WHERE [IdMarca] = @original_IdMarca AND [NombreMarca] = @original_NombreMarca" InsertCommand="INSERT INTO [MarcaProductoes] ([NombreMarca]) VALUES (@NombreMarca)" OldValuesParameterFormatString="original_{0}" SelectCommand="SELECT * FROM [MarcaProductoes]" UpdateCommand="UPDATE [MarcaProductoes] SET [NombreMarca] = @NombreMarca WHERE [IdMarca] = @original_IdMarca AND [NombreMarca] = @original_NombreMarca">

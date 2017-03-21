@@ -158,7 +158,7 @@ namespace Proyecto1.Logica
             AutoStoreContext context = new AutoStoreContext();
             var mostrarInfo = from usr in context.Usuario
                               select usr;
-            return mostrarInfo.ToList();
+            return mostrarInfo.ToList();    
 
         }
 

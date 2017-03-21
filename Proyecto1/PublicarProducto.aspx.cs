@@ -19,6 +19,7 @@ namespace Proyecto1
         protected void Page_Load(object sender, EventArgs e)
         {
 
+           
         }
 
 
@@ -32,16 +33,18 @@ namespace Proyecto1
             ProductoBLL productBLL = new ProductoBLL();
             ImagenProductoBLL imgBLL = new ImagenProductoBLL();
             UsuarioBLL usr = new UsuarioBLL();
+            Guid idProducto = Guid.NewGuid();
 
-
-            productBLL.AgregarProducto(TextNombreProducto.Text, TextDescripcion.InnerText, Convert.ToInt32( TxtPrecio.Text),Convert.ToInt32( DDlMarca.SelectedValue),usr.TraerIdDeUsuarioLogueado());
-
+            productBLL.AgregarProducto(idProducto, TextNombreProducto.Text, TextDescripcion.InnerText, Convert.ToInt32( TxtPrecio.Text),Convert.ToInt32( DDlMarca.SelectedValue), Guid.Parse(usr.TraerIdDeUsuarioLogueado().ToString()));
+          
             if (FileUpload1.HasFile)
             {
                 using (BinaryReader lector = new BinaryReader(FileUpload1.PostedFile.InputStream))
                 {
                     byte[] imagen = lector.ReadBytes(FileUpload1.PostedFile.ContentLength);
-                    imgBLL.ObtenerImagen(imagen);
+                    imgBLL.ObtenerImagen(idProducto, imagen);
+
+                    
                 }
 
             }

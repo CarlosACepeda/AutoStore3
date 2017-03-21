@@ -19,7 +19,7 @@ namespace Proyecto1.Logica
         /// </summary>
         /// <param name="NombreUsuario">Parametro para asignar el carro a un usuario especifico </param>
         /// <param name="idProducto"> Parametro que proporcionara que producto esta en el carro</param>
-        public void AnadirAlCarro(int idProducto)
+        public void AnadirAlCarro(Guid idProducto)
         {
             CarritoId = ObtenerItemId();
             var obtenerItem = context.ItemCarrito.SingleOrDefault(c => c.NombreUsuario == CarritoId && c.ProductoID == idProducto);
@@ -81,7 +81,7 @@ namespace Proyecto1.Logica
 
 
         }
-        public void RemoverItem(string RemoverCarrito, int idItem)
+        public void RemoverItem(string RemoverCarrito, Guid idItem)
         {
             using (var context = new Proyecto1.Models.AutoStoreContext())
             {
@@ -110,7 +110,7 @@ namespace Proyecto1.Logica
         /// <param name="actualizarCarritoId"> Parametro que trae el id del carrito</param>
         /// <param name="actualizarProductoId">Parametro que especifica que productos existen en el carrito </param>
         /// <param name="cantidad">Parametro que especifica la cantidad proveniente del item del carrito</param>
-        public void ActualizarCarro(string actualizarCarritoId, int actualizarProductoId, int cantidad)
+        public void ActualizarCarro(string actualizarCarritoId, Guid actualizarProductoId, int cantidad)
         {
             using (var context = new Proyecto1.Models.AutoStoreContext())
             {
@@ -202,7 +202,7 @@ namespace Proyecto1.Logica
         }
         public struct ActualizacionesCarrito
         {
-            public int ProductoID;
+            public Guid ProductoID;
             public int CantidaddeCompra;
             public bool QuitarItem;
         }

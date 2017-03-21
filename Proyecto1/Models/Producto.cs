@@ -12,8 +12,7 @@ namespace Proyecto1.Models
         [ScaffoldColumn(false)]
 
         [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int ProductoID { get; set; }
+        public Guid ProductoID { get; set; }
 
         [Required, StringLength(200, ErrorMessage ="El producto debe ser de menos de 200 caracteres"), Display(Name = "Nombre producto")]
         public string NombreProducto { get; set; }
