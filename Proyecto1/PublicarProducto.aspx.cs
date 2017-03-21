@@ -18,8 +18,15 @@ namespace Proyecto1
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            //ImagenProductoBLL imagen = new ImagenProductoBLL();
+            //byte imag= imagen.Mostrarimagen()
+            //using (var ms = new System.IO.MemoryStream(byte.Parse(imag.ToString())))
+            //{
+            //    using (var img = Image.FromStream(ms))
+            //    {
 
-           
+            //    }
+            //}
         }
 
 
@@ -42,9 +49,8 @@ namespace Proyecto1
                 using (BinaryReader lector = new BinaryReader(FileUpload1.PostedFile.InputStream))
                 {
                     byte[] imagen = lector.ReadBytes(FileUpload1.PostedFile.ContentLength);
-                    imgBLL.ObtenerImagen(idProducto, imagen);
-
-                    
+                    imgBLL.InsertarImagen(idProducto, imagen);
+                   
                 }
 
             }
