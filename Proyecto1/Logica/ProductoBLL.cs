@@ -19,13 +19,14 @@ namespace Proyecto1.Logica
         /// <param name="idCategoria">Parametro que captura el id de la categoria a la que pertenece el producto</param>
         /// <param name="activo">Parametro que captura el estado del producto</param>
         /// <returns>Retorna un valor booleano segun la ejecucion del metodo</returns>
-        public bool AgregarProducto(string nombreP, string descripcion, int precioU, int marcaProducto, Guid idUsuario, bool activo = true)
+        public bool AgregarProducto(Guid idProducto, string nombreP, string descripcion, int precioU, int marcaProducto, Guid idUsuario, bool activo = true)
         {
 
             try
             {
                 Producto producto = new Producto
                 {
+                    ProductoID= idProducto,
                     NombreProducto = nombreP,
                     Descripcion = descripcion,
                     PrecioU = precioU,
@@ -34,6 +35,7 @@ namespace Proyecto1.Logica
                 };
                 AutoStoreContext contexto = new AutoStoreContext();
                 contexto.Producto.Add(producto);
+                contexto.SaveChanges();
                 return true;
             }
 
@@ -86,7 +88,7 @@ namespace Proyecto1.Logica
         /// </summary>
         /// <param name="idProducto">Parametro que permite traer el id del producto que se desea desactivar</param>
         /// <returns>Retorna un valor booleano segun la ejecucion del metodo</returns>
-        public bool DesactivarProducto(int idProducto)
+        public bool DesactivarProducto(Guid idProducto)
         {
             //Consulta para traer el producto que se desea desactivar
             AutoStoreContext contexto = new Models.AutoStoreContext();

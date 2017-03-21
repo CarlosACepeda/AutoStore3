@@ -19,6 +19,7 @@ namespace Proyecto1
         protected void Page_Load(object sender, EventArgs e)
         {
 
+           
         }
 
 
@@ -29,24 +30,28 @@ namespace Proyecto1
         }
         protected void BtnSubirProducto_Click(object sender, EventArgs e)
         {
+            ProductoBLL productBLL = new ProductoBLL();
+            ImagenProductoBLL imgBLL = new ImagenProductoBLL();
+            UsuarioBLL usr = new UsuarioBLL();
+            Guid idProducto = Guid.NewGuid();
+
+            productBLL.AgregarProducto(idProducto, TextNombreProducto.Text, TextDescripcion.InnerText, Convert.ToInt32( TxtPrecio.Text),Convert.ToInt32( DDlMarca.SelectedValue), Guid.Parse(usr.TraerIdDeUsuarioLogueado().ToString()));
+          
             if (FileUpload1.HasFile)
             {
-                string BD = Server.MapPath("./Imagen/");
-                string FileName = Path.GetFileName(FileUpload1.PostedFile.FileName);
-                FileUpload1.PostedFile.SaveAs(BD + FileName);
-
-                ImagenProductoBLL ImgProducto = new ImagenProductoBLL();
-                ImagenProducto p = new ImagenProducto();
+                using (BinaryReader lector = new BinaryReader(FileUpload1.PostedFile.InputStream))
                 {
-                    ImgProducto.ObtenerImagen(
-                       Convert.ToString(FileUpload1)
-                        );
+                    byte[] imagen = lector.ReadBytes(FileUpload1.PostedFile.ContentLength);
+                    imgBLL.ObtenerImagen(idProducto, imagen);
+
+                    
                 }
+
             }
         }
     }
 }
 
 
-            
-    
+
+

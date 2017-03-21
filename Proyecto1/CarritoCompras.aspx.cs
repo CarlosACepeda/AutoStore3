@@ -53,7 +53,7 @@ namespace Proyecto1
             {
                 IOrderedDictionary valoresDeFila = new OrderedDictionary();
                 valoresDeFila = ObtenerValores(gvCarrito.Rows[i]);
-                actualizarCarro[i].ProductoID = Convert.ToInt32(valoresDeFila["ProductoID"]);
+                actualizarCarro[i].ProductoID = Guid.Parse(valoresDeFila["ProductoID"].ToString());
 
                 CheckBox cbQuitar = new CheckBox();
                 cbQuitar = (CheckBox)gvCarrito.Rows[i].FindControl("Remover");

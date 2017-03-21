@@ -18,9 +18,8 @@ namespace Proyecto1
         }
         protected void CargarInfoDeUsuario()
         {
-            UsuarioBLL user = new UsuarioBLL();
-
-            txtNombre.Text = user.MostrarInformacion().ToString();
+            PersonaBLL persona = new PersonaBLL();
+            txtNombre.Text = persona.TraerPersona().Select(n => n.PersonaID).ToList().ToString();
         }
 
         
