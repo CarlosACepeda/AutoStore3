@@ -28,6 +28,9 @@
         <br />
         <br />
         <asp:Label ID="Label6" runat="server"></asp:Label>
+        <br />
+        <br />
+        <br />
     </form>
 </body>
 </html>
