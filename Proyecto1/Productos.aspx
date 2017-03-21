@@ -90,6 +90,10 @@
         </Columns>
     </asp:GridView>
     <br />
+    <br />
+    <asp:Label ID="Label1" runat="server"></asp:Label>
+    <br />
+    <br />
     <asp:ListView ID="listaProductosLV" runat="server"
         DataKeyNames="ProductoID" GroupItemCount="3"
 

@@ -22,7 +22,7 @@ namespace Proyecto1
             {
                 CarritoComprasBLL carrito = new CarritoComprasBLL();
 
-                carrito.AnadirAlCarro(int.Parse(idProduct));
+                carrito.AnadirAlCarro(Guid.Parse(idProduct));
             }
             else
             {

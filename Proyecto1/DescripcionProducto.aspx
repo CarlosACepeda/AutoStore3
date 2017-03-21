@@ -28,6 +28,19 @@
         <br />
         <br />
         <asp:Label ID="Label6" runat="server"></asp:Label>
+        <br />
+        <br />
+        <br />
+
+          <br />
+
+                           <a href="/AgregarAlCarro.aspx?ProductoID=<%#:Item.ProductoID %>">
+
+                               <span class="ListaItemProducto">
+                                   <b>Agregar Al Carro</b>
+                                     </span>
+                           </a>
+      
     </form>
 </body>
 </html>

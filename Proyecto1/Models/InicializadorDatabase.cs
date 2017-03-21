@@ -14,10 +14,29 @@ namespace Proyecto1.Models
             listarFabricantes().ForEach(f => context.FabricanteCarro.Add(f));
             listarModelosDeCarro().ForEach(m => context.ModeloCarro.Add(m));
             listarProductos().ForEach(product => context.Producto.Add(product));
+            ListarRoles().ForEach(roles => context.Rol.Add(roles));
 
 
         }
+        private static List<Rol> ListarRoles()
+        {
+            var rol = new List<Rol>
+            {
+                new Rol
+                {
+                    RolID = 1,
+                    NombreRol ="Admin",
 
+                },
+                new Rol
+                {
+                    RolID = 2,
+                    NombreRol = "Usuario",
+                }
+                };
+            return rol;     
+        }
+            
         //Datos quemados de Modelos de Carro.
         private static List<Categoria> listarCategorias()
         {
