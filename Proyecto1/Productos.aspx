@@ -75,7 +75,7 @@
 
     
     <!-- PRODUCTOS LISTA-->
-    <asp:TextBox ID="txtBuscar" runat="server"></asp:TextBox>
+    <asp:TextBox ID="txtBuscar" runat="server" size="25" maxlength="45" placeholder="Buscar Producto..."></asp:TextBox>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
     <asp:Button ID="btnBuscar" runat="server" Text="Buscar" OnClick="btnBuscar_Click" />
     <br />
