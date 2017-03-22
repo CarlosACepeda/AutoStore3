@@ -4,6 +4,8 @@ using System.Linq;
 using System.Web;
 using System.Web.Security;
 using System.Web.SessionState;
+using System.Data.Entity;
+using Proyecto1.Models;
 
 namespace Proyecto1
 {
@@ -12,7 +14,7 @@ namespace Proyecto1
 
         protected void Application_Start(object sender, EventArgs e)
         {
-
+            Database.SetInitializer(new InicializadorDatabase());
         }
 
         protected void Session_Start(object sender, EventArgs e)

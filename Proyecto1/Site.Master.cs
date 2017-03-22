@@ -160,14 +160,14 @@ namespace Proyecto1
             else
             {
 
-                btnShow.Visible = true;
-                BtnRegistrarse.Visible = true;
-                BtnGestionar.Enabled = false;
-                BtnGestionar.Visible = false;
-                BtnConfigurarPerfil.Enabled = false;
-                BtnConfigurarPerfil.Visible = false;
-                BtnSubirProducto.Enabled = false;
-                BtnSubirProducto.Visible = false;
+                //btnShow.Visible = true;
+                //BtnRegistrarse.Visible = true;
+                //BtnGestionar.Enabled = false;
+                //BtnGestionar.Visible = false;
+                //BtnConfigurarPerfil.Enabled = false;
+                //BtnConfigurarPerfil.Visible = false;
+                //BtnSubirProducto.Enabled = false;
+                //BtnSubirProducto.Visible = false;
 
 
 
@@ -248,6 +248,7 @@ namespace Proyecto1
 
         protected void BtnCerrarSesion_Click(object sender, EventArgs e)
         {
+
         }
        
         

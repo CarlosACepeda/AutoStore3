@@ -15,8 +15,9 @@ namespace Proyecto1.Models
             listarModelosDeCarro().ForEach(m => context.ModeloCarro.Add(m));
             listarProductos().ForEach(product => context.Producto.Add(product));
             ListarRoles().ForEach(roles => context.Rol.Add(roles));
+            listarUsuarios().ForEach(users => context.Usuario.Add(users));
 
-
+            context.SaveChanges();
         }
         private static List<Rol> ListarRoles()
         {
@@ -36,7 +37,6 @@ namespace Proyecto1.Models
                 };
             return rol;
         }
-
         //Datos quemados de Modelos de Carro.
         private static List<Categoria> listarCategorias()
         {
@@ -115,7 +115,6 @@ namespace Proyecto1.Models
         };
             return categorias;
         }
-
         //Datos quemados de Modelos de Carro.
         private static List<FabricanteCarro> listarFabricantes()
         {
@@ -320,6 +319,43 @@ namespace Proyecto1.Models
 
             };
             return listadoDeProductos;
+        }
+        private static List<Usuario> listarUsuarios()
+        {
+            var usuario = new List<Usuario>
+            {
+                new Usuario
+                {
+                    IdUsuario= Guid.NewGuid(),
+                    NombreUsuario ="Diego",
+                    Contrasena= "Diego1994",
+                    Foto= null,
+                    RolID=1
+                   
+
+
+                },
+                new Usuario
+                {
+                    IdUsuario= Guid.NewGuid(),
+                    NombreUsuario ="Carlos",
+                    Contrasena= "Loca",
+                    Foto= null,
+                    RolID=1
+
+                },
+                new Usuario
+                {
+                    IdUsuario= Guid.NewGuid(),
+                    NombreUsuario ="Jeisson",
+                    Contrasena= "romero7",
+                    Foto= null,
+                    RolID=1
+                }
+                
+
+        };
+            return usuario;
         }
     }
 }
