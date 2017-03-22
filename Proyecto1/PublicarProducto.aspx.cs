@@ -27,6 +27,7 @@ namespace Proyecto1
 
             //    }
             //}
+            
         }
 
 
@@ -43,17 +44,25 @@ namespace Proyecto1
             Guid idProducto = Guid.NewGuid();
 
             productBLL.AgregarProducto(idProducto, TextNombreProducto.Text, TextDescripcion.InnerText, Convert.ToInt32( TxtPrecio.Text),Convert.ToInt32( DDlMarca.SelectedValue), Guid.Parse(usr.TraerIdDeUsuarioLogueado().ToString()));
-          
+            
             if (FileUpload1.HasFile)
             {
                 using (BinaryReader lector = new BinaryReader(FileUpload1.PostedFile.InputStream))
                 {
                     byte[] imagen = lector.ReadBytes(FileUpload1.PostedFile.ContentLength);
                     imgBLL.InsertarImagen(idProducto, imagen);
-                   
+                    Limpiar();
+                    LblMensaje.Text = "<h1>Producto publicado con exito</h1>"; 
                 }
 
             }
+        }
+
+        public void Limpiar()
+        {
+            TextNombreProducto.Text = "";
+            TextDescripcion.InnerText = "";
+            TxtPrecio.Text = "";
         }
     }
 }

@@ -8,21 +8,19 @@
     <br />
     <br />
     <br />
+   <br />
     <br />
-    <br />
-    <br />
-    <br />
-
     <!--FORMULARIO DE PUBLICAR PRODUCTO-->
     <div class="form-group">
-        <div class="collapse navbar-collapse" id="upmenu2" style="background-color: #e9eef1" >
+        <div class="collapse navbar-collapse" id="upmenu2" style="background-color: #e9eef1"  >
             <ul class="nav navbar-nav" id="navbarontop3" style="background-color: #e9eef1">
                 <li>
-
+                    <asp:Label ID="LblMensaje" runat="server" Text=""></asp:Label>
+                    <br />
                     <asp:Label ID="LblNombreProducto" runat="server" Text="Nombre del Producto"></asp:Label><br />
                     <asp:TextBox ID="TextNombreProducto" runat="server" Class="form-control" Width="62%"></asp:TextBox><br />
 
-                    <asp:Label ID="LblSeleccionarImagen" runat="server" Text="Seleccionar Imagen"></asp:Label>
+                    <asp:Label ID="LblSeleccionarImagen" runat="server" Text="Seleccionar Imagen" ></asp:Label>
                     <asp:FileUpload ID="FileUpload1" runat="server" /> <br />
                     
                      <asp:Label ID="LblMarca" runat="server" Text="Marca"></asp:Label>
@@ -41,7 +39,7 @@
                             <asp:Parameter Name="original_NombreMarca" Type="String" />
                         </UpdateParameters>
                     </asp:SqlDataSource> <br />
-
+                    <br />
                     <asp:Label ID="LblDescripcion" runat="server" Text="Descripcion"></asp:Label> 
                     <textarea id="TextDescripcion" runat="server" class="form-control" name="comentario" rows="5" cols="25"></textarea><br />
 
@@ -49,6 +47,7 @@
                     <asp:TextBox ID="TxtPrecio" runat="server" Class="form-control" Width="62%"></asp:TextBox><br />
 
                     <asp:Button ID="BtnSubirProducto" runat="server" Text="Publicar" CssClass="btn btn-lg btn-primary btn-block btn-signin" Width="62%" OnClick="BtnSubirProducto_Click" /><br />
+
                 </li>
             </ul>
         </div>

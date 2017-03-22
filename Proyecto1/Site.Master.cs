@@ -159,6 +159,7 @@ namespace Proyecto1
             }
             else
             {
+
                 btnShow.Visible = true;
                 BtnRegistrarse.Visible = true;
                 BtnGestionar.Enabled = false;
@@ -167,6 +168,7 @@ namespace Proyecto1
                 BtnConfigurarPerfil.Visible = false;
                 BtnSubirProducto.Enabled = false;
                 BtnSubirProducto.Visible = false;
+
 
 
             }
@@ -244,7 +246,11 @@ namespace Proyecto1
             Response.Redirect("PublicarProducto.aspx");
         }
 
-
+        protected void BtnCerrarSesion_Click(object sender, EventArgs e)
+        {
+        }
+       
+        
     }
 }
 
