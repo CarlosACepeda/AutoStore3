@@ -21,11 +21,24 @@
     <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
         <br />
         <br />
-        <asp:TextBox ID="TextBox2" runat="server"></asp:TextBox>
         <br />
         <br />
-        <asp:DropDownList ID="DropDownList1" runat="server" OnSelectedIndexChanged="DropDownList1_SelectedIndexChanged">
+        <asp:DropDownList ID="DropDownList1" runat="server" OnSelectedIndexChanged="DropDownList1_SelectedIndexChanged" DataSourceID="SqlDataSource1" DataTextField="NombreFabricanteC" DataValueField="idFabricanteCarro">
         </asp:DropDownList>
+        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConflictDetection="CompareAllValues" ConnectionString="<%$ ConnectionStrings:AutoStoreContext %>" DeleteCommand="DELETE FROM [FabricanteCarroes] WHERE [idFabricanteCarro] = @original_idFabricanteCarro AND [NombreFabricanteC] = @original_NombreFabricanteC" InsertCommand="INSERT INTO [FabricanteCarroes] ([NombreFabricanteC]) VALUES (@NombreFabricanteC)" OldValuesParameterFormatString="original_{0}" SelectCommand="SELECT [idFabricanteCarro], [NombreFabricanteC] FROM [FabricanteCarroes]" UpdateCommand="UPDATE [FabricanteCarroes] SET [NombreFabricanteC] = @NombreFabricanteC WHERE [idFabricanteCarro] = @original_idFabricanteCarro AND [NombreFabricanteC] = @original_NombreFabricanteC">
+            <DeleteParameters>
+                <asp:Parameter Name="original_idFabricanteCarro" Type="Int32" />
+                <asp:Parameter Name="original_NombreFabricanteC" Type="String" />
+            </DeleteParameters>
+            <InsertParameters>
+                <asp:Parameter Name="NombreFabricanteC" Type="String" />
+            </InsertParameters>
+            <UpdateParameters>
+                <asp:Parameter Name="NombreFabricanteC" Type="String" />
+                <asp:Parameter Name="original_idFabricanteCarro" Type="Int32" />
+                <asp:Parameter Name="original_NombreFabricanteC" Type="String" />
+            </UpdateParameters>
+    </asp:SqlDataSource>
         <br />
     <asp:Button ID="Button1" runat="server" Text="Agregar Modelo" OnClick="Button1_Click"/>
         

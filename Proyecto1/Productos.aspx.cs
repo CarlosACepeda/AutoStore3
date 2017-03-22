@@ -31,31 +31,9 @@ namespace Proyecto1
             ProductoBLL producto = new ProductoBLL();
             return producto.ObtenerProducto();
         }
-        public void LlenarGrilla()
-        {
-            ProductoBLL product = new ProductoBLL();
-            gvProductos.DataSource = product.ObtenerProducto();
-            gvProductos.DataMember = txtBuscar.Text;
-            gvProductos.DataBind();
-
-        }
 
         protected void btnBuscar_Click(object sender, EventArgs e)
         {
-            //string buscar = txtBuscar.Text;
-
-            //using (AutoStoreContext contexto = new AutoStoreContext())
-            //{
-            //    IQueryable<Producto> lista = from q in contexto.Producto
-            //                                 where q.NombreProducto == buscar
-            //                                 select q;
-            //    List<Producto> nombres = lista.ToList();
-
-            //    var oNombre = nombres[0];
-
-            //    gvProductos.DataSource = nombres;
-            //    gvProductos.DataBind();
-            //}
             try
             {
 
@@ -68,19 +46,6 @@ namespace Proyecto1
                                    where c.NombreProducto.Contains(txtBuscar.Text)
                                    select c;
 
-
-                    //var query = from p in contexto.Producto
-                    //            where (SqlMethods.Like(prod.NombreProducto, "%" + valor + "%").ToString()) != null
-                    //            select new
-                    //            {
-                    //                p.ProductoID,
-                    //                p.NombreProducto,
-                    //                p.Descripcion,
-                    //                p.PrecioU,
-                    //                p.Activo,
-                    //                p.UsuarioID,
-                    //                p.MarcaProductoID
-                    //            };
                     gvProductos.DataSource = consulta.ToList();
                     gvProductos.DataBind();
                 }
@@ -90,6 +55,7 @@ namespace Proyecto1
                 throw;
             }
         }
+    
 
         protected void gvProductos_SelectedIndexChanged(object sender, EventArgs e)
         {

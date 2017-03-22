@@ -93,8 +93,7 @@ namespace Proyecto1
         protected void Button5_Click(object sender, EventArgs e)
         {
             UsuarioBLL persona = new UsuarioBLL();
-
-
+            persona.TraerIdDeUsuarioLogueado();
         }
     }
 }

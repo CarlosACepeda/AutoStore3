@@ -34,7 +34,7 @@ namespace Proyecto1
             cat.ObtenerCategoria();
             modelo.AgregarModeloCarro(
                 TextBox1.Text,
-                int.Parse(TextBox2.Text)
+                int.Parse(DropDownList1.SelectedValue)
             );
         }
 

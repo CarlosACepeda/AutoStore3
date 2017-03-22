@@ -38,6 +38,7 @@ namespace Proyecto1.Logica
                 };
                 AutoStoreContext contexto = new AutoStoreContext();
                 contexto.ModeloCarro.Add(ModeloC);
+                contexto.SaveChanges();
                 return true;
             }
 
