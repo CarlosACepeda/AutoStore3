@@ -59,21 +59,10 @@
                  <label for="ex7">Contraseña</label>
                 <asp:TextBox ID="txtClave" runat="server" style="width:90%;" CssClass="form-control"></asp:TextBox>
                  
-                      <br />
-                      <br />
-                      <asp:GridView ID="gvPerfil" runat="server">
-                      </asp:GridView>
-                      <br />
-                      <br />
-                      <br />
                  
                 <br />
                       <asp:Button ID="Actualizar" runat="server" Text="Button" OnClick="btnActualizar_Click"/>
-                      <%--<asp:Button ID="bntVer" runat="server" Text="Button" Class="btn btn-lg btn-primary btn-block btn-signin"  style="width:90%;  border-bottom:1px solid #03214c; background-color:#4d90fe";  type="button" OnClick="EditarPerfil_Click">--%>
-                 <%--<button class="btn btn-lg btn-primary btn-block btn-signin"  style="width:90%;  border-bottom:1px solid #03214c; background-color:#4d90fe";  type="button" </button>--%>
                       </div>
                   
-            </li>    
-        </ul>
-                </div>
+          
 </asp:Content>

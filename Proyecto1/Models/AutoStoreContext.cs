@@ -14,9 +14,9 @@ namespace Proyecto1.Models
             Database.SetInitializer(new InicializadorDatabase());
         }
 
-
-        public DbSet<Usuario> Usuario { get; set; }
         public DbSet<Rol> Rol { get; set; }
+        public DbSet<Usuario> Usuario { get; set; }
+        
         public DbSet<Puntuacion> Puntuacion { get; set; }
         public DbSet<Producto> Producto { get; set; }
         public DbSet<Persona> Persona { get; set; }

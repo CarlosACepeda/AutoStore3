@@ -192,8 +192,11 @@ namespace Proyecto1.Logica
                     //Si se encuentra un usuario, compara el id de ese usuario.
                     else if (rolId.Equals(1))
                     {
+                        //Y se activa un estado de sesión para Administrador.
+                        HttpContext.Current.Session["AdminLogin"] = 1;
                         ///Si el Rol es 1 entonces es Administrador.
                         return 1;
+                        
                     }
                     else
                     {
@@ -208,6 +211,9 @@ namespace Proyecto1.Logica
                 throw;
             }
         }
+
+
+        //Método que trae el Id del usuario que está logueado, para diferentes fines.
         public Guid? TraerIdDeUsuarioLogueado()
         {
 

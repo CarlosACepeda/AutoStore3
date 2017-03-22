@@ -34,9 +34,9 @@ namespace Proyecto1.Models
                     NombreRol = "Usuario",
                 }
                 };
-            return rol;     
+            return rol;
         }
-            
+
         //Datos quemados de Modelos de Carro.
         private static List<Categoria> listarCategorias()
         {
@@ -278,17 +278,18 @@ namespace Proyecto1.Models
             {
                 new Producto
                 {
-
+                    ProductoID= Guid.NewGuid(),
                     NombreProducto ="Bujias",
                     Descripcion="Bujias para... ",
                     PrecioU = 30000,
                     Activo= true,
                     UsuarioID= Guid.NewGuid(),
                     MarcaProductoID= 1
-                    
+
                 },
                   new Producto
                 {
+                      ProductoID= Guid.NewGuid(),
                     NombreProducto ="Limpiaparabrisas",
                     Descripcion="Limpiaparabrisas para... ",
                     PrecioU = 50000,
@@ -298,6 +299,7 @@ namespace Proyecto1.Models
                 },
                     new Producto
                 {
+                        ProductoID= Guid.NewGuid(),
                     NombreProducto ="Radioador",
                     Descripcion="Radiador para... ",
                     PrecioU = 60000,
@@ -307,6 +309,7 @@ namespace Proyecto1.Models
                 },
                       new Producto
                 {
+                          ProductoID= Guid.NewGuid(),
                     NombreProducto ="Retrovisor",
                     Descripcion="Retrovisor para... ",
                     PrecioU = 5000,
@@ -314,12 +317,12 @@ namespace Proyecto1.Models
                     UsuarioID= Guid.NewGuid(),
                     MarcaProductoID = 2,
                 },
-                
+
             };
             return listadoDeProductos;
-            }
         }
     }
+}
 
 
 
@@ -329,4 +332,3 @@ namespace Proyecto1.Models
 
 
 
-     
