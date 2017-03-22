@@ -220,6 +220,7 @@
     <Content Include="Content\Site.css" />
     <Content Include="DescripcionProducto.aspx" />
     <Content Include="EliminarProducto.aspx" />
+    <Content Include="Errores\NoPermitido.aspx" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
@@ -278,6 +279,7 @@
     <Content Include="GestionarModelos.aspx" />
     <Content Include="GestionarProductos.aspx" />
     <Content Include="GestionarUsuarios.aspx" />
+    <Content Include="Global.asax" />
     <Content Include="image\benz.jpg" />
     <Content Include="image\border.png" />
     <Content Include="image\car1.jpg" />
@@ -292,12 +294,15 @@
     <Content Include="image\compicon.png" />
     <Content Include="image\featurporch.jpg" />
     <Content Include="image\featurporch1.jpg" />
+    <Content Include="image\Imagen_Error.jpg" />
+    <Content Include="image\Imagen_NoPermitido.jpg" />
     <Content Include="image\line.png" />
     <Content Include="image\logo1.png" />
     <Content Include="image\newsletter.jpg" />
     <Content Include="image\oldcar.jpg" />
     <Content Include="image\porche.jpg" />
     <Content Include="index.html" />
+    <Content Include="Errores\PaginaError.aspx" />
     <Content Include="Productos.aspx" />
     <Content Include="PublicarProducto.aspx" />
     <Content Include="QuienesSomos.aspx" />
@@ -433,7 +438,6 @@
     <Content Include="GARAGE - HTML-CSS-Template\source\fonts\._OpenSans-Regular.ttf" />
     <Content Include="GARAGE - HTML-CSS-Template\source\fonts\._OpenSans-Semibold.ttf" />
     <Content Include="GARAGE - HTML-CSS-Template\source\fonts\._Roboto-Light.ttf" />
-    <Content Include="._GARAGE - HTML-CSS-Template" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <None Include="Scripts\jquery-3.1.1.intellisense.js" />
@@ -630,6 +634,13 @@
     <Compile Include="EliminarProducto.aspx.designer.cs">
       <DependentUpon>EliminarProducto.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Errores\NoPermitido.aspx.cs">
+      <DependentUpon>NoPermitido.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Errores\NoPermitido.aspx.designer.cs">
+      <DependentUpon>NoPermitido.aspx</DependentUpon>
+    </Compile>
     <Compile Include="GestionarCategorias.aspx.cs">
       <DependentUpon>GestionarCategorias.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -672,6 +683,9 @@
     <Compile Include="GestionarUsuarios.aspx.designer.cs">
       <DependentUpon>GestionarUsuarios.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
     <Compile Include="Inicio.aspx.cs">
       <DependentUpon>Inicio.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -707,6 +721,13 @@
     <Compile Include="Models\Puntuacion.cs" />
     <Compile Include="Models\Rol.cs" />
     <Compile Include="Models\Usuario.cs" />
+    <Compile Include="Errores\PaginaError.aspx.cs">
+      <DependentUpon>PaginaError.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Errores\PaginaError.aspx.designer.cs">
+      <DependentUpon>PaginaError.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Productos.aspx.cs">
       <DependentUpon>Productos.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

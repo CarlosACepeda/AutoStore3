@@ -14,8 +14,23 @@ namespace Proyecto1
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            SiteMaster.usuarioEstaLogueado = 2;
-            CargarInfoDeUsuario();
+            // Se comprueba que tipo de usuario está logueado en el Sistema.
+            if (Session["Admin"] != null)
+            {
+                //Se le redirige a la página de error porque solo los Usuarios deben ingresar a esta página
+                Response.Redirect("Errores/NoPermitido.aspx.aspx");
+            }
+            else if (Session["UserLogin"] != null)
+            {
+
+                SiteMaster.usuarioEstaLogueado = 2;
+            }
+            if (!IsPostBack)
+            {
+                CargarInfoDeUsuario();
+            }
+
+
         }
         protected void CargarInfoDeUsuario()
         {
@@ -62,13 +77,14 @@ namespace Proyecto1
             Usuario usuario = new Usuario
             {
                 IdUsuario = idUser,
-                NombreUsuario = txtNombre.Text,
+                NombreUsuario = txtUsuario.Text,
                 Contrasena = txtClave.Text,
                 Foto = imagen              
 
             };
             Persona per = new Persona
             {
+                PersonaID= idUser,
                 Nombre = txtNombre.Text,
                 Apellido = txtApellido.Text,
                 Direccion = txtDireccion.Text,

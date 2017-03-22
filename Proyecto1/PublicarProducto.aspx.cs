@@ -18,6 +18,17 @@ namespace Proyecto1
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            //Se comprueba que tipo de usuario está logueado en el Sistema.
+            if (Session["Admin"] != null)
+            {
+                //Se le redirige a la página de error porque solo los Usuarios deben ingresar a esta página
+                Response.Redirect("Errores/NoPermitido.aspx");
+            }
+            else if (Session["UserLogin"] != null)
+            {
+
+                SiteMaster.usuarioEstaLogueado = 2;
+            }
             //ImagenProductoBLL imagen = new ImagenProductoBLL();
             //byte imag= imagen.Mostrarimagen()
             //using (var ms = new System.IO.MemoryStream(byte.Parse(imag.ToString())))

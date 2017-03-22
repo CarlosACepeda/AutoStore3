@@ -11,6 +11,18 @@ namespace Proyecto1
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            // Se comprueba que tipo de usuario está logueado en el Sistema.
+            if (Session["Admin"] != null)
+            {
+                //Se le redirige a la página de error porque solo los Usuarios deben ingresar a esta página
+                Response.Redirect("Errores/NoPermitido.aspx.aspx");
+            }
+            else if (Session["UserLogin"] != null)
+            {
+
+                SiteMaster.usuarioEstaLogueado = 2;
+            }
+
             Label1.Text = Session["IdProducto"].ToString();
             Label2.Text = Session["NombreP"].ToString();
             Label3.Text = Session["Descripcion"].ToString();

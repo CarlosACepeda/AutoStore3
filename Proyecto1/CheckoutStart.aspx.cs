@@ -11,8 +11,17 @@ namespace Proyecto1
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            SiteMaster site = new SiteMaster();
-            site.RevisarLoginUser();
+            // Se comprueba que tipo de usuario está logueado en el Sistema.
+            if (Session["Admin"] != null)
+            {
+                //Se le redirige a la página de error porque solo los Usuarios deben ingresar a esta página
+                Response.Redirect("Errores/NoPermitido.aspx.aspx");
+            }
+            else if (Session["UserLogin"] != null)
+            {
+
+                SiteMaster.usuarioEstaLogueado = 2;
+            }
         }
     }
 }

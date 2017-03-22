@@ -12,9 +12,32 @@ namespace Proyecto1
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+
+            //Se comprueba que tipo de usuario está logueado en el Sistema.
+            if (Session["Admin"] != null)
+            {
+                SiteMaster.usuarioEstaLogueado = 1;
+            }
+            else if (Session["UserLogin"] != null)
+            {
+                //Se le redirige a la página de error porque solo los admins deben ingresar a esta página
+                Response.Redirect("Errores/NoPermitido.aspx");
+            }
+
             ProductoBLL producBLL = new ProductoBLL();
             string id = Request.Params["ProductoID"];
-            Guid idNum = Guid.Parse(id);
+            Guid idNum= Guid.Empty;
+            try
+            {
+                idNum = Guid.Parse(id);
+            }
+            catch (Exception)
+            {
+
+                Response.Redirect("Errores/NoPermitido.aspx");
+            }
+            
+            
 
             producBLL.DesactivarProducto(idNum);
         }
