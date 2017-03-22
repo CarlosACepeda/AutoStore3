@@ -13,8 +13,17 @@ namespace Proyecto1
         ModeloCarroBLL modelo = new ModeloCarroBLL();
         protected void Page_Load(object sender, EventArgs e)
         {
+            //Se comprueba que tipo de usuario está logueado en el Sistema.
+            if (Session["Admin"] != null)
+            {
+                SiteMaster.usuarioEstaLogueado = 1;
+            }
+            else if (Session["UserLogin"] != null)
+            {
+                //Se le redirige a la página de error porque solo los admins deben ingresar a esta página
+                Response.Redirect("Errores/NoPermitido.aspx.aspx");
+            }
             CargarModelos();
-            SiteMaster.usuarioEstaLogueado = 1;
         }
 
         protected void Button1_Click(object sender, EventArgs e)
