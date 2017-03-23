@@ -62,7 +62,7 @@ namespace Proyecto1
                     byte[] imagen = lector.ReadBytes(FileUpload1.PostedFile.ContentLength);
                     imgBLL.InsertarImagen(idProducto, imagen);
                     Limpiar();
-                    LblMensaje.Text = "<h1>Producto publicado con exito</h1>"; 
+                    LblMensaje.Text = "Producto publicado con exito."; 
                 }
 
             }

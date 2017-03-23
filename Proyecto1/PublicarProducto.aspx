@@ -15,7 +15,7 @@
         <div class="collapse navbar-collapse" id="upmenu2" style="background-color: #e9eef1"  >
             <ul class="nav navbar-nav" id="navbarontop3" style="background-color: #e9eef1">
                 <li>
-                    <asp:Label ID="LblMensaje" runat="server" Text=""></asp:Label>
+                    <asp:Label ID="LblMensaje" runat="server" Text="" ForeColor="Blue"></asp:Label>
                     <br />
                     <asp:Label ID="LblNombreProducto" runat="server" Text="Nombre del Producto"></asp:Label><br />
                     <asp:TextBox ID="TextNombreProducto" runat="server" Class="form-control" Width="62%"></asp:TextBox><br />
