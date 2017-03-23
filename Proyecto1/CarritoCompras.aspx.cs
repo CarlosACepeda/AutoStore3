@@ -96,6 +96,21 @@ namespace Proyecto1
             {
                 lblLoginRequerido.Visible = true;
             }
+            Response.Redirect("CheckoutStart.aspx");
+        }
+        public void LlenarDatos()
+        {
+            UsuarioBLL persona = new UsuarioBLL();
+            persona.MostrarInformacion();
+            Persona personita = new Persona();
+            Usuario user = new Usuario();
+            user = persona.MostrarInformacion();
+            personita = persona.TraerPersona();
+            Session["NombreP"]= personita.Nombre;
+            Session["email"]= personita.Email;
+            Session["Telefono"]= personita.Telefono.ToString();
+            Session["Total"] = LblTotal.Text;
+            Session["IdCarro"] = user.NombreUsuario;
         }
     }
 }

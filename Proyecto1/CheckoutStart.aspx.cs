@@ -22,6 +22,8 @@ namespace Proyecto1
 
                 SiteMaster.usuarioEstaLogueado = 2;
             }
+
+
         }
     }
 }

@@ -12,7 +12,6 @@ namespace Proyecto1
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
             ProductoBLL producBLL = new ProductoBLL();
             Guid id = Guid.Parse(Request.Params["ProductoID"].ToString());
             producBLL.DesactivarProducto(id);

@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using Proyecto1.Logica;
 
 namespace Proyecto1
 {
@@ -29,6 +30,11 @@ namespace Proyecto1
             Label4.Text = Session["PrecioU"].ToString();
             Label5.Text = Session["UsuarioId"].ToString();
             Label6.Text = Session["MarcaP"].ToString();
+        }
+        public List<Models.Producto> ObtenerProductos()
+        {
+            ProductoBLL producto = new ProductoBLL();
+            return producto.ObtenerProducto();
         }
     }
 }

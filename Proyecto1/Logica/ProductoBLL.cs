@@ -1,10 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Web;
+using System.Web;   
 using Proyecto1.Models;
-using System.IO;
-using System.Drawing;
 
 namespace Proyecto1.Logica
 {
@@ -122,13 +120,22 @@ namespace Proyecto1.Logica
             return true;
 
         }
-        public Producto ObtenerProducto()
+        public List<Producto> ObtenerProducto()
         {
             AutoStoreContext context = new AutoStoreContext();
             var mostrarProducto = from Fab in context.Producto
                                     select Fab;
-            return mostrarProducto.FirstOrDefault();
+            return mostrarProducto.ToList();
         }
-        
+        public void EliminarProducto(Guid IdP)
+        {
+            AutoStoreContext context = new AutoStoreContext();
+            var Eliminar = (from e in context.Producto
+                            where e.ProductoID == IdP
+                            select e).FirstOrDefault();
+
+            context.Producto.Remove(Eliminar);
+            context.SaveChanges();
+        }
     }
 }
