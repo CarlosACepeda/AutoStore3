@@ -127,5 +127,15 @@ namespace Proyecto1.Logica
                                     select Fab;
             return mostrarProducto.ToList();
         }
+        public void EliminarProducto(Guid IdP)
+        {
+            AutoStoreContext context = new AutoStoreContext();
+            var Eliminar = (from e in context.Producto
+                            where e.ProductoID == IdP
+                            select e).FirstOrDefault();
+
+            context.Producto.Remove(Eliminar);
+            context.SaveChanges();
+        }
     }
 }

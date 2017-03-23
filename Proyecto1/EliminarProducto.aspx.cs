@@ -4,7 +4,9 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-
+using Proyecto1;
+using Proyecto1.Logica;
+using Proyecto1.Models;
 
 namespace Proyecto1
 {
@@ -12,6 +14,8 @@ namespace Proyecto1
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            
+
             //Se comprueba que tipo de usuario está logueado en el Sistema.
             if (Session["Admin"] != null)
             {
@@ -23,8 +27,6 @@ namespace Proyecto1
                 
                 SiteMaster.usuarioEstaLogueado = 2;
             }
-
         }
-
     }
 }
