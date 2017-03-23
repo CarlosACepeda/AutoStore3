@@ -26,7 +26,7 @@ namespace Proyecto1
                 SiteMaster.usuarioEstaLogueado = 2;
             }
         }
-        public List<Models.Producto> ObtenerProductos()
+        public Producto ObtenerProductos()
         {
             ProductoBLL producto = new ProductoBLL();
             return producto.ObtenerProducto();

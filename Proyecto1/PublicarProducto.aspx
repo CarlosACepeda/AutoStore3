@@ -22,6 +22,8 @@
 
                     <asp:Label ID="LblSeleccionarImagen" runat="server" Text="Seleccionar Imagen" ></asp:Label>
                     <asp:FileUpload ID="FileUpload1" runat="server" /> <br />
+
+                    <asp:Image ID="ImagenProducto" runat="server" />
                     
                      <asp:Label ID="LblMarca" runat="server" Text="Marca"></asp:Label>
                     <asp:DropDownList ID="DDlMarca" runat="server" DataSourceID="SqlDataSource1" DataTextField="NombreMarca" DataValueField="IdMarca"></asp:DropDownList>

@@ -96,7 +96,6 @@ namespace Proyecto1
             {
                 lblLoginRequerido.Visible = true;
             }
-
         }
     }
 }

@@ -73,8 +73,16 @@ namespace Proyecto1
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            RevisarLoginUser();
 
+            HttpContext.Current.Response.AddHeader("Cache-Control", "no-cache, no-store, must-revalidate");
+            HttpContext.Current.Response.AddHeader("Pragma", "no-cache");
+            HttpContext.Current.Response.AddHeader("Expires", "0");
+
+            RevisarLoginUser();
+            if(usuarioEstaLogueado==0)
+            {
+                RevisarLoginUser();
+            }
         }
 
         protected void Unnamed_LoggingOut(object sender, LoginCancelEventArgs e)
@@ -89,6 +97,8 @@ namespace Proyecto1
             {
                 Session["Admin"] = TxtNombre.Text;
                 usuarioEstaLogueado = 1;
+                //lblUsuarioEnLinea.Text = TxtNombre.Text;
+                //lblUsuarioEnLinea.Visible = true;
                 RevisarLoginUser();
                 
              }

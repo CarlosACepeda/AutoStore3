@@ -13,7 +13,7 @@ namespace Proyecto1.Logica
         
         public string CarritoId { get; set; }
         AutoStoreContext context = new AutoStoreContext();
-
+       
         /// <summary>
         /// Metodo en el cual se añadiran los item al carrito
         /// </summary>
@@ -97,7 +97,7 @@ namespace Proyecto1.Logica
                         context.SaveChanges();
                     }
                 }
-                catch (Exception ex)
+                catch (Exception)
                 {
 
                     throw new Exception("No se puede remover el item del carrito");
@@ -125,7 +125,7 @@ namespace Proyecto1.Logica
                         context.SaveChanges();
                     }
                 }
-                catch (Exception ex)
+                catch (Exception)
                 {
 
                     throw new Exception("No se puede actualizar el item del carrito");

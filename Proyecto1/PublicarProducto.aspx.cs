@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.IO;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -8,6 +7,7 @@ using System.Web.UI.WebControls;
 using Proyecto1;
 using Proyecto1.Models;
 using Proyecto1.Logica;
+using System.IO;
 
 
 
@@ -16,8 +16,10 @@ namespace Proyecto1
 {
     public partial class PublicarProducto : System.Web.UI.Page
     {
+        Guid idProducto = Guid.NewGuid();
         protected void Page_Load(object sender, EventArgs e)
         {
+
             //Se comprueba que tipo de usuario está logueado en el Sistema.
             if (Session["Admin"] != null)
             {
@@ -26,18 +28,9 @@ namespace Proyecto1
             }
             else if (Session["UserLogin"] != null)
             {
-
-                SiteMaster.usuarioEstaLogueado = 2;
+                
             }
-            //ImagenProductoBLL imagen = new ImagenProductoBLL();
-            //byte imag= imagen.Mostrarimagen()
-            //using (var ms = new System.IO.MemoryStream(byte.Parse(imag.ToString())))
-            //{
-            //    using (var img = Image.FromStream(ms))
-            //    {
 
-            //    }
-            //}
         }
 
 
@@ -51,7 +44,7 @@ namespace Proyecto1
             ProductoBLL productBLL = new ProductoBLL();
             ImagenProductoBLL imgBLL = new ImagenProductoBLL();
             UsuarioBLL usr = new UsuarioBLL();
-            Guid idProducto = Guid.NewGuid();
+            
 
             productBLL.AgregarProducto(idProducto, TextNombreProducto.Text, TextDescripcion.InnerText, Convert.ToInt32( TxtPrecio.Text),Convert.ToInt32( DDlMarca.SelectedValue), Guid.Parse(usr.TraerIdDeUsuarioLogueado().ToString()));
             
@@ -73,6 +66,15 @@ namespace Proyecto1
             TextNombreProducto.Text = "";
             TextDescripcion.InnerText = "";
             TxtPrecio.Text = "";
+        }
+        public System.Drawing.Image TraerImagenProducto()
+        {
+            ImagenProductoBLL imag = new ImagenProductoBLL();
+
+            MemoryStream memoryStream = new MemoryStream(imag.MostrarImagen(idProducto));
+            System.Drawing.Image regresarImagen = System.Drawing.Image.FromStream(memoryStream);
+            return regresarImagen;
+           
         }
     }
 }

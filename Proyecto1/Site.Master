@@ -278,8 +278,9 @@
                               <li>
                               <asp:Button ID="BtnSubirProducto" runat="server" Text="PUBLICAR PRODUCTO" BackColor="Black" BorderColor="Black" ForeColor="White" OnClick="BtnSubirProducto_Click" />
                        </li>
+                    
                     <li>
-                        <asp:Button ID="BtnCerrarSesion" runat="server" Text="CERRAR SESION" BackColor="Black" BorderColor="Black" ForeColor="White" OnClick="BtnCerrarSesion_Click"/>
+                             <asp:Button ID="BtnCerrarSesion" runat="server" Text="CERRAR SESION" BackColor="Black" BorderColor="Black" ForeColor="White" OnClick="BtnCerrarSesion_Click"/>
                     </li>
                     </ul>
                      </div>
