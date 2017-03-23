@@ -17,7 +17,7 @@ namespace Proyecto1
     public partial class PublicarProducto : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
-        {
+        { 
             //Se comprueba que tipo de usuario está logueado en el Sistema.
             if (Session["Admin"] != null)
             {
@@ -62,7 +62,7 @@ namespace Proyecto1
                     byte[] imagen = lector.ReadBytes(FileUpload1.PostedFile.ContentLength);
                     imgBLL.InsertarImagen(idProducto, imagen);
                     Limpiar();
-                    LblMensaje.Text = "<h1>Producto publicado con exito</h1>"; 
+                    LblMensaje.Text = "Producto publicado con exito."; 
                 }
 
             }
