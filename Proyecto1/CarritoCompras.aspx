@@ -27,8 +27,8 @@
     <br />
     <br />
 
-    <div id="CarritoComprasTitulo" runat="server" class="ContentHead"><h1>Carrito De Compras</h1></div>
-
+    <div id="CarritoComprasTitulo" runat="server" class="ContentHead"><h1>Carrito De Compras</h1></div><br /><br />
+    <asp:Label ID="lblLoginRequerido" runat="server" Text="Debe loguearse primero antes de pagar" ForeColor="Red" Visible="false"></asp:Label>
         <asp:GridView ID="gvCarrito" runat="server" AutoGenerateColumns="False" CssClass="table table-striped table-bordered" CellPadding="4" ItemType="Proyecto1.Models.ItemCarrito" SelectMethod="LlenarCarrito" BackColor="White" BorderColor="#3366CC" BorderStyle="None" BorderWidth="1px">
             <Columns>
                 <asp:BoundField DataField="ProductoID" HeaderText="ID" SortExpression="ProductoID" />

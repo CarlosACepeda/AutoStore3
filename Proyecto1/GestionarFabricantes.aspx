@@ -17,12 +17,17 @@
 
         </ul>
     </div>
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />   
 
              <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
 
     <asp:Button ID="btnGuardar" runat="server" Text="Agregar Fabricante" OnClick="Button1_Click"/>
 
-         <asp:Button ID="btnVerF" runat="server" Text="Ver Fabricantes" OnClick="btnVerF_Click"/>
+       
 
          <asp:GridView ID="gvFabricante" runat="server" CellPadding="4" ForeColor="#333333" GridLines="None">
              <AlternatingRowStyle BackColor="White" />

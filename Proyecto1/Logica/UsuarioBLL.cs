@@ -190,7 +190,7 @@ namespace Proyecto1.Logica
                     }
 
                     //Si se encuentra un usuario, compara el id de ese usuario.
-                    else if (rolId.Equals(1))
+                    else if (rolId.FirstOrDefault().Equals(1))
                     {
                         //Y se activa un estado de sesión para Administrador.
                         HttpContext.Current.Session["AdminLogin"] = 1;

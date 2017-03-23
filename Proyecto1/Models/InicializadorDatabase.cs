@@ -16,9 +16,28 @@ namespace Proyecto1.Models
             listarProductos().ForEach(product => context.Producto.Add(product));
             ListarRoles().ForEach(roles => context.Rol.Add(roles));
             listarUsuarios().ForEach(users => context.Usuario.Add(users));
-
             context.SaveChanges();
         }
+        private static List<MarcaProducto> ListarMarcas()
+        {
+            var marcas = new List<MarcaProducto>
+            {
+                new MarcaProducto
+                {
+                    NombreMarca= "Michelin"
+
+
+                },
+                new MarcaProducto
+                {
+                    NombreMarca= "Motorcraft"
+
+
+                },
+                };
+            return marcas;
+        }
+
         private static List<Rol> ListarRoles()
         {
             var rol = new List<Rol>

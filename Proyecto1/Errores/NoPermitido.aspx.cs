@@ -15,7 +15,7 @@ namespace Proyecto1.Errores
         }
         protected void ImageButton1_Click(object sender, ImageClickEventArgs e)
         {
-            Response.Redirect("Inicio.aspx");
+            Response.Redirect("~/Inicio.aspx");
         }
     }
 }

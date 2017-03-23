@@ -18,11 +18,13 @@
 
         </ul>
     </div>
+      <br />
+        <br />
+        <br />
+      
+       
     <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
-        <br />
-        <br />
-        <br />
-        <br />
+      
         <asp:DropDownList ID="DropDownList1" runat="server" OnSelectedIndexChanged="DropDownList1_SelectedIndexChanged" DataSourceID="SqlDataSource1" DataTextField="NombreFabricanteC" DataValueField="idFabricanteCarro">
         </asp:DropDownList>
         <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConflictDetection="CompareAllValues" ConnectionString="<%$ ConnectionStrings:AutoStoreContext %>" DeleteCommand="DELETE FROM [FabricanteCarroes] WHERE [idFabricanteCarro] = @original_idFabricanteCarro AND [NombreFabricanteC] = @original_NombreFabricanteC" InsertCommand="INSERT INTO [FabricanteCarroes] ([NombreFabricanteC]) VALUES (@NombreFabricanteC)" OldValuesParameterFormatString="original_{0}" SelectCommand="SELECT [idFabricanteCarro], [NombreFabricanteC] FROM [FabricanteCarroes]" UpdateCommand="UPDATE [FabricanteCarroes] SET [NombreFabricanteC] = @NombreFabricanteC WHERE [idFabricanteCarro] = @original_idFabricanteCarro AND [NombreFabricanteC] = @original_NombreFabricanteC">
