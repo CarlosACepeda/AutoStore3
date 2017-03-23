@@ -18,9 +18,14 @@
         </ul>
     </div>
 
-         <asp:Button ID="btnVerCateg" runat="server" Text="Ver Categorias" OnClick="btnVerCateg_Click"/>
+         <br />
+    <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
+    <br />
+    <br />
+    <asp:Button ID="btnAgregar" runat="server" OnClick="btnAgregar_Click" Text="Agregar" />
+    <br />
 
-         <asp:GridView ID="gvCategorias" runat="server" CellPadding="4" ForeColor="#333333" GridLines="None" Visible="False">
+         <asp:GridView ID="gvCategorias" runat="server" CellPadding="4" ForeColor="#333333" GridLines="None">
              <AlternatingRowStyle BackColor="White" />
              <EditRowStyle BackColor="#2461BF" />
              <FooterStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />

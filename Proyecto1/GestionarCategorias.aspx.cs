@@ -22,14 +22,24 @@ namespace Proyecto1
                 //Se le redirige a la página de error porque solo los admins deben ingresar a esta página
                 Response.Redirect("Errores/NoPermitido.aspx.aspx");
             }
+            LlenarCategoria();
         }
 
         protected void btnVerCateg_Click(object sender, EventArgs e)
         {
-            gvCategorias.Visible = true;
+            
+        }
+        public void LlenarCategoria()
+        {
             CategoriaBLL categoria = new CategoriaBLL();
             gvCategorias.DataSource = categoria.ObtenerCategoria();
             gvCategorias.DataBind();
+        }
+
+        protected void btnAgregar_Click(object sender, EventArgs e)
+        {
+            CategoriaBLL categoria = new CategoriaBLL();
+            //categoria.AgregarCategoria(TextBox1.Text, )
         }
     }
 }
