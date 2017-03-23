@@ -87,7 +87,7 @@ namespace Proyecto1
             UsuarioBLL Login = new UsuarioBLL();
             if (Login.Autenticar(TxtNombre.Text, TxtContraseña.Text) == 1)//Si es 1 es Admin
             {
-                Session["UserLogin"] = TxtNombre.Text;
+                Session["Admin"] = TxtNombre.Text;
                 usuarioEstaLogueado = 1;
                 RevisarLoginUser();
                 
@@ -135,6 +135,7 @@ namespace Proyecto1
                 BtnRegistrarse.Enabled = false;
                 BtnGestionar.Enabled = true;
                 BtnGestionar.Visible = true;
+                BtnCerrarSesion.Visible = true;
                 btnShow.Visible = false;
                 btnShow.Enabled = false;
                 BtnConfigurarPerfil.Visible = false;
@@ -155,19 +156,23 @@ namespace Proyecto1
                 BtnConfigurarPerfil.Enabled = true;
                 BtnSubirProducto.Visible = true;
                 BtnSubirProducto.Enabled = true;
+                BtnCerrarSesion.Visible = true;
 
             }
             else
             {
 
-                //btnShow.Visible = true;
-                //BtnRegistrarse.Visible = true;
-                //BtnGestionar.Enabled = false;
-                //BtnGestionar.Visible = false;
-                //BtnConfigurarPerfil.Enabled = false;
-                //BtnConfigurarPerfil.Visible = false;
-                //BtnSubirProducto.Enabled = false;
-                //BtnSubirProducto.Visible = false;
+                btnShow.Visible = true;
+                btnShow.Enabled = true;
+                BtnRegistrarse.Visible = true;
+                BtnRegistrarse.Enabled = true;
+                BtnGestionar.Enabled = false;
+                BtnGestionar.Visible = false;
+                BtnConfigurarPerfil.Enabled = false;
+                BtnConfigurarPerfil.Visible = false;
+                BtnSubirProducto.Enabled = false;
+                BtnSubirProducto.Visible = false;
+                BtnCerrarSesion.Visible = false;
 
 
 
@@ -248,7 +253,8 @@ namespace Proyecto1
 
         protected void BtnCerrarSesion_Click(object sender, EventArgs e)
         {
-
+            usuarioEstaLogueado = 0;
+            RevisarLoginUser();
         }
        
         

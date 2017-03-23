@@ -27,9 +27,8 @@ namespace Proyecto1
                 SiteMaster.usuarioEstaLogueado = 2;
             }
             string idProduct = Request.QueryString["ProductoID"];
-            int idP;
 
-            if (!string.IsNullOrEmpty(idProduct)&& int.TryParse(idProduct, out idP))
+            if (!string.IsNullOrEmpty(idProduct))
             {
                 CarritoComprasBLL carrito = new CarritoComprasBLL();
 

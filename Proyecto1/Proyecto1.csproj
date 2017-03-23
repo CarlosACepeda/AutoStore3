@@ -220,6 +220,7 @@
     <Content Include="Content\Site.css" />
     <Content Include="DescripcionProducto.aspx" />
     <Content Include="EliminarProducto.aspx" />
+    <Content Include="EliminarProductoG.aspx" />
     <Content Include="Errores\NoPermitido.aspx" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
@@ -633,6 +634,13 @@
     </Compile>
     <Compile Include="EliminarProducto.aspx.designer.cs">
       <DependentUpon>EliminarProducto.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="EliminarProductoG.aspx.cs">
+      <DependentUpon>EliminarProductoG.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EliminarProductoG.aspx.designer.cs">
+      <DependentUpon>EliminarProductoG.aspx</DependentUpon>
     </Compile>
     <Compile Include="Errores\NoPermitido.aspx.cs">
       <DependentUpon>NoPermitido.aspx</DependentUpon>
