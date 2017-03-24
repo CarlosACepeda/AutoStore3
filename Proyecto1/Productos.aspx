@@ -26,7 +26,7 @@
     <br />
   
 
-    <nav class="navbar navbar-default midle-nav">
+   <%-- <nav class="navbar navbar-default midle-nav">
 			<div class="navbar-header">
 				<button type="button" class="navbar-toggle collapsed textcostume" data-toggle="collapse" data-target="#navbarmidle" aria-expanded="false">
 						<h1>SEARCH TEXT</h1>
@@ -71,10 +71,15 @@
                  </ul>
  
 			</div>
-		</nav>
+		</nav>--%>
 
-    
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
     <!-- PRODUCTOS LISTA-->
+
     <asp:TextBox ID="txtBuscar" runat="server" size="25" maxlength="45" placeholder="Buscar Producto..."></asp:TextBox>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
     <asp:Button ID="btnBuscar" runat="server" Text="Buscar" OnClick="btnBuscar_Click" />
