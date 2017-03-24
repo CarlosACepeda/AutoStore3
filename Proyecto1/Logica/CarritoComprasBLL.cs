@@ -110,7 +110,7 @@ namespace Proyecto1.Logica
         /// <param name="cantidad">Parametro que especifica la cantidad proveniente del item del carrito</param>
         public void ActualizarCarro(string actualizarCarritoId, Guid actualizarProductoId, int cantidad)
         {
-                try
+              try
                 {
                     var Item = (from c in context.ItemCarrito
                                 where c.NombreUsuario == actualizarCarritoId && c.Producto.ProductoID == actualizarProductoId

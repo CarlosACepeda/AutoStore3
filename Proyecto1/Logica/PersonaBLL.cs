@@ -18,7 +18,7 @@ namespace Proyecto1.Logica
             AutoStoreContext contexto = new AutoStoreContext();
             var actualizarPersona = from c in contexto.Persona
                                     where c.PersonaID==persona.PersonaID
-                                    select c;
+                                    select c; 
 
             //Ejecutar la consulta y cambiar los valores que se requiera.
 
