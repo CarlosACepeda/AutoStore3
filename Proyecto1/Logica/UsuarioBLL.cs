@@ -204,6 +204,7 @@ namespace Proyecto1.Logica
                         return 2;
                     }
 
+
                 }
             }
             catch (Exception)
