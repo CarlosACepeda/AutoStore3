@@ -266,6 +266,10 @@ namespace Proyecto1
             usuarioEstaLogueado = 0;
             RevisarLoginUser();
         }
+        protected void btnOlvidePass_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("RecuperarPass.aspx");
+        }
        
         
     }

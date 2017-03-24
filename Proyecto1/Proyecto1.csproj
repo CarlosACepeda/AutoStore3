@@ -262,6 +262,7 @@
     <Content Include="Productos.aspx" />
     <Content Include="PublicarProducto.aspx" />
     <Content Include="QuienesSomos.aspx" />
+    <Content Include="RecuperarPass.aspx" />
     <Content Include="source\bootstrap-3.3.6-dist\css\bootstrap-theme.css" />
     <Content Include="source\bootstrap-3.3.6-dist\css\bootstrap-theme.min.css" />
     <Content Include="source\bootstrap-3.3.6-dist\css\bootstrap.css" />
@@ -650,6 +651,13 @@
     </Compile>
     <Compile Include="QuienesSomos.aspx.designer.cs">
       <DependentUpon>QuienesSomos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="RecuperarPass.aspx.cs">
+      <DependentUpon>RecuperarPass.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RecuperarPass.aspx.designer.cs">
+      <DependentUpon>RecuperarPass.aspx</DependentUpon>
     </Compile>
     <Compile Include="Site.Master.cs">
       <DependentUpon>Site.Master</DependentUpon>

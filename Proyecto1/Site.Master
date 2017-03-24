@@ -45,7 +45,7 @@
             padding-top: 10px;
             padding-left: 10px;
             width: 430px;
-            height: 290px;
+            height: 300px;
         }
     </style>
      <style type="text/css">
@@ -181,7 +181,10 @@
                                 <asp:Label ID="LbleClave" runat="server" Text="Contraseña"></asp:Label>  <asp:TextBox ID="TxtContraseña" runat="server" CssClass="form-control" Width="62%" TextMode="Password"></asp:TextBox><br />
 
                                 <asp:Button ID="BtnIniciarSesion" runat="server" Text="Ingresar" CssClass="btn btn-lg btn-primary btn-block btn-signin" Width="62%" OnClick="BtnIniciarSesion_Click" /><br />
+                                <asp:Button ID="btnOlvidePass" runat="server" Text="¿Olvidaste tu contraseña?" ForeColor="Blue" Font-Size="Smaller" BorderColor="Transparent" BackColor="Transparent" OnClick="btnOlvidePass_Click"/>
+                                
                                 <asp:Button ID="btnClose" runat="server" CssClass="btn btn-lg btn-primary btn-block btn-signin"  Width="62%" Text="Cerrar" OnClick="cerrarLogin_Click" />
+                                
                             </asp:Panel>
                             <!-- ModalPopupExtender -->
                           </li>
@@ -220,8 +223,9 @@
                            <br />
 
                            <asp:Button ID="botonRegistrarse" runat="server" Text="Registrarse" CssClass="btn btn-lg btn-primary btn-block btn-signin" Width="62%" OnClick="botonRegistrarse_Click" />
-                                <asp:Button ID="Button1" runat="server" CssClass="btn btn-lg btn-primary btn-block btn-signin"  Width="62%" Text="Cerrar" OnClick="cerrarRegistro_Click" />
-
+                                <asp:Button ID="Button1" runat="server" CssClass="btn btn-lg btn-primary btn-block btn-signin"  Width="62%" Text="Cerrar" OnClick="cerrarRegistro_Click" /><br />
+                                
+                                    
                             </asp:Panel>
                                </li>
                     <li>

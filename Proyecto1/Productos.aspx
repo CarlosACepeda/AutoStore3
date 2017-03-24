@@ -129,7 +129,7 @@
                    </tr>
                    <tr>
                        <td>
-                           <a href="DetalleProducto.aspx?ProductoID=<%#: Item.ProductoID%>">
+                           <a href="DescripcionProducto.aspx?<%#:Item.ProductoID %>"/>
                                 <span>
                                     <%#: Item.NombreProducto %>
                                 </span>

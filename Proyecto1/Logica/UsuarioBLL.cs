@@ -239,6 +239,19 @@ namespace Proyecto1.Logica
 
             return per.FirstOrDefault();
         }
+        public string TraerPassword(string email)
+        {
+            AutoStoreContext contexto = new AutoStoreContext();
+            var per = (from p in contexto.Persona
+                      where p.Email == email
+                      select p.PersonaID).First();
+
+            var pass = (from p in contexto.Usuario
+                        where p.IdUsuario == per
+                        select p.Contrasena).FirstOrDefault();
+            return pass.ToString();
+
+        }
     }
     }
 
