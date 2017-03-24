@@ -71,7 +71,6 @@ namespace Proyecto1.Logica
         /// <returns></returns>
         public List<ItemCarrito> ObtenerItemCarrito()
         {
-            AutoStoreContext contexto = new AutoStoreContext();
             CarritoId = ObtenerItemId();
 
             var regresarItems = from itm in context.ItemCarrito
@@ -83,8 +82,7 @@ namespace Proyecto1.Logica
         }
         public void RemoverItem(string RemoverCarrito, Guid idItem)
         {
-            using (var context = new Proyecto1.Models.AutoStoreContext())
-            {
+
                 try
                 {
                     var Item = (from c in context.ItemCarrito
@@ -102,7 +100,7 @@ namespace Proyecto1.Logica
 
                     throw new Exception("No se puede remover el item del carrito");
                 }
-            }
+            
         }
         /// <summary>
         /// Metodo para actualizar la informacion del carrito
@@ -112,8 +110,6 @@ namespace Proyecto1.Logica
         /// <param name="cantidad">Parametro que especifica la cantidad proveniente del item del carrito</param>
         public void ActualizarCarro(string actualizarCarritoId, Guid actualizarProductoId, int cantidad)
         {
-            using (var context = new Proyecto1.Models.AutoStoreContext())
-            {
                 try
                 {
                     var Item = (from c in context.ItemCarrito
@@ -130,7 +126,7 @@ namespace Proyecto1.Logica
 
                     throw new Exception("No se puede actualizar el item del carrito");
                 }
-            }
+            
 
         }
         /// <summary>
@@ -178,7 +174,7 @@ namespace Proyecto1.Logica
         public decimal ObtenerTotal()
         {
             CarritoId = ObtenerItemId();
-            decimal? total = decimal.Zero;
+            decimal? total; 
             total = (decimal?)(from item in context.ItemCarrito
                                where item.NombreUsuario == CarritoId
                                select (int?)item.Cantidad * item.Producto.PrecioU).Sum();
@@ -209,7 +205,6 @@ namespace Proyecto1.Logica
 
         public void ActualizarCarritoDB(String carroID, ActualizacionesCarrito[] CartItemUpdates)
         {
-            AutoStoreContext contexto = new AutoStoreContext();
                 try
                 {
                     int cuentadeItems = CartItemUpdates.Count();

@@ -35,6 +35,7 @@ namespace Proyecto1
             if (totalCarrito > 0)
             {
                 LblTotal.Text = totalCarrito.ToString();
+                Session["Total"] = LblTotal.Text;
             }
             else
             {
@@ -58,18 +59,19 @@ namespace Proyecto1
         {
             CarritoComprasBLL carrito = new CarritoComprasBLL();
             string idCarro = carrito.ObtenerItemId();
+
             CarritoComprasBLL.ActualizacionesCarrito[] actualizarCarro = new CarritoComprasBLL.ActualizacionesCarrito[gvCarrito.Rows.Count];
             for (int i = 0; i < gvCarrito.Rows.Count; i++)
             {
-                IOrderedDictionary valoresDeFila = new OrderedDictionary();
+                IOrderedDictionary valoresDeFila;
                 valoresDeFila = ObtenerValores(gvCarrito.Rows[i]);
                 actualizarCarro[i].ProductoID = Guid.Parse(valoresDeFila["ProductoID"].ToString());
 
-                CheckBox cbQuitar = new CheckBox();
+                CheckBox cbQuitar;
                 cbQuitar = (CheckBox)gvCarrito.Rows[i].FindControl("Remover");
                 actualizarCarro[i].QuitarItem = cbQuitar.Checked;
 
-                TextBox txtCantidad = new TextBox();
+                TextBox txtCantidad;
                 txtCantidad = (TextBox)gvCarrito.Rows[i].FindControl("txtCantidad");
                 actualizarCarro[i].CantidaddeCompra = Convert.ToInt16(txtCantidad.Text.ToString());
 

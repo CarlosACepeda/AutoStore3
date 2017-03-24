@@ -18,7 +18,7 @@
             <input name="tax" type="hidden" value="0"/>
             <input name="taxReturnBase" type="hidden" value="0"/>
             <input name="currency" type="hidden" value="COP"/>
-            <input name="signature" type="hidden" value=""/>
+            <input name="signature" type="hidden" value="<%#:checkoutstart_aspx.GetSHA1()%>"/>
             <input name="test" type="hidden" value="1"/>
             <input name="buyerFullName" type="hidden" value="<%#:Session["NombreP"] %>" />
             <input name="buyerEmail" type="hidden" value="<%#:Session["email"] %>"/>
