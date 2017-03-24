@@ -20,7 +20,7 @@ namespace Proyecto1
             else if (Session["UserLogin"] != null)
             {
                 //Se le redirige a la página de error porque solo los admins deben ingresar a esta página
-                Response.Redirect("Errores/NoPermitido.aspx.aspx");
+                Response.Redirect("Errores/NoPermitido.aspx");
             }
         }
 

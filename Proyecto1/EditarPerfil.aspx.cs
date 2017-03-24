@@ -18,7 +18,7 @@ namespace Proyecto1
             if (Session["Admin"] != null)
             {
                 //Se le redirige a la página de error porque solo los Usuarios deben ingresar a esta página
-                Response.Redirect("Errores/NoPermitido.aspx.aspx");
+                Response.Redirect("Errores/NoPermitido.aspx");
             }
             else if (Session["UserLogin"] != null)
             {
