@@ -27,7 +27,7 @@ namespace Proyecto1.Logica.Tests
             }
             catch (Exception)
             {
-
+                throw;
             }
         }
     }

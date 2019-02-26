@@ -26,7 +26,7 @@ namespace Proyecto1.Models
 
 
         [Required]
-        public int Telefono { get; set; }
+        public Int64 Telefono { get; set; }
 
 
         [Required, StringLength(40), Display(Name = "Email")]

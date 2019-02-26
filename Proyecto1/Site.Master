@@ -1,8 +1,117 @@
 ﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="Proyecto1.SiteMaster" %>
+<%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="cc1" %>
+
 
 <!doctype html>
 <html>
 <head runat="server">
+
+
+    <style type="text/css">
+        .modalRegistrarse
+        {
+            background-color: Black;
+            filter: alpha(opacity=90);
+            opacity: 0.8;
+
+        }
+        .modalPopupRegistrarse
+        {
+            background-color: #dadcdd;
+            border-width: 5px;
+            border-style: groove;
+            border-color: #337ab7;
+            padding-top: 10px;
+            padding-left: 10px;
+            width: 700px;
+            height: 650px;
+        }
+    </style>
+
+     <style type="text/css">
+        .modalLogin
+        {
+            background-color: Black;
+            filter: alpha(opacity=90);
+            opacity: 0.8;
+
+        }
+        .modalPopupLogin
+        {
+            background-color: #dadcdd;
+            border-width: 5px;
+            border-style: groove;
+            border-color: #337ab7;
+            padding-top: 10px;
+            padding-left: 10px;
+            width: 430px;
+            height: 300px;
+        }
+    </style>
+     <style type="text/css">
+        .modalGestionar
+        {
+            background-color: Black;
+            filter: alpha(opacity=90);
+            opacity: 0.8;
+
+        }
+        .modalPopupGestionar
+        {
+            background-color: #dadcdd;
+            border-width: 5px;
+            border-style: groove;
+            border-color: #337ab7;
+            padding-top: 10px;
+            padding-left: 10px;
+            width: 330px;
+            height: 400px;
+        }
+    </style>
+       <style type="text/css">
+        .modalPerfil
+        {
+            background-color: Black;
+            filter: alpha(opacity=90);
+            opacity: 0.8;
+
+        }
+        .modalPopupPerfil
+        {
+            background-color: #dadcdd;
+            border-width: 5px;
+            border-style: groove;
+            border-color: #337ab7;
+            padding-top: 10px;
+            padding-left: 10px;
+            width: 300px;
+            height: 175px;
+        }
+    </style>
+         <style type="text/css">
+        .modalPublicarProducto
+        {
+            background-color: Black;
+            filter: alpha(opacity=90);
+            opacity: 0.8;
+
+        }
+        .modalPopupPublicarProducto
+        {
+            background-color: #dadcdd;
+            border-width: 5px;
+            border-style: groove;
+            border-color: #337ab7;
+            padding-top: 10px;
+            padding-left: 10px;
+            width: 400px;
+            height: 420px;
+        }
+    </style>
+
+
+
+
     <meta charset="UTF-8">
     <title>AutoStore </title>
     <meta name="description" content="Scarica gratis il nostro Template HTML/CSS GARAGE. Se avete bisogno di un design per il vostro sito web GARAGE può fare per voi. Web Domus Italia">
@@ -23,191 +132,14 @@
  
 
     <asp:ContentPlaceHolder ID="head" runat="server">
+
     </asp:ContentPlaceHolder>
+
 </head>
-<body>
-    <!-- Header -->
-    <div class="allcontain">
-        <div class="header" style="background-color:black" >
-            <ul class="socialicon">
-                <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
-               
-                <li>
-                    <a> </a><a> </a><a> </a><a> </a><a> </a><a> </a><a> </a><a> </a><a> </a><a> </a><a> </a><a> </a><a> </a><a> </a><a> </a><a> </a><a> </a><a> </a><a> </a><a> </a><a> </a><a> </a><a> </a><a> </a><a> </a><a> </a><a> </a><a> </a><a> </a><a> </a><a> </a><a> </a><a> </a><a> </a><a> </a><a> </a><a> </a><a> </a><a> </a><a> </a><a> </a><a> </a>
-                </li>  
-                           
-                             
-                <li>
-                <a>|</a>
-                    </li>
-                <li>
-                     <a data-toggle="modal"  href="#modalSesion" id="modal-nav" style="text-decoration: none;  width:150px; color: #FFFFFF; ">INICIAR SESIÓN <span class="glyphicon glyphicon-check"></span></a>
-                </li>   
-                <li>
-                    <a>|</a>
-                </li>                     
-                <li>
-                 <a data-toggle="modal"  href="#modalSesion2" id="modal-nav2" style="text-decoration: none;  width:180px; color: #FFFFFF;">REGISTRARSE <span class="glyphicon glyphicon-eye-open"></span></a>                              
-                </li>
-                <li>
-                <a>|</a>
-                    </li>
-                <li>
-                     <a data-toggle="modal"  href="#modalSesion3" id="EditarPerfil" style="text-decoration: none; color: #FFFFFF; ">CONFIGURACIÓN<span class="glyphicon glyphicon-user"></span></a>
-                </li>  
-                  <li>
-                <a>|</a>
-                        </li> 
-                <li>
-                   <a data-toggle="modal"  href="#modalSesion4" id="Gestionar" style="text-decoration: none; color: #FFFFFF; ">GESTIONAR <span class="glyphicon glyphicon-briefcase"></span></a>
 
-                </li>
-                <li>
-                <a>|</a>
-                        </li>                
-                <li>
-                    <a href="#" style="text-decoration: none; color: #FFFFFF;">CARRITO<span class="glyphicon glyphicon-shopping-cart"></span></a>
-                </li>                
-            </ul>            
-
-            </div>
-          
-
-        <!--MODAL GESTIONAR -->
-         
-        <div class="modal fade " role="dialog" id="modalSesion4" >
-                    <div class="modal-dialog modal-ms" >
-                        <div class="modal-content" style="background-color:aliceblue">
-                            <div class="modal-header" style="background-color:#4d90fe">
-                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true" style="font:whit;">X</span></button>
-                                <h4 class="modal-title" style="background-color:#4d90fe; color:white;" id="myModalGestionar">Gestionar</h4>
-                            </div>
-                            <div class="modal-body">               
-                               
-        <div class="card card-container" style="background-color: white"> 
-             <!-- <img class="profile-img-card" src="//lh3.googleusercontent.com/-6V8xOA6M7BA/AAAAAAAAAAI/AAAAAAAAAAA/rzlHcD0KYwo/photo.jpg?sz=120" alt="" /> -->
-            <img id="profile-img4" class="profile-img-card" src="//ssl.gstatic.com/accounts/ui/avatar_2x.png" />
-            <p id="profile-name4" class="profile-name-card"></p>          
-            <form class="form-signin" style="margin-left: auto"; >            
-                 <a href="GestionarUsuarios.aspx" class="btn btn-lg btn-primary btn-block btn-signin"  style="width:90%; border-bottom:1px solid #03214c; background-color:#4d90fe";  type="button">Gestionar  Usuarios</a>
-                 <a href="GestionarProductos.aspx" class="btn btn-lg btn-primary btn-block btn-signin"  style="width:90%; border-bottom:1px solid #03214c; background-color:#4d90fe";  type="button">Gestionar  Productos</a>
-                 <a href="GestionarFabricantes.aspx" class="btn btn-lg btn-primary btn-block btn-signin"  style="width:90%; border-bottom:1px solid #03214c; background-color:#4d90fe";  type="button">Gestionar  Fabricantes</a>
-                 <a href="GestionarCategorias.aspx" class="btn btn-lg btn-primary btn-block btn-signin"  style="width:90%; border-bottom:1px solid #03214c; background-color:#4d90fe";  type="button">Gestionar  Categorias</a>
-                 <a href="GestionarModelos.aspx" class="btn btn-lg btn-primary btn-block btn-signin"  style="width:90%; border-bottom:1px solid #03214c; background-color:#4d90fe";  type="button">Gestionar  Modelos</a>
-                 <a href="GestionarMarcas.aspx" class="btn btn-lg btn-primary btn-block btn-signin"  style="width:90%; border-bottom:1px solid #03214c; background-color:#4d90fe";  type="button">Gestionar  Marcas</a>
-
-               
-            </form><!-- /form -->
-           
-        </div><!-- /card-container -->
-    </div><!-- /container -->
-                        </div>                           
-                        </div>
-                    </div>
-
-        <!-- MODAL CONFIGURACIÓN PERFIL-->
-
-           <div class="modal fade" role="dialog" id="modalSesion3" >
-                    <div class="modal-dialog modal-ms" >
-                        <div class="modal-content" style="background-color: aliceblue">
-                            <div class="modal-header" style="background-color: #4d90fe ">
-                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true" style="font:White;">X</span></button>
-                                <h4 class="modal-title" style="background-color:#4d90fe; color:white;" id="myModalEditarPerfil">Editar Perfil</h4>
-                            </div>
-                            <div class="modal-body">               
-                               
-        <div class="card card-container" style="background-color:#FFFFFF">
-            <!-- <img class="profile-img-card" src="//lh3.googleusercontent.com/-6V8xOA6M7BA/AAAAAAAAAAI/AAAAAAAAAAA/rzlHcD0KYwo/photo.jpg?sz=120" alt="" /> -->
-            <img id="profile-img3" class="profile-img-card" src="//ssl.gstatic.com/accounts/ui/avatar_2x.png" />
-            <p id="profile-name3" class="profile-name-card"></p>
-            <form class="form-signin" style="margin-left: auto";>
-                <span id="reauth-email3" class="reauth-email"></span>
-               
-                  <a href="EditarPerfil.aspx" class="btn btn-lg btn-primary btn-block btn-signin"  style="width:90%; border-bottom:1px solid #03214c; background-color:#4d90fe";  type="button">EDITAR  PERFIL</a>
-                 <a href="VerOrden.aspx" class="btn btn-lg btn-primary btn-block btn-signin"  style="width:90%; border-bottom:1px solid #03214c; background-color:#4d90fe";  type="button">VER ORDENES</a>
-
-
-            </form><!-- /form -->
-           
-        </div><!-- /card-container -->
-    </div><!-- /container -->
-                        </div>                            
-                        </div>
-                    </div>
-
-
-                <!-- Modal INICIO SESIÓN-->
-                <div class="modal fade" role="dialog" id="modalSesion" >
-                    <div class="modal-dialog modal-ms" >
-                        <div class="modal-content" style="background-color:aliceblue">
-                            <div class="modal-header" style="background-color: #4d90fe ">
-                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">X</span></button>
-                                <h4 class="modal-title" style="background-color:#4d90fe; color:white;" id="myModalLabel">Iniciar Sesión</h4>
-                            </div>
-                            <div class="modal-body">               
-                               
-        <div class="card card-container" style="background-color:white">
-            <!-- <img class="profile-img-card" src="//lh3.googleusercontent.com/-6V8xOA6M7BA/AAAAAAAAAAI/AAAAAAAAAAA/rzlHcD0KYwo/photo.jpg?sz=120" alt="" /> -->
-            <img id="profile-img" class="profile-img-card" src="//ssl.gstatic.com/accounts/ui/avatar_2x.png" />
-            <p id="profile-name" class="profile-name-card"></p>
-            <form class="form-signin" style="margin-left: auto";>
-                <span id="reauth-email" class="reauth-email"></span>
-                <input type="text"  style="width:90%;" " id="NombreUser" class="form-control"  placeholder="Nombre Usuario" required autofocus><br />
-                <input type="password"  style="width:90%;"  id="inputPassword" class="form-control"  placeholder="Contraseña" required><br />
-              
-                <button class="btn btn-lg btn-primary btn-block btn-signin" style="width:90%; border-bottom:1px solid #03214c; background-color:#4d90fe";  type="submit">Ingresar</button>
-            </form><!-- /form -->
-            <a href="#"  class="forgot-password" style="color:#4d90fe " >
-               ¿Olvido la contraseña?
-            </a>
-        </div><!-- /card-container -->
-    </div><!-- /container -->
-                        </div>   <!--DIV MODAL CONTAINER -->                         
-                        </div>
-                    </div>
-               
-
-    <!-- Modal REGISTRO-->
-                <div class="modal fade" role="dialog" id="modalSesion2">
-                    <div class="modal-dialog modal-ms" >
-                        <div class="modal-content" style="background-color: aliceblue">
-                            <div class="modal-header" style="background-color: #4d90fe">
-                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">X</span></button>
-                                <h4 class="modal-title" style="background-color:#4d90fe; color:white;" id="myModalLabe2">Registrarse</h4>
-                            </div>
-                            <div class="modal-body">   
-
-        <div class="card card-container" style="background-color:white">
-            <!-- <img class="profile-img-card" src="//lh3.googleusercontent.com/-6V8xOA6M7BA/AAAAAAAAAAI/AAAAAAAAAAA/rzlHcD0KYwo/photo.jpg?sz=120" alt="" /> -->
-            <img id="profile-img2" class="profile-img-card" src="//ssl.gstatic.com/accounts/ui/avatar_2x.png" />
-            <p id="profile-name2" class="profile-name-card"></p>
-            <form class="form-signin" style="margin-left: auto">
-                <span id="reauth-email2" class="reauth-email"></span>
-                 <input type="text"  style="width:90%;" id="InputUsuario" class="form-control" placeholder="Usuario" required autofocus><br />
-                <input type="text" style="width:90%;" id="InputNombre" class="form-control" placeholder="Nombre" required ><br />
-                <input type="text" style="width:90%;" id="InputApellido" class="form-control" placeholder="Apellido" required>  <br />
-                <input type="text"  style="width:90%;"id="inputDireccion" class="form-control" placeholder="Direccion" required >     <br />          
-                <input type="text" style="width:90%;" id="InputTelefono" class="form-control" placeholder="Telefono" required><br />
-                <input type="email" style="width:90%;" id="InputCorreoElectronico" class="form-control" placeholder="Correo Electronico" required > <br />
-                <input type="password"  style="width:90%;"id="InputContraseña" class="form-control" placeholder="Contraseña" required> <br />
-                             
-                 
-                <button class="btn btn-lg btn-primary btn-block btn-signin"  style="width:90%;  border-bottom:1px solid #03214c; background-color:#4d90fe";  type="submit">Registrarse</button>
-
-            </form>  
-                    </div>
-
-                            </div>
-                        </div>  
-
-                    </div>
-                    </div>
-         </div>
-                
-        <!-- Navbar Up -->
-        <nav class="topnavbar navbar-default topnav" style="background-color:#E5E6E9">
+<body style="background-color:white;">
+    <form id="form1" runat="server" style="background-color:white;">
+    <nav class="topnavbar navbar-default topnav" style="background-color:#FFFFFF">
             <div class="container">
                 <div class="navbar-header">
                     <button type="button" class="navbar-toggle collapsed toggle-costume" data-toggle="collapse" data-target="#upmenu" aria-expanded="false">
@@ -220,429 +152,146 @@
                         <img src="image/logo1.png" alt="logo"></a>
                 </div>
             </div>
+           </nav>
+     <div class="allcontain">
+          
+                 <div class="header" style="background-color: black">
+                <ul class="socialicon">
+                   
+                    <li>
+                  <a></a><a></a><a></a><a></a><a></a><a></a><a></a><a></a><a></a><a></a><a></a><a></a><a></a><a></a><a></a><a></a><a></a><a></a><a></a><a></a><a></a><a></a><a></a><a></a><a></a><a></a><a></a><a></a><a></a><a></a><a></a><a></a><a></a><a></a><a></a><a></a>
+                    </li>
+                   <li>
 
-            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
-            </asp:ContentPlaceHolder>
-        </nav>
-    
-    <!--_______________________________________ SLIDER__________________________________ -->
-  <%--  <div class="allcontain">
-        <div id="carousel-up" class="carousel slide" data-ride="carousel">
-            <div class="carousel-inner " role="listbox">
-                <div class="item active">
-                    <img src="image/oldcar.jpg" alt="oldcar">
-                    <div class="carousel-caption">
-                    </div>
-                </div>
-                <div class="item">
-                    <img src="image/porche.jpg" alt="porche">
-                    <div class="carousel-caption">
-                    </div>
-                </div>
-                <div class="item">
-                    <img src="image/benz.jpg" alt="benz">
-                    <div class="carousel-caption">
-                    </div>
-                </div>
-            </div>--%>
+                      
+                            <asp:ScriptManager ID="ScriptManager1" runat="server">
+                            </asp:ScriptManager>
 
-            <!-- Buscador -->
-            <%--<nav class="navbar navbar-default midle-nav">
-			<div class="navbar-header">
-				<button type="button" class="navbar-toggle collapsed textcostume" data-toggle="collapse" data-target="#navbarmidle" aria-expanded="false">
-						<h1>SEARCH TEXT</h1>
-					<span class="sr-only">Toggle navigation</span>
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-				</button>
-			</div>
-			<div class="collapse navbar-collapse" id="navbarmidle">
-				<div class="searchtxt">
-					<h1>SEARCH TEXT</h1>
-				</div>
-				<form class="navbar-form navbar-left searchformmargin" role="search">
-					<div class="form-group">
-						<input type="text" class="form-control searchform" placeholder="Buscar Producto...">
-					</div>
-				</form>
-				<ul class="nav navbar-nav navbarborder">
-					<li class="li-category">
-						<a class="btn  dropdown-toggle btn-costume"  id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">PRODUCTO<span class="glyphicon glyphicon-chevron-down downicon"></span></a>
-						<ul class="dropdown-menu" id="mydd">
-							<li><a href="#">Llantas</a></li>
-							<li><a href="#">Bujias</a></li>
-							<li><a href="#">Espejos</a></li>
-						</ul>
-					</li>
-					<li class="li-minyear"><a class="btn  dropdown-toggle btn-costume"  id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">CATEGORIA <span class="glyphicon glyphicon-chevron-down downicon"></span></a>
-						<ul class="dropdown-menu" id="mydd2">
-							<li><a href="#"></a></li>
-							<li><a href="#"></a></li>
-							<li><a href="#"></a></li>
-						</ul>
-					</li>
-					<li class="li-maxyear"><a class="btn dropdown-toggle btn-costume"  id="dropdownMenu3" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">MARCA <span class="glyphicon glyphicon-chevron-down downicon"></span></a>
-						<ul class="dropdown-menu" id="mydd3">
-							<li><a href="#">Nissan</a></li>
-							<li><a href="#">Toyota</a></li>							
-						</ul>
-					</li>					
-					<li class="li-search"> <button class="searchbutton"><span class="glyphicon glyphicon-search "></span></button></li>
-				</ul>
- 
-			</div>
-		</nav>
-        </div>
-    </div>--%>
-    <!-- ____________________Featured Section ______________________________-->
-    <%--<div class="allcontain">
-	<div class="feturedsection">
-		<h1 class="text-center"><span class="bdots">&bullet;</span>A U T O P A R T E S</h1>
-	</div>--%>
-    <%--<div class="feturedimage">
-		<div class="row firstrow">
-			<div class="col-lg-6 costumcol colborder1">
-				<div class="row costumrow">
-					<div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 img1colon">
-						<img src="image/featurporch.jpg" alt="porsche">
-					</div>
-					<div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 txt1colon ">
-						<div class="featurecontant">
-							<h1>LOREM IPSUM</h1>
-							<p>"Lorem ipsum dolor sit amet, consectetur ,<br>
-			 						sed do eiusmod tempor incididunt </p>
-			 				<h2>Price &euro;</h2>
-			 				<button id="btnRM" onclick="rmtxt()">READ MORE</button>
-			 				<div id="readmore">
-			 						<h1>Car Name</h1>
-			 						<p>"Lorem ipsum dolor sit amet, consectetur ,<br>
-			 						sed do eiusmod tempor incididunt <br>"Lorem ipsum dolor sit amet, consectetur ,<br>
-			 						sed do eiusmod tempor incididunt"Lorem ipsum dolor sit amet, consectetur1 ,
-			 						sed do eiusmod tempor incididunt"Lorem ipsum dolor sit amet, consectetur1
-			 						sed do eiusmod tempor incididunt"Lorem ipsum dolor sit amet, consectetur1<br>
-			 						</p>
-			 						<button id="btnRL">READ LESS</button>
-			 				</div>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="col-lg-6 costumcol colborder2">
-				<div class="row costumrow">
-					<div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 img2colon">
-						<img src="image/featurporch1.jpg" alt="porsche1">
-					</div>
-					<div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 txt1colon ">
-						<div class="featurecontant">
-							<h1>LOREM IPSUM</h1>
-							<p>"Lorem ipsum dolor sit amet, consectetur ,<br>
-			 						sed do eiusmod tempor incididunt </p>
-			 				<h2>Price &euro;</h2>
-			 				<button id="btnRM2">READ MORE</button>
-			 				<div id="readmore2">
-			 						<h1>Car Name</h1>
-			 						<p>"Lorem ipsum dolor sit amet, consectetur ,<br>
-			 						sed do eiusmod tempor incididunt <br>"Lorem ipsum dolor sit amet, consectetur ,<br>
-			 						sed do eiusmod tempor incididunt"Lorem ipsum dolor sit amet, consectetur1 ,
-			 						sed do eiusmod tempor incididunt"Lorem ipsum dolor sit amet, consectetur1
-			 						sed do eiusmod tempor incididunt"Lorem ipsum dolor sit amet, consectetur1<br></p>
-			 						<button id="btnRL2">READ LESS</button>
-			 				</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>--%>
-    <!-- ________________________LATEST CARS SECTION _______________________-->
-    <%--<div class="latestcars">
-	<h1 class="text-center">&bullet; LATEST   CARS &bullet;</h1>
-	<ul class="nav nav-tabs navbar-left latest-navleft">
-		<li role="presentation" class="li-sortby"><span class="sortby">SORT BY: </span></li>
-		<li data-filter=".RECENT" role="presentation"><a href="#mostrecent" class="prcBtnR">MOST RECENT </a></li>
-		<li data-filter=".POPULAR" role="presentation"><a href="#mostpopular" class="prcBtnR">MOST POPULAR </a></li>
-		<li  role="presentation"><a href="#" class="alphSort">ALPHABETICAL </a></li>
-		<li data-filter=".HPRICE" role="presentation"><a href="#" class="prcBtnH">HIGHEST PRICE </a></li>
-		<li data-filter=".LPRICE" role="presentation"><a href="#" class="prcBtnL">LOWEST  PRICE </a></li>
-		<li id="hideonmobile">
-	</ul>
-</div>--%>
+                            <!--MODAL INICIO SESION-->
 
-    <!-- ________________________Latest Cars Image Thumbnail________________-->
-    <%--<div class="grid">
-		<div class="row">
-			<div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
-				<div class="txthover">
-					<img src="image/car1.jpg" alt="car1">
-						<div class="txtcontent">
-							<div class="stars">
-								<div class="glyphicon glyphicon-star"></div>
-								<div class="glyphicon glyphicon-star"></div>
-								<div class="glyphicon glyphicon-star"></div>
-							</div>
-							<div class="simpletxt">
-								<h3 class="name">Rolls Royce</h3>
-								<p>"Lorem ipsum dolor sit amet, consectetur,<br>
-	 							sed do eiusmod tempor incididunt" </p>
-	 							<h4 class="price"> 1000&euro;</h4>
-	 							<button>READ MORE</button><br>
-	 							<div class="wishtxt">
-		 							<p class="paragraph1"> Add to Wishlist <span class="glyphicon glyphicon-heart"></span> </p>
-		 							<p class="paragraph2">Compare <span class="icon"><img src="image/compicon.png" alt="compicon"></span></p>
-		 						</div>
-							</div>
-							<div class="stars2">
-								<div class="glyphicon glyphicon-star"></div>
-								<div class="glyphicon glyphicon-star"></div>
-								<div class="glyphicon glyphicon-star"></div>
-							</div>
-						</div>
-				</div>	 
-			</div>
-			<div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 ">
-				<div class="txthover">
-					<img src="image/car2.jpg" alt="car2">
-						<div class="txtcontent">
-							<div class="stars">
-								<div class="glyphicon glyphicon-star"></div>
-								<div class="glyphicon glyphicon-star"></div>
-								<div class="glyphicon glyphicon-star"></div>
-							</div>
-							<div class="simpletxt">
-								<h3 class="name">Renault</h3>
-								<p>"Lorem ipsum dolor sit amet, consectetur,<br>
-	 							sed do eiusmod tempor incididunt" </p>
-	 							<h4 class="price">900 &euro;</h4>
-	 							<button>READ MORE</button><br>
-	 							<div class="wishtxt">
-		 							<p class="paragraph1"> Add to Wishlist <span class="glyphicon glyphicon-heart"></span> </p>
-		 							<p class="paragraph2">Compare <span class="icon"><img src="image/compicon.png" alt="compicon"></span></p>
-		 						</div>
-							</div>
-							<div class="stars2">
-								<div class="glyphicon glyphicon-star"></div>
-								<div class="glyphicon glyphicon-star"></div>
-								<div class="glyphicon glyphicon-star"></div>
-							</div>
-						</div>
-				</div>	 
-			</div>
-			<div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
-				<div class="txthover">
-					<img src="image/car3.jpg" alt="car3">
-						<div class="txtcontent">
-							<div class="stars">
-								<div class="glyphicon glyphicon-star"></div>
-								<div class="glyphicon glyphicon-star"></div>
-								<div class="glyphicon glyphicon-star"></div>
-							</div>
-							<div class="simpletxt">
-								<h3 class="name">Ford Mustang</h3>
-								<p>"Lorem ipsum dolor sit amet, consectetur,<br>
-	 							sed do eiusmod tempor incididunt" </p>
-	 							<h4 class="price">3000 &euro;</h4>
-	 							<button>READ MORE</button><br>
-	 							<div class="wishtxt">
-		 							<p class="paragraph1"> Add to Wishlist <span class="glyphicon glyphicon-heart"></span> </p>
-		 							<p class="paragraph2">Compare <span class="icon"><img src="image/compicon.png" alt="compicon"></span></p>
-		 						</div>
-							</div>
-							<div class="stars2">
-								<div class="glyphicon glyphicon-star"></div>
-								<div class="glyphicon glyphicon-star"></div>
-								<div class="glyphicon glyphicon-star"></div>
-							</div>
-						</div>
-				</div>	 
-			</div>
-			<div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
-				<div class="txthover">
-					<img src="image/car4.jpg" alt="car4">
-						<div class="txtcontent">
-							<div class="stars">
-								<div class="glyphicon glyphicon-star"></div>
-								<div class="glyphicon glyphicon-star"></div>
-								<div class="glyphicon glyphicon-star"></div>
-							</div>
-							<div class="simpletxt">
-								<h3 class="name">Rover</h3>
-								<p>"Lorem ipsum dolor sit amet, consectetur,<br>
-	 							sed do eiusmod tempor incididunt" </p>
-	 							<h4 class="price">1000 &euro;</h4>
-	 							<button>READ MORE</button><br>
-	 							<div class="wishtxt">
-		 							<p class="paragraph1"> Add to Wishlist <span class="glyphicon glyphicon-heart"></span> </p>
-		 							<p class="paragraph2">Compare <span class="icon"><img src="image/compicon.png" alt="compicon"></span></p>
-		 						</div>
-							</div>
-							<div class="stars2">
-								<div class="glyphicon glyphicon-star"></div>
-								<div class="glyphicon glyphicon-star"></div>
-								<div class="glyphicon glyphicon-star"></div>
-							</div>
-						</div>
-				</div>	 
-			</div>
-			<div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
-				<div class="txthover">
-					<img src="image/car5.jpg" alt="car5">
-						<div class="txtcontent">
-							<div class="stars">
-								<div class="glyphicon glyphicon-star"></div>
-								<div class="glyphicon glyphicon-star"></div>
-								<div class="glyphicon glyphicon-star"></div>
-							</div>
-							<div class="simpletxt">
-								<h3 class="name">Porche</h3>
-								<p>"Lorem ipsum dolor sit amet, consectetur,<br>
-	 							sed do eiusmod tempor incididunt" </p>
-	 							<h4 class="price">1200 &euro;</h4>
-	 							<button>READ MORE</button><br>
-	 							<div class="wishtxt">
-		 							<p class="paragraph1"> Add to Wishlist <span class="glyphicon glyphicon-heart"></span> </p>
-		 							<p class="paragraph2">Compare <span class="icon"><img src="image/compicon.png" alt="compicon"></span></p>
-		 						</div>
-							</div>
-							<div class="stars2">
-								<div class="glyphicon glyphicon-star"></div>
-								<div class="glyphicon glyphicon-star"></div>
-								<div class="glyphicon glyphicon-star"></div>
-							</div>
-						</div>
-				</div>	 
-			</div>
-			<div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
-				<div class="txthover">
-					<img src="image/car6.jpg" alt="car6">
-						<div class="txtcontent">
-							<div class="stars">
-								<div class="glyphicon glyphicon-star"></div>
-								<div class="glyphicon glyphicon-star"></div>
-								<div class="glyphicon glyphicon-star"></div>
-							</div>
-							<div class="simpletxt">
-								<h3 class="name">Porche 911</h3>
-								<p>"Lorem ipsum dolor sit amet, consectetur,<br>
-	 							sed do eiusmod tempor incididunt" </p>
-	 							<h4 class="price">4000 &euro;</h4>
-	 							<button>READ MORE</button><br>
-	 							<div class="wishtxt">
-		 							<p class="paragraph1"> Add to Wishlist <span class="glyphicon glyphicon-heart"></span> </p>
-		 							<p class="paragraph2">Compare <span class="icon"><img src="image/compicon.png" alt="compicon"></span></p>
-		 						</div>
-							</div>
-							<div class="stars2">
-								<div class="glyphicon glyphicon-star"></div>
-								<div class="glyphicon glyphicon-star"></div>
-								<div class="glyphicon glyphicon-star"></div>
-							</div>
-						</div>
-				</div>	 
-			</div>
-			<div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
-				<div class="txthover">
-					<img src="image/car7.jpg" alt="car7">
-						<div class="txtcontent">
-							<div class="stars">
-								<div class="glyphicon glyphicon-star"></div>
-								<div class="glyphicon glyphicon-star"></div>
-								<div class="glyphicon glyphicon-star"></div>
-							</div>
-							<div class="simpletxt">
-								<h3 class="name">Chevrolet SS</h3>
-								<p>"Lorem ipsum dolor sit amet, consectetur,<br>
-	 							sed do eiusmod tempor incididunt" </p>
-	 							<h4 class="price">3000 &euro;</h4>
-	 							<button>READ MORE</button><br>
-	 							<div class="wishtxt">
-		 							<p class="paragraph1"> Add to Wishlist <span class="glyphicon glyphicon-heart"></span> </p>
-		 							<p class="paragraph2">Compare <span class="icon"><img src="image/compicon.png" alt="compicon"></span></p>
-		 						</div>
-							</div>
-							<div class="stars2">
-								<div class="glyphicon glyphicon-star"></div>
-								<div class="glyphicon glyphicon-star"></div>
-								<div class="glyphicon glyphicon-star"></div>
-							</div>
-						</div>
-				</div>	 
-			</div>
-			<div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
-				<div class="txthover">
-					<img src="image/car8.jpg" alt="car8">
-						<div class="txtcontent">
-							<div class="stars">
-								<div class="glyphicon glyphicon-star"></div>
-								<div class="glyphicon glyphicon-star"></div>
-								<div class="glyphicon glyphicon-star"></div>
-							</div>
-							<div class="simpletxt">
-								<h3 class="name">Meclaren</h3>
-								<p>"Lorem ipsum dolor sit amet, consectetur,<br>
-	 							sed do eiusmod tempor incididunt" </p>
-	 							<h4 class="price">2500 &euro;</h4>
-	 							<button>READ MORE</button><br>
-	 							<div class="wishtxt">
-		 							<p class="paragraph1"> Add to Wishlist <span class="glyphicon glyphicon-heart"></span> </p>
-		 							<p class="paragraph2">Compare <span class="icon"><img src="image/compicon.png" alt="compicon"></span></p>
-		 						</div>
-							</div>
-							<div class="stars2">
-								<div class="glyphicon glyphicon-star"></div>
-								<div class="glyphicon glyphicon-star"></div>
-								<div class="glyphicon glyphicon-star"></div>
-							</div>
-						</div>
-				</div>	 
-			</div>	
-		</div>
-	</div>--%>
-    <!-- _______________________________News Letter ____________________-->
-    <%--<div class="newslettercontent">
-		<div class="leftside">
-			<img src="image/border.png" alt="border">
-			<h1>NEWSLETTER</h1>
-			<p>Subscribe to the COLLECTIONCARS mailing list to <br>
-				receive updates on new arrivals, special offers <br>
-				and other discount information.</p>
-		</div>
-		<div class="rightside">
-			<img class="newsimage" src="image/newsletter.jpg" alt="newsletter">
-			<input type="text" class="form-control" id="subemail" placeholder="EMAIL">
-			<button>SUBSCRIBE</button>
-		</div>
-	</div>--%>
-    <!-- ______________________________________________________Bottom Menu ______________________________-->
-    <%--<div class="bottommenu">
-		<div class="bottomlogo">
-		<span class="dotlogo">&bullet;</span><img src="image/collectionlogo1.png" alt="logo1"><span class="dotlogo">&bullet;;</span>
-		</div>
-		<ul class="nav nav-tabs bottomlinks">
-			<li role="presentation" ><a href="#/" role="button">ABOUT US</a></li>
-			<li role="presentation"><a href="#/">CATEGORIES</a></li>
-			<li role="presentation"><a href="#/">PREORDERS</a></li>
-			<li role="presentation"><a href="#/">CONTACT US</a></li>
-			<li role="presentation"><a href="#/">RECEIVE OUR NEWSLETTER</a></li>
-		</ul>
-		
-		 <div class="bottomsocial">
-		 	<a href="#"><i class="fa fa-facebook"></i></a>
-			<a href="#"><i class="fa fa-twitter"></i></a>
-			<a href="#"><i class="fa fa-google-plus"></i></a>
-		</div>
-			<div class="footer">
-				<div class="copyright">
-				  &copy; Copy right 2016 | <a href="#">Privacy </a>| <a href="#">Policy</a>
-				</div>
-				<div class="atisda">
-					 Designed by <a href="http://www.webdomus.net/">Web Domus Italia - Web Agency </a> 
-				</div>
-			</div>
-	</div>--%>
-   
+                            <asp:Button ID="btnShow" runat="server" BackColor="Black" BorderColor="Black" ForeColor="White" Text="INICIAR SESION" />
 
-   
+                            <!-- ModalPopupExtender -->
+                            <cc1:ModalPopupExtender ID="mp1" runat="server" PopupControlID="Panel1" TargetControlID="btnShow"
+                                CancelControlID="btnClose" BackgroundCssClass="modalLogin">
+                            </cc1:ModalPopupExtender>
+                            <asp:Panel ID="Panel1" runat="server" CssClass="modalPopupLogin" align="center" Style="display: none">
+                                <asp:Label ID="LblIncorrecto" runat="server" ForeColor="Red" Text="El último inicio de sesión no funcionó, inténtalo de nuevo" Visible="false"></asp:Label><br />
+                                <asp:Label ID="LblNombre" runat="server" Text="Usuario"></asp:Label> <asp:TextBox ID="TxtNombre" runat="server" CssClass="form-control" Width="62%"></asp:TextBox><br />
+                                <asp:Label ID="LbleClave" runat="server" Text="Contraseña"></asp:Label>  <asp:TextBox ID="TxtContraseña" runat="server" CssClass="form-control" Width="62%" TextMode="Password"></asp:TextBox><br />
+
+                                <asp:Button ID="BtnIniciarSesion" runat="server" Text="Ingresar" CssClass="btn btn-lg btn-primary btn-block btn-signin" Width="62%" OnClick="BtnIniciarSesion_Click" /><br />
+                                <asp:Button ID="btnOlvidePass" runat="server" Text="¿Olvidaste tu contraseña?" ForeColor="Blue" Font-Size="Smaller" BorderColor="Transparent" BackColor="Transparent" OnClick="btnOlvidePass_Click"/>
+                                
+                                <asp:Button ID="btnClose" runat="server" CssClass="btn btn-lg btn-primary btn-block btn-signin"  Width="62%" Text="Cerrar" OnClick="cerrarLogin_Click" />
+                                
+                            </asp:Panel>
+                            <!-- ModalPopupExtender -->
+                          </li>
+                    <li>
+                        
+                    </li>
+                    
+                            <!--MODAL REGISTRO-->
+                           <li>
+                            <asp:Button ID="BtnRegistrarse" runat="server" BackColor="Black" BorderColor="Black" ForeColor="White" Text="REGISTRARSE" />
+
+                       <cc1:ModalPopupExtender ID="ModalPopupExtender1" runat="server" PopupControlID="Panel2" TargetControlID="BtnRegistrarse"
+                           CancelControlID="btnClose" BackgroundCssClass="modalRegistrarse">
+                       </cc1:ModalPopupExtender>
+                       <asp:Panel ID="Panel2" runat="server" CssClass="modalPopupRegistrarse" align="center" Style="display: none">
+
+                           <asp:Label ID="LblUsuario" runat="server" Text="Usuario" ></asp:Label>
+                           <asp:TextBox ID="InputUsuario" runat="server" CssClass="form-control" Width="62%"></asp:TextBox>
+                           <br />
+                           <asp:Label ID="LblNombreR" runat="server" Text="Nombre"></asp:Label>
+                           <asp:TextBox ID="InputNombre" runat="server" CssClass="form-control" Width="62%"></asp:TextBox>
+                           <br />
+                           <asp:Label ID="LblApellido" runat="server" Text="Apellido"></asp:Label>
+                           <asp:TextBox ID="InputApellido" runat="server" CssClass="form-control" Width="62%"></asp:TextBox>
+                           <br />
+                           <asp:Label ID="LblDireccion" runat="server" Text="Direccion"></asp:Label>
+                           <asp:TextBox ID="InputDireccion" runat="server" CssClass="form-control" Width="62%"></asp:TextBox>
+                           <br />
+                           <asp:Label ID="LblTelefono" runat="server" Text="Telefono"></asp:Label>
+                           <asp:TextBox ID="InputTelefono" runat="server" CssClass="form-control" Width="62%" TextMode="Number"></asp:TextBox><br />
+                           <asp:Label ID="LblCorreo" runat="server" Text="Correo Electronico"></asp:Label>
+                           <asp:TextBox ID="InputCorreoE" runat="server" CssClass="form-control" Width="62%" TextMode="Email"></asp:TextBox>
+                           <br />
+                           <asp:Label ID="LblClave" runat="server" Text="Contraseña"></asp:Label>
+                           <asp:TextBox ID="InputContraseña" runat="server" CssClass="form-control" Width="62%" TextMode="Password"></asp:TextBox>
+                           <br />
+
+                           <asp:Button ID="botonRegistrarse" runat="server" Text="Registrarse" CssClass="btn btn-lg btn-primary btn-block btn-signin" Width="62%" OnClick="botonRegistrarse_Click" />
+                                <asp:Button ID="Button1" runat="server" CssClass="btn btn-lg btn-primary btn-block btn-signin"  Width="62%" Text="Cerrar" OnClick="cerrarRegistro_Click" /><br />
+                                
+                                    
+                            </asp:Panel>
+                               </li>
+                    <li>
+                        
+                    </li>
+
+                   <!--MODAL GESTIONAR-->
+                    <li>
+                        
+                         <asp:Button ID="BtnGestionar" runat="server" BackColor="Black" BorderColor="Black" ForeColor="White" Text="GESTIONAR" />
+
+                            <!-- ModalPopupExtender -->
+                            <cc1:ModalPopupExtender ID="ModalPopupExtender2" runat="server" PopupControlID="Panel3" TargetControlID="BtnGestionar"
+                                CancelControlID="btnClose" BackgroundCssClass="modalGestionar">
+                            </cc1:ModalPopupExtender>
+                            <asp:Panel ID="Panel3" runat="server" CssClass="modalPopupGestionar" align="center" Style="display: none">
+
+                            <asp:Button ID="BtnGestionarUsuarios" runat="server" Text="Gestionar Usuarios" CssClass="btn btn-lg btn-primary btn-block btn-signin" Width="62%" OnClick="BtnGestionarUsuarios_Click" /> <br />
+                            <asp:Button ID="BtnGestionarProductos" runat="server" Text="Gestionar Productos" CssClass="btn btn-lg btn-primary btn-block btn-signin" Width="62%" OnClick="BtnGestionarProductos_Click1"/><br />
+                            <asp:Button ID="BtnGestionarFabricantes" runat="server" Text="Gestionar Fabricantes" CssClass="btn btn-lg btn-primary btn-block btn-signin" Width="62%" OnClick="BtnGestionarFabricantes_Click" /> <br />
+                            <asp:Button ID="BtnGestionarCategorias" runat="server" Text="Gestionar Categorias" CssClass="btn btn-lg btn-primary btn-block btn-signin" Width="62%" OnClick="BtnGestionarCategorias_Click" /><br />
+                            <asp:Button ID="BtnGestionarModelos" runat="server" Text="Gestionar Modelos" CssClass="btn btn-lg btn-primary btn-block btn-signin" Width="62%" OnClick="BtnGestionarModelos_Click" /><br />
+                            <asp:Button ID="btnGestionarMarcas" runat="server" Text="Gestionar Marcas" CssClass="btn btn-lg btn-primary btn-block btn-signin" Width="62%" OnClick="btnGestionarMarcas_Click" /><br />
+                                <asp:Button ID="Button2" runat="server" CssClass="btn btn-lg btn-primary btn-block btn-signin"  Width="62%" Text="Cerrar" OnClick="cerrarGestionar_Click" />
+                            </asp:Panel>
+                        </li>
+
+                    <li>
+                        
+                    </li>
+                            <!--MODAL CONFIGURACION PERFIL-->
+                              <li>
+                                  <asp:Button ID="BtnConfigurarPerfil" runat="server" BackColor="Black" BorderColor="Black" ForeColor="White" Text="CONFIGURAR PERFIL"  />
+
+                                  <!-- ModalPopupExtender -->
+                                  <cc1:ModalPopupExtender ID="ModalPopupExtender4" runat="server" PopupControlID="Panel4" TargetControlID="BtnConfigurarPerfil"
+                                      CancelControlID="btnClose" BackgroundCssClass="modalPerfil">
+                                  </cc1:ModalPopupExtender>
+
+                                  <asp:Panel ID="Panel4" runat="server" CssClass="modalPopupPerfil" align="center" Style="display: none">
+
+                                      <asp:Button ID="BtnEliminarProducto" runat="server" Text="Eliminar Producto" CssClass="btn btn-lg btn-primary btn-block btn-signin" Width="69%" OnClick="BtnEliminarProducto_Click" /><br />
+                                      <asp:Button ID="BtnEditarPerfil" runat="server" Text="Editar Perfil" CssClass="btn btn-lg btn-primary btn-block btn-signin" Width="69%" OnClick="BtnEditarPerfil_Click" /><br />
+                                      <asp:Button ID="BtnVerOrden" runat="server" Text="Ver Orden" CssClass="btn btn-lg btn-primary btn-block btn-signin" Width="69%" OnClick="BtnVerOrden_Click" /><br />
+
+                                      <asp:Button ID="Button3" runat="server" CssClass="btn btn-lg btn-primary btn-block btn-signin" Width="62%" Text="Cerrar" OnClick="cerrarConfigurar_Click" />
+                                  </asp:Panel>
+                              </li>
+
+                    <li>
+                        
+                    </li>
+                         <!--BOTÓN SUBIR PRODUCTO-->
+                              <li>
+                              <asp:Button ID="BtnSubirProducto" runat="server" Text="PUBLICAR PRODUCTO" BackColor="Black" BorderColor="Black" ForeColor="White" OnClick="BtnSubirProducto_Click" />
+                       </li>
+                    
+                    <li>
+                             <asp:Button ID="BtnCerrarSesion" runat="server" Text="CERRAR SESION" BackColor="Black" BorderColor="Black" ForeColor="White" OnClick="BtnCerrarSesion_Click"/>
+                    </li>
+                    </ul>
+                     </div>
+         </div>
+
+        
+	
 
     <script type="text/javascript" src="source/bootstrap-3.3.6-dist/js/jquery.js"></script>
     <script type="text/javascript" src="source/js/isotope.js"></script>
@@ -651,5 +300,15 @@
     <script type="text/javascript" src="source/bootstrap-3.3.6-dist/js/bootstrap.js"></script>
     <script type="text/javascript" src="source/bootstrap-3.3.6-dist/js/login.js"></script>
 
+
+
+
+    <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+     
+    </asp:ContentPlaceHolder>
+
+
+             
+             </form> 
 </body>
 </html>

@@ -16,14 +16,14 @@ namespace Proyecto1.Logica
         /// <param name="categorias">Parametro para capturar la categoria a la cual pertenecera el producto el producto</param>
         /// <param name="productos">Parametro para capturar una coleccion de los producto pertenecientes a la marca</param>
         /// <returns>Retorna un valor booleano segun la ejecucion del metodo</returns>
-        public bool AgregarMarcaP(string nombreM, List<Categoria>categorias,List<Producto>productos)
+        public bool AgregarMarcaP(string nombreM, List<Categoria>categorias,List<ModeloCarro> modelosDeCarro)
         {
             try
             {
                 MarcaProducto marcaP = new MarcaProducto
                 {
                     NombreMarca= nombreM,
-                    Productos= productos,
+                    ModelosDeCarro= modelosDeCarro,
                     Categorias= categorias                    
                 };
                 AutoStoreContext contexto = new AutoStoreContext();

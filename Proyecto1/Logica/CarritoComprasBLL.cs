@@ -9,25 +9,26 @@ namespace Proyecto1.Logica
     public class CarritoComprasBLL
     {
 
-        public const string sessionCarro = "SessionCarro";
+        public const string sessionCarro = "sessionCarro";
+        
         public string CarritoId { get; set; }
         AutoStoreContext context = new AutoStoreContext();
-
+       
         /// <summary>
         /// Metodo en el cual se añadiran los item al carrito
         /// </summary>
         /// <param name="NombreUsuario">Parametro para asignar el carro a un usuario especifico </param>
         /// <param name="idProducto"> Parametro que proporcionara que producto esta en el carro</param>
-        public void AnadirAlCarro(string NombreUsuario, int idProducto)
+        public void AnadirAlCarro(Guid idProducto)
         {
             CarritoId = ObtenerItemId();
-            var obtenerItem = context.ItemCarrito.SingleOrDefault(c => c.NombreUsuario == NombreUsuario && c.ProductoID == idProducto);
+            var obtenerItem = context.ItemCarrito.SingleOrDefault(c => c.NombreUsuario == CarritoId && c.ProductoID == idProducto);
             if (obtenerItem == null)
             {
                 ItemCarrito Icarrito = new ItemCarrito
                 {
                     ItemCarritoID = Guid.NewGuid().ToString(),
-                    NombreUsuario = NombreUsuario,
+                    NombreUsuario = CarritoId,
                     Producto = context.Producto.SingleOrDefault(p => p.ProductoID == idProducto),
                     Cantidad = 1
 
@@ -45,6 +46,8 @@ namespace Proyecto1.Logica
         /// <returns></returns>
         public string ObtenerItemId()
         {
+            HttpContext.Current.Session[sessionCarro] = HttpContext.Current.Session["UserLogin"];
+
             if (HttpContext.Current.Session[sessionCarro] == null)
             {
                 string nombreUser = null;
@@ -68,18 +71,22 @@ namespace Proyecto1.Logica
         /// <returns></returns>
         public List<ItemCarrito> ObtenerItemCarrito()
         {
-            AutoStoreContext contexto = new AutoStoreContext();
             CarritoId = ObtenerItemId();
-            return contexto.ItemCarrito.Where(c => c.ItemCarritoID == CarritoId).ToList();
+
+            var regresarItems = from itm in context.ItemCarrito
+                                where itm.NombreUsuario == CarritoId
+                                select itm;
+            return regresarItems.ToList();
+
+
         }
-        public void RemoverItem(string RemoverCarrito, int idItem)
+        public void RemoverItem(string RemoverCarrito, Guid idItem)
         {
-            using (var context = new Proyecto1.Models.AutoStoreContext())
-            {
+
                 try
                 {
                     var Item = (from c in context.ItemCarrito
-                                where c.ItemCarritoID == RemoverCarrito
+                                where c.NombreUsuario == RemoverCarrito
                                 && c.Producto.ProductoID == idItem
                                 select c).FirstOrDefault();
                     if (Item != null)
@@ -88,12 +95,12 @@ namespace Proyecto1.Logica
                         context.SaveChanges();
                     }
                 }
-                catch (Exception ex)
+                catch (Exception)
                 {
 
                     throw new Exception("No se puede remover el item del carrito");
                 }
-            }
+            
         }
         /// <summary>
         /// Metodo para actualizar la informacion del carrito
@@ -101,14 +108,12 @@ namespace Proyecto1.Logica
         /// <param name="actualizarCarritoId"> Parametro que trae el id del carrito</param>
         /// <param name="actualizarProductoId">Parametro que especifica que productos existen en el carrito </param>
         /// <param name="cantidad">Parametro que especifica la cantidad proveniente del item del carrito</param>
-        public void ActualizarCarro(string actualizarCarritoId, int actualizarProductoId, int cantidad)
+        public void ActualizarCarro(string actualizarCarritoId, Guid actualizarProductoId, int cantidad)
         {
-            using (var context = new Proyecto1.Models.AutoStoreContext())
-            {
-                try
+              try
                 {
                     var Item = (from c in context.ItemCarrito
-                                where c.ItemCarritoID == actualizarCarritoId && c.Producto.ProductoID == actualizarProductoId
+                                where c.NombreUsuario == actualizarCarritoId && c.Producto.ProductoID == actualizarProductoId
                                 select c).FirstOrDefault();
                     if (Item != null)
                     {
@@ -116,12 +121,12 @@ namespace Proyecto1.Logica
                         context.SaveChanges();
                     }
                 }
-                catch (Exception ex)
+                catch (Exception)
                 {
 
                     throw new Exception("No se puede actualizar el item del carrito");
                 }
-            }
+            
 
         }
         /// <summary>
@@ -169,11 +174,66 @@ namespace Proyecto1.Logica
         public decimal ObtenerTotal()
         {
             CarritoId = ObtenerItemId();
-            decimal? total = decimal.Zero;
+            decimal? total; 
             total = (decimal?)(from item in context.ItemCarrito
-                               where item.ItemCarritoID == CarritoId
+                               where item.NombreUsuario == CarritoId
                                select (int?)item.Cantidad * item.Producto.PrecioU).Sum();
             return total ?? decimal.Zero;
         }
-    } 
-}
+        public void Dispose()
+        {
+            if (context != null)
+            {
+                context.Dispose();
+                context = null;
+            }
+        }
+
+        public CarritoComprasBLL ObtenerCar (HttpContext contexto)
+        {
+            CarritoComprasBLL car = new CarritoComprasBLL();
+                 car.CarritoId = car.ObtenerItemId();
+                return car;
+            
+        }
+        public struct ActualizacionesCarrito
+        {
+            public Guid ProductoID;
+            public int CantidaddeCompra;
+            public bool QuitarItem;
+        }
+
+        public void ActualizarCarritoDB(String carroID, ActualizacionesCarrito[] CartItemUpdates)
+        {
+                try
+                {
+                    int cuentadeItems = CartItemUpdates.Count();
+                    List<ItemCarrito> miCarrito = ObtenerItemCarrito();
+                    foreach (var cartItem in miCarrito)
+                    {
+                        for (int i = 0; i < cuentadeItems; i++)
+                        {
+                            if (cartItem.Producto.ProductoID == CartItemUpdates[i].ProductoID)
+                            {
+                                if (CartItemUpdates[i].CantidaddeCompra < 1 || CartItemUpdates[i].QuitarItem == true)
+                                {
+                                    RemoverItem(carroID, cartItem.ProductoID);
+                                }
+                                else
+                                {
+                                    ActualizarCarro(carroID, cartItem.ProductoID, CartItemUpdates[i].CantidaddeCompra);
+                                }
+                            }
+                        }
+                    }
+                }
+                catch (Exception exp)
+                {
+
+                    throw new Exception("Error: No se puede actualizar la base de datos del carrio - " + exp.Message.ToString(), exp);
+
+                }
+            }
+        }
+
+    }

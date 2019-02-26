@@ -20,14 +20,14 @@ namespace Proyecto1.Models
 
         //Zona de Relaciones
 
-        //Relacion con Producto
-        public ICollection<Producto> Productos { get; set; }
-
         //Relacion con Categoria
         public ICollection<Categoria> Categorias { get; set; }
 
+        // Relacion con ModeloCarro
+
+        public ICollection<ModeloCarro> ModelosDeCarro { get; set; }
 
 
-        
+
     }
 }

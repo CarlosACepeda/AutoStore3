@@ -15,14 +15,15 @@ namespace Proyecto1.Models
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int ImagenID { get; set; }
 
-        [Required, StringLength(20), Display(Name = "imagen")]
-        public string Imagen { get; set; }
+        [Required]
+        public byte[] Imagen { get; set; }
+        
 
 
         //Zona de Relaciones.
 
         //Relacion con Producto-
-        public int ProductoID { get; set; }
+        public Guid ProductoID { get; set; }
         public virtual Producto Producto { get; set; }
 
 

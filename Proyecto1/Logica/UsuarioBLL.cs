@@ -3,11 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using Proyecto1.Models;
+using System.Data.Entity.SqlServer;
 
 namespace Proyecto1.Logica
 {
     public class UsuarioBLL
     {
+
 
         /// <summary>
         /// Metodo para cambiar el estado del usuario 
@@ -22,7 +24,7 @@ namespace Proyecto1.Logica
             var actualizarEstado = from c in contexto.Usuario
                                    where c.IdUsuario == idUsuario
                                    select c;
-                
+
             //Ejecutar la consulta y cambiar los valores que se requiera.
 
             foreach (Usuario usr in actualizarEstado)
@@ -50,6 +52,7 @@ namespace Proyecto1.Logica
             return true;
         }
 
+
         /// <summary>
         /// Metodo para editar el usuario 
         /// </summary>
@@ -73,7 +76,6 @@ namespace Proyecto1.Logica
                 user.Contrasena = usr.Contrasena;
                 user.Foto = usr.Foto;
                 user.Activo = true;
-
             }
 
             //Registrar los cambios en la Base de Datos
@@ -84,7 +86,7 @@ namespace Proyecto1.Logica
             catch (Exception)
             {
                 return false;
-            }   
+            }
             return true;
         }
 
@@ -93,22 +95,16 @@ namespace Proyecto1.Logica
         /// </summary>
         /// <param name="idUser">Parametro que permite saber de que usuario se desea obtener la informacion</param>
         /// <returns>Retorna un valor booleano segun la ejecucion del metodo</returns>
-        public bool MostrarInformacion(Guid idUser)
+        public Usuario MostrarInformacion()
         {
+            Guid? iduser = TraerIdDeUsuarioLogueado();
 
-            try
-            {
-                AutoStoreContext context = new AutoStoreContext();
-                var mostrarInfo = from usr in context.Usuario
-                                  where usr.IdUsuario == idUser
-                                  select usr;
-                return true;
-            }
-            catch (Exception)
-            {
+            AutoStoreContext context = new AutoStoreContext();
+            var mostrarInfo = from usr in context.Usuario
+                              where usr.IdUsuario == iduser
+                              select usr;
 
-                return false;
-            }
+            return mostrarInfo.FirstOrDefault();
         }
 
         /// <summary>
@@ -121,7 +117,7 @@ namespace Proyecto1.Logica
         /// <param name="rol">Parametro que captura el rol que tendra el usuario</param>
         /// <param name="activo">Parametro que captura el estado que tiene el usuario</param>
         /// <returns>Retorna un valor booleano segun la ejecucion del metodo</returns>
-        public bool CrearUsuario(Guid idUser, string nombreUser, string clave, Char foto, int rol, bool activo = true)
+        public bool CrearUsuario(Guid idUser, string nombreUser, string clave, byte[] foto, int rol, bool activo = true)
         {
             try
             {
@@ -132,18 +128,22 @@ namespace Proyecto1.Logica
                     NombreUsuario = nombreUser,
                     Contrasena = clave,
                     Foto = foto,
+                    Activo = activo,
                     RolID = rol
+
 
 
                 };
                 AutoStoreContext contex = new AutoStoreContext();
                 contex.Usuario.Add(usr);
+                contex.SaveChanges();
                 return true;
+
             }
             catch (Exception)
             {
 
-                return false;
+                throw;
             }
 
         }
@@ -157,10 +157,101 @@ namespace Proyecto1.Logica
             AutoStoreContext context = new AutoStoreContext();
             var mostrarInfo = from usr in context.Usuario
                               select usr;
-            return mostrarInfo.ToList();
+            return mostrarInfo.ToList();    
 
         }
-        
-        
+
+        /// <summary>
+        /// Metodo para Autenticar el usuario que se va a loguear en el sistema
+        /// </summary>
+        /// <param name="nombre">Nombre de Usuario</param>
+        /// <param name="clave">contraseña del Usuario</param>
+        /// <returns></returns>
+        public int Autenticar(string nombre, string clave)
+        {
+
+            try
+            {
+                using (AutoStoreContext context = new AutoStoreContext())
+                {
+                    var mostrarInfo = from usr in context.Usuario
+                                      where usr.NombreUsuario == nombre && usr.Contrasena == clave
+                                      select usr;
+                    //Buscar el Rol del Usuario que se loguea.
+                    var rolId = from usr in context.Usuario
+                                where usr.NombreUsuario == nombre
+                                select usr.RolID;
+
+
+                    //Este if confirma si hay un usuario en la Base de Datos.
+                    if (mostrarInfo.Count() == 0)
+                    {
+                        return 0; //0 vale a 'No hay usuarios'
+                    }
+
+                    //Si se encuentra un usuario, compara el id de ese usuario.
+                    else if (rolId.FirstOrDefault().Equals(1))
+                    {
+                        //Y se activa un estado de sesión para Administrador.
+                        HttpContext.Current.Session["AdminLogin"] = 1;
+                        ///Si el Rol es 1 entonces es Administrador.
+                        return 1;
+                        
+                    }
+                    else
+                    {
+                        //Si el rol es 2 entonces es Usuario
+                        return 2;
+                    }
+
+
+                }
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+
+
+        //Método que trae el Id del usuario que está logueado, para diferentes fines.
+        public Guid? TraerIdDeUsuarioLogueado()
+        {
+
+            string sesionActual = HttpContext.Current.Session["UserLogin"].ToString();
+            AutoStoreContext context = new AutoStoreContext();
+            Guid? idUser = (from usuario in context.Usuario
+                            where usuario.NombreUsuario == sesionActual
+                            select usuario.IdUsuario).FirstOrDefault();
+
+            return idUser;
+        }
+
+        public Persona TraerPersona()
+        {
+            AutoStoreContext contexto = new AutoStoreContext();
+            Guid? idUser = TraerIdDeUsuarioLogueado();
+            string UsuarioLogueado = HttpContext.Current.Session["UserLogin"].ToString();
+
+            var per = from p in contexto.Persona
+                      where p.PersonaID == idUser
+                      select p;
+
+            return per.FirstOrDefault();
+        }
+        public string TraerPassword(string email)
+        {
+            AutoStoreContext contexto = new AutoStoreContext();
+            var per = (from p in contexto.Persona
+                      where p.Email == email
+                      select p.PersonaID).First();
+
+            var pass = (from p in contexto.Usuario
+                        where p.IdUsuario == per
+                        select p.Contrasena).FirstOrDefault();
+            return pass.ToString();
+
+        }
     }
-}
+    }
+

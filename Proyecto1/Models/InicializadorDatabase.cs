@@ -14,10 +14,48 @@ namespace Proyecto1.Models
             listarFabricantes().ForEach(f => context.FabricanteCarro.Add(f));
             listarModelosDeCarro().ForEach(m => context.ModeloCarro.Add(m));
             listarProductos().ForEach(product => context.Producto.Add(product));
+            ListarRoles().ForEach(roles => context.Rol.Add(roles));
+            listarUsuarios().ForEach(users => context.Usuario.Add(users));
+            context.SaveChanges();
+        }
+        private static List<MarcaProducto> ListarMarcas()
+        {
+            var marcas = new List<MarcaProducto>
+            {
+                new MarcaProducto
+                {
+                    NombreMarca= "Michelin"
 
 
+                },
+                new MarcaProducto
+                {
+                    NombreMarca= "Motorcraft"
+
+
+                },
+                };
+            return marcas;
         }
 
+        private static List<Rol> ListarRoles()
+        {
+            var rol = new List<Rol>
+            {
+                new Rol
+                {
+                    RolID = 1,
+                    NombreRol ="Admin",
+
+                },
+                new Rol
+                {
+                    RolID = 2,
+                    NombreRol = "Usuario",
+                }
+                };
+            return rol;
+        }
         //Datos quemados de Modelos de Carro.
         private static List<Categoria> listarCategorias()
         {
@@ -96,7 +134,6 @@ namespace Proyecto1.Models
         };
             return categorias;
         }
-
         //Datos quemados de Modelos de Carro.
         private static List<FabricanteCarro> listarFabricantes()
         {
@@ -259,17 +296,18 @@ namespace Proyecto1.Models
             {
                 new Producto
                 {
-
+                    ProductoID= Guid.NewGuid(),
                     NombreProducto ="Bujias",
                     Descripcion="Bujias para... ",
                     PrecioU = 30000,
                     Activo= true,
                     UsuarioID= Guid.NewGuid(),
                     MarcaProductoID= 1
-                    
+
                 },
                   new Producto
                 {
+                      ProductoID= Guid.NewGuid(),
                     NombreProducto ="Limpiaparabrisas",
                     Descripcion="Limpiaparabrisas para... ",
                     PrecioU = 50000,
@@ -279,6 +317,7 @@ namespace Proyecto1.Models
                 },
                     new Producto
                 {
+                        ProductoID= Guid.NewGuid(),
                     NombreProducto ="Radioador",
                     Descripcion="Radiador para... ",
                     PrecioU = 60000,
@@ -288,6 +327,7 @@ namespace Proyecto1.Models
                 },
                       new Producto
                 {
+                          ProductoID= Guid.NewGuid(),
                     NombreProducto ="Retrovisor",
                     Descripcion="Retrovisor para... ",
                     PrecioU = 5000,
@@ -295,12 +335,49 @@ namespace Proyecto1.Models
                     UsuarioID= Guid.NewGuid(),
                     MarcaProductoID = 2,
                 },
-                
+
             };
             return listadoDeProductos;
-            }
+        }
+        private static List<Usuario> listarUsuarios()
+        {
+            var usuario = new List<Usuario>
+            {
+                new Usuario
+                {
+                    IdUsuario= Guid.NewGuid(),
+                    NombreUsuario ="Diego",
+                    Contrasena= "Diego1994",
+                    Foto= null,
+                    RolID=1
+                   
+
+
+                },
+                new Usuario
+                {
+                    IdUsuario= Guid.NewGuid(),
+                    NombreUsuario ="Carlos",
+                    Contrasena= "Loca",
+                    Foto= null,
+                    RolID=1
+
+                },
+                new Usuario
+                {
+                    IdUsuario= Guid.NewGuid(),
+                    NombreUsuario ="Jeisson",
+                    Contrasena= "romero7",
+                    Foto= null,
+                    RolID=1
+                }
+                
+
+        };
+            return usuario;
         }
     }
+}
 
 
 
@@ -310,4 +387,3 @@ namespace Proyecto1.Models
 
 
 
-     

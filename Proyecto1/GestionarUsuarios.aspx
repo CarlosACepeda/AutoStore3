@@ -1,9 +1,9 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="GestionarUsuarios.aspx.cs" Inherits="Proyecto1.GestionarUsuarios" %>
+<%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="cc1" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     
-
     <div class="collapse navbar-collapse" id="upmenu" style="background-color:#e9eef1">
         <ul class="nav navbar-nav" id="navbarontop" style="background-color:#e9eef1">
             <li><a href="Inicio.aspx">INICIO</a> </li>
@@ -18,4 +18,13 @@
 
         </ul>
     </div>
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+        
 </asp:Content>

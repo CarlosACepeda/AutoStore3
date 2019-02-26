@@ -12,12 +12,12 @@ namespace Proyecto1.Models
         [ScaffoldColumn(false)]
 
         [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int ProductoID { get; set; }
+        public Guid ProductoID { get; set; }
 
         [Required, StringLength(200, ErrorMessage ="El producto debe ser de menos de 200 caracteres"), Display(Name = "Nombre producto")]
         public string NombreProducto { get; set; }
 
+       
 
         [Required, StringLength(400, ErrorMessage ="La descripción debe ser de menos de 400 caracteres"), Display(Name = "Descripcion")DataType(DataType.MultilineText)]
         public string Descripcion { get; set; }
@@ -46,20 +46,6 @@ namespace Proyecto1.Models
         public int MarcaProductoID { get; set; }
 
         public virtual MarcaProducto MarcaProducto { get; set; }
-
-        //Relacion con categoría
-        public int CategoriaID { get; set; }
-
-        public virtual Categoria Categoria { get; set; }
-
-        // Relacion con ModeloCarro
-
-        public int ModeloCarroID { get; set; }
-
-        public virtual ModeloCarro ModeloCarro { get; set; }
-
-
-
 
 
     }

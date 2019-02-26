@@ -7,11 +7,15 @@ using System.Web.Security;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using Microsoft.AspNet.Identity;
+using Proyecto1.Logica;
 
 namespace Proyecto1
 {
     public partial class SiteMaster : MasterPage
     {
+
+        public static int? usuarioEstaLogueado;
+
         private const string AntiXsrfTokenKey = "__AntiXsrfToken";
         private const string AntiXsrfUserNameKey = "__AntiXsrfUserName";
         private string _antiXsrfTokenValue;
@@ -70,12 +74,204 @@ namespace Proyecto1
         protected void Page_Load(object sender, EventArgs e)
         {
 
+            HttpContext.Current.Response.AddHeader("Cache-Control", "no-cache, no-store, must-revalidate");
+            HttpContext.Current.Response.AddHeader("Pragma", "no-cache");
+            HttpContext.Current.Response.AddHeader("Expires", "0");
+
+            RevisarLoginUser();
+            if(usuarioEstaLogueado==0)
+            {
+                RevisarLoginUser();
+            }
         }
 
         protected void Unnamed_LoggingOut(object sender, LoginCancelEventArgs e)
         {
             Context.GetOwinContext().Authentication.SignOut(DefaultAuthenticationTypes.ApplicationCookie);
         }
-    }
 
+        protected void BtnIniciarSesion_Click(object sender, EventArgs e)
+        {
+            UsuarioBLL Login = new UsuarioBLL();
+            if (Login.Autenticar(TxtNombre.Text, TxtContraseña.Text) == 1)//Si es 1 es Admin
+            {
+                Session["Admin"] = TxtNombre.Text;
+                usuarioEstaLogueado = 1;
+                //lblUsuarioEnLinea.Text = TxtNombre.Text;
+                //lblUsuarioEnLinea.Visible = true;
+                RevisarLoginUser();
+                
+             }
+            else if(Login.Autenticar(TxtNombre.Text, TxtContraseña.Text) == 2)//Si es 2 es User.
+            {
+                Session["UserLogin"] = TxtNombre.Text;
+                usuarioEstaLogueado = 2;
+                RevisarLoginUser();
+            }
+            else //Si no, fue que hubo un error al login
+            {
+                LblIncorrecto.Visible = true;
+            }
+        }
+        public void botonRegistrarse_Click(object sender, EventArgs e)
+        {
+            Guid nuevo_id = Guid.NewGuid();
+            UsuarioBLL registrarUsr = new UsuarioBLL();
+            PersonaBLL registrarPer = new PersonaBLL();
+
+            registrarUsr.CrearUsuario(
+                nuevo_id,
+                InputUsuario.Text,
+                InputContraseña.Text,
+                null,
+                2
+                );
+            registrarPer.CrearPersona(  
+                nuevo_id,
+                InputNombre.Text,
+                InputApellido.Text,
+                InputDireccion.Text,
+            Int64.Parse(InputTelefono.Text),
+                InputCorreoE.Text
+                );
+
+        }
+
+        public void RevisarLoginUser()
+        {
+            if (usuarioEstaLogueado==1)
+            {
+                BtnRegistrarse.Visible = false;
+                BtnRegistrarse.Enabled = false;
+                BtnGestionar.Enabled = true;
+                BtnGestionar.Visible = true;
+                BtnCerrarSesion.Visible = true;
+                btnShow.Visible = false;
+                btnShow.Enabled = false;
+                BtnConfigurarPerfil.Visible = false;
+                BtnConfigurarPerfil.Enabled = false;
+                BtnSubirProducto.Enabled = false;
+                BtnSubirProducto.Visible=false;
+                
+            }
+            else if(usuarioEstaLogueado==2)
+            {
+                BtnRegistrarse.Visible = false;
+                BtnRegistrarse.Enabled = false;
+                btnShow.Visible = false;
+                btnShow.Enabled = false;
+                BtnGestionar.Enabled = false;
+                BtnGestionar.Visible = false;
+                BtnConfigurarPerfil.Visible = true;
+                BtnConfigurarPerfil.Enabled = true;
+                BtnSubirProducto.Visible = true;
+                BtnSubirProducto.Enabled = true;
+                BtnCerrarSesion.Visible = true;
+
+            }
+            else
+            {
+
+                btnShow.Visible = true;
+                btnShow.Enabled = true;
+                BtnRegistrarse.Visible = true;
+                BtnRegistrarse.Enabled = true;
+                BtnGestionar.Enabled = false;
+                BtnGestionar.Visible = false;
+                BtnConfigurarPerfil.Enabled = false;
+                BtnConfigurarPerfil.Visible = false;
+                BtnSubirProducto.Enabled = false;
+                BtnSubirProducto.Visible = false;
+                BtnCerrarSesion.Visible = false;
+
+
+
+            }
+        }
+
+        //Click de los botones
+
+        protected void cerrarLogin_Click(object sender, EventArgs e)
+        {
+            RevisarLoginUser();
+        }
+        protected void cerrarRegistro_Click(object sender, EventArgs e)
+        {
+            RevisarLoginUser();
+        }
+        protected void cerrarConfigurar_Click(object sender, EventArgs e)
+        {
+            RevisarLoginUser();
+        }
+        protected void cerrarGestionar_Click(object sender, EventArgs e)
+        {
+            RevisarLoginUser();
+        }
+
+        protected void BtnGestionarUsuarios_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("GestionarUsuarios.aspx");
+        }
+
+        protected void BtnGestionarProductos_Click1(object sender, EventArgs e)
+        {
+            Response.Redirect("GestionarProductos.aspx");
+        }
+        
+        protected void BtnGestionarFabricantes_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("GestionarFabricantes.aspx");
+
+        }
+
+        protected void BtnGestionarCategorias_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("GestionarCategorias.aspx");
+
+        }
+
+        protected void BtnGestionarModelos_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("GestionarModelos.aspx");
+
+        }
+
+        protected void btnGestionarMarcas_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("GestionarMarcas.aspx");
+
+        }
+        protected void BtnEditarPerfil_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("EditarPerfil.aspx");
+
+        }
+        protected void BtnVerOrden_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("VerOrden.aspx");
+
+        }
+        protected void BtnEliminarProducto_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("EliminarProducto.aspx");
+        }
+
+        protected void BtnSubirProducto_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("PublicarProducto.aspx");
+        }
+
+        protected void BtnCerrarSesion_Click(object sender, EventArgs e)
+        {
+            usuarioEstaLogueado = 0;
+            RevisarLoginUser();
+        }
+        protected void btnOlvidePass_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("RecuperarPass.aspx");
+        }
+       
+        
+    }
 }
+

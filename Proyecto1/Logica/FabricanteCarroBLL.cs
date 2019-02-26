@@ -35,13 +35,14 @@ namespace Proyecto1.Logica
                 };
                 AutoStoreContext contexto = new AutoStoreContext();
                 contexto.FabricanteCarro.Add(FabicanteC);
+                contexto.SaveChanges();
                 return true;
             }
 
 
             catch (Exception)
             {
-                return false;
+                throw;
             }
         }
     }

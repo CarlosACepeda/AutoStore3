@@ -11,7 +11,15 @@ namespace Proyecto1
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            //Se comprueba que tipo de usuario está logueado en el Sistema.
+            if(Session["Admin"] != null)
+            {
+                SiteMaster.usuarioEstaLogueado = 1;
+            }
+            else if(Session["UserLogin"]!=null)
+            {
+                SiteMaster.usuarioEstaLogueado = 2;
+            }
         }
     }
 }

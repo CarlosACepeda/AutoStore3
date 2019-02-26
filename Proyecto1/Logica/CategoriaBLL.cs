@@ -26,14 +26,13 @@ namespace Proyecto1.Logica
         /// <param name="Modelos">Parametro para guardar el modelo al cual pertenece</param>
         /// <param name="MarcasP">Parametro para guardar las marcas de productos</param>
         /// <returns>Retorna un valor booleano segun la ejecucion del metodo</returns>
-        public bool AgregarCategoria(string nombreC, List<ModeloCarro> Modelos, List<MarcaProducto> MarcasP)
+        public bool AgregarCategoria(string nombreC, List<MarcaProducto> MarcasP)
         {
             try
             {
                 Categoria categoria = new Categoria
                 {
                     NombreCategoria = nombreC,
-                    ModelosDeCarro = Modelos,
                     MarcaProducto = MarcasP
                 };
                 AutoStoreContext contexto = new AutoStoreContext();
